@@ -1,0 +1,12 @@
+composio
+google-genai
+pydantic
+python-dotenv
+httpx
+beautifulsoup4
+playwright
+tenacity
+pandas
+jinja2
+pytest
+pytest-asyncio
