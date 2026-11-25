@@ -1,0 +1,925 @@
+[
+  {
+    "app_id": 21,
+    "selected_attempt": 2,
+    "total_attempts": 2,
+    "support_rate": 0.5714285714285714,
+    "execution_time": 63.21,
+    "result": {
+      "app": {
+        "id": 21,
+        "name": "Slack",
+        "category": "Communications and Messaging",
+        "website_hint": "slack.com"
+      },
+      "description": "The Slack Web API is an interface for querying information from and enacting change in a Slack workspace.",
+      "auth_methods": [
+        "oauth2"
+      ],
+      "access_types": [
+        "unknown"
+      ],
+      "access_details": "",
+      "api_types": [
+        "rpc"
+      ],
+      "api_breadth": "broad",
+      "example_operations": [],
+      "mcp_status": "unknown",
+      "mcp_url": null,
+      "buildability": "unknown",
+      "blockers": [],
+      "verdict_reason": "",
+      "claims": [
+        {
+          "field": "description",
+          "statement": "The Slack Web API is an interface for querying information from and enacting change in a Slack workspace.",
+          "evidence": [
+            {
+              "source_url": "https://docs.slack.dev/apis/web-api/",
+              "excerpt": "The Slack Web API is an interface for querying information from and enacting change in a Slack workspace.",
+              "source_title": "Slack Web API | Slack Developer Docs",
+              "retrieved_at": "2026-11-24T21:30:38.780308Z",
+              "official_source": false
+            }
+          ],
+          "verification_status": "supported",
+          "verification_reason": "The evidence directly confirms the description of the Slack Web API."
+        },
+        {
+          "field": "auth_methods",
+          "statement": "Slack apps are installed using a v2 OAuth 2.0 flow to obtain access tokens.",
+          "evidence": [
+            {
+              "source_url": "https://docs.slack.dev/authentication/installing-with-oauth/",
+              "excerpt": "Slack apps are installed with a v2 OAuth 2.0 flow.",
+              "source_title": "Installing via OAuth authorization code flow | Slack Developer Docs",
+              "retrieved_at": "2026-11-24T21:29:52.300974Z",
+              "official_source": false
+            }
+          ],
+          "verification_status": "supported",
+          "verification_reason": "The evidence confirms Slack apps use a v2 OAuth 2.0 flow."
+        },
+        {
+          "field": "api_types",
+          "statement": "The Slack Web API is a collection of HTTP RPC-style methods.",
+          "evidence": [
+            {
+              "source_url": "https://docs.slack.dev/apis/web-api/",
+              "excerpt": "The Web API is a collection of HTTP RPC-style methods",
+              "source_title": "Slack Web API | Slack Developer Docs",
+              "retrieved_at": "2026-11-24T21:30:38.780308Z",
+              "official_source": false
+            }
+          ],
+          "verification_status": "supported",
+          "verification_reason": "The evidence confirms the Web API is a collection of HTTP RPC-style methods."
+        },
+        {
+          "field": "api_breadth",
+          "statement": "The API supports a wide range of operations including reading messages, searching conversations, and managing channels.",
+          "evidence": [
+            {
+              "source_url": "https://explainx.ai/mcp-servers/slack-mcp-server-official",
+              "excerpt": "Connects AI agents to Slack workspaces to read messages, search conversations, and manage channels through the official Slack API.",
+              "source_title": "Slack MCP Server (Official) — MCP server | explainx.ai | explainx.ai",
+              "retrieved_at": "2026-11-24T21:29:57.662569Z",
+              "official_source": false
+            }
+          ],
+          "verification_status": "supported",
+          "verification_reason": "The evidence confirms the API supports reading messages, searching conversations, and managing channels."
+        }
+      ],
+      "research_attempt": 2,
+      "research_errors": [
+        "No valid evidence for field: access_details",
+        "No valid evidence for field: example_operations",
+        "No valid evidence for field: mcp_status",
+        "No valid evidence for field: verdict_reason",
+        "Ready verdict downgraded because essential API evidence is missing."
+      ],
+      "researched_at": "2026-11-24T21:30:49.287973Z"
+    },
+    "verification": {
+      "total_claims": 7,
+      "supported_claims": 4,
+      "contradicted_claims": 0,
+      "insufficient_claims": 3,
+      "support_rate": 0.5714285714285714,
+      "failed_claims": [
+        {
+          "field": "mcp_status",
+          "statement": "Slack provides an official MCP server for AI agents.",
+          "status": "insufficient_evidence",
+          "reason": "No valid source quotation."
+        },
+        {
+          "field": "mcp_url",
+          "statement": "The official Slack MCP server is configured via the URL https://mcp.slack.com/mcp.",
+          "status": "insufficient_evidence",
+          "reason": "The evidence comes from a third-party site and does not verify the URL as an official Slack endpoint."
+        },
+        {
+          "field": "buildability",
+          "statement": "The availability of official documentation and an official MCP server makes integration feasible.",
+          "status": "insufficient_evidence",
+          "reason": "The claim relies on the existence of an official MCP server, which remains unverified."
+        }
+      ],
+      "failed_fields": [
+        {
+          "field": "access_types",
+          "status": "insufficient_evidence",
+          "reason": "The field is marked as unknown and lacks supporting evidence.",
+          "unsupported_values": [
+            "unknown"
+          ],
+          "corrective_query": "Slack API authentication access types documentation"
+        },
+        {
+          "field": "access_details",
+          "status": "insufficient_evidence",
+          "reason": "Verifier omitted this field.",
+          "unsupported_values": [],
+          "corrective_query": "Slack API access requirements permissions editions"
+        },
+        {
+          "field": "example_operations",
+          "status": "insufficient_evidence",
+          "reason": "Verifier omitted this field.",
+          "unsupported_values": [],
+          "corrective_query": "Slack API endpoints supported operations"
+        },
+        {
+          "field": "mcp_status",
+          "status": "insufficient_evidence",
+          "reason": "No official evidence confirms Slack provides an MCP server.",
+          "unsupported_values": [
+            "unknown"
+          ],
+          "corrective_query": "official Slack MCP server documentation"
+        },
+        {
+          "field": "mcp_url",
+          "status": "insufficient_evidence",
+          "reason": "The provided URL is not verified as an official Slack endpoint.",
+          "unsupported_values": [
+            "https://mcp.slack.com/mcp"
+          ],
+          "corrective_query": "official Slack MCP server repository URL"
+        },
+        {
+          "field": "buildability",
+          "status": "insufficient_evidence",
+          "reason": "Buildability status is unknown and relies on unverified MCP claims.",
+          "unsupported_values": [
+            "unknown"
+          ],
+          "corrective_query": "Slack API integration guide"
+        },
+        {
+          "field": "blockers",
+          "status": "insufficient_evidence",
+          "reason": "Verifier omitted this field.",
+          "unsupported_values": [],
+          "corrective_query": "Slack API limitations access restrictions"
+        },
+        {
+          "field": "verdict_reason",
+          "status": "insufficient_evidence",
+          "reason": "Verifier omitted this field.",
+          "unsupported_values": [],
+          "corrective_query": "Slack developer API integration requirements"
+        }
+      ],
+      "corrective_queries": [
+        "Slack API authentication access types documentation",
+        "Slack API access requirements permissions editions",
+        "Slack API endpoints supported operations",
+        "official Slack MCP server documentation",
+        "official Slack MCP server repository URL",
+        "Slack API integration guide",
+        "Slack API limitations access restrictions",
+        "Slack developer API integration requirements"
+      ],
+      "needs_research": true,
+      "field_verdicts": [
+        {
+          "field": "description",
+          "status": "supported",
+          "reason": "The description is accurate based on official documentation.",
+          "unsupported_values": [],
+          "corrective_query": ""
+        },
+        {
+          "field": "auth_methods",
+          "status": "supported",
+          "reason": "OAuth 2.0 is confirmed as the primary authentication method.",
+          "unsupported_values": [],
+          "corrective_query": ""
+        },
+        {
+          "field": "access_types",
+          "status": "insufficient_evidence",
+          "reason": "The field is marked as unknown and lacks supporting evidence.",
+          "unsupported_values": [
+            "unknown"
+          ],
+          "corrective_query": "Slack API authentication access types documentation"
+        },
+        {
+          "field": "access_details",
+          "status": "insufficient_evidence",
+          "reason": "Verifier omitted this field.",
+          "unsupported_values": [],
+          "corrective_query": "Slack API access requirements permissions editions"
+        },
+        {
+          "field": "api_types",
+          "status": "supported",
+          "reason": "RPC-style methods are confirmed.",
+          "unsupported_values": [],
+          "corrective_query": ""
+        },
+        {
+          "field": "api_breadth",
+          "status": "supported",
+          "reason": "The API breadth is broad, covering core messaging and channel management.",
+          "unsupported_values": [],
+          "corrective_query": ""
+        },
+        {
+          "field": "example_operations",
+          "status": "insufficient_evidence",
+          "reason": "Verifier omitted this field.",
+          "unsupported_values": [],
+          "corrective_query": "Slack API endpoints supported operations"
+        },
+        {
+          "field": "mcp_status",
+          "status": "insufficient_evidence",
+          "reason": "No official evidence confirms Slack provides an MCP server.",
+          "unsupported_values": [
+            "unknown"
+          ],
+          "corrective_query": "official Slack MCP server documentation"
+        },
+        {
+          "field": "mcp_url",
+          "status": "insufficient_evidence",
+          "reason": "The provided URL is not verified as an official Slack endpoint.",
+          "unsupported_values": [
+            "https://mcp.slack.com/mcp"
+          ],
+          "corrective_query": "official Slack MCP server repository URL"
+        },
+        {
+          "field": "buildability",
+          "status": "insufficient_evidence",
+          "reason": "Buildability status is unknown and relies on unverified MCP claims.",
+          "unsupported_values": [
+            "unknown"
+          ],
+          "corrective_query": "Slack API integration guide"
+        },
+        {
+          "field": "blockers",
+          "status": "insufficient_evidence",
+          "reason": "Verifier omitted this field.",
+          "unsupported_values": [],
+          "corrective_query": "Slack API limitations access restrictions"
+        },
+        {
+          "field": "verdict_reason",
+          "status": "insufficient_evidence",
+          "reason": "Verifier omitted this field.",
+          "unsupported_values": [],
+          "corrective_query": "Slack developer API integration requirements"
+        }
+      ]
+    }
+  },
+  {
+    "app_id": 61,
+    "selected_attempt": 1,
+    "total_attempts": 1,
+    "support_rate": 0.7,
+    "execution_time": 26.09,
+    "result": {
+      "app": {
+        "id": 61,
+        "name": "GitHub",
+        "category": "Developer, Infra and Data platforms",
+        "website_hint": "docs.github.com/rest"
+      },
+      "description": "GitHub is a developer and infrastructure platform providing REST and GraphQL APIs for managing repositories, branches, issues, pull requests, and other platform resources.",
+      "auth_methods": [
+        "oauth2",
+        "api_key"
+      ],
+      "access_types": [
+        "free",
+        "paid"
+      ],
+      "access_details": "GitHub offers unauthenticated access for public resources with lower rate limits, alongside authenticated options using personal access tokens, OAuth tokens, or GitHub App tokens for higher limits and private resource access.",
+      "api_types": [
+        "unknown"
+      ],
+      "api_breadth": "broad",
+      "example_operations": [
+        "Execute GraphQL queries"
+      ],
+      "mcp_status": "official",
+      "mcp_url": "https://docs.github.com/en/copilot/concepts/customizations/mcp",
+      "buildability": "unknown",
+      "blockers": [],
+      "verdict_reason": "",
+      "claims": [
+        {
+          "field": "description",
+          "statement": "GitHub offers REST and GraphQL APIs enabling developers to interact with platform features such as branches, repositories, and related resources.",
+          "evidence": [
+            {
+              "source_url": "https://docs.github.com/en/rest/branches/branches",
+              "excerpt": "Use the REST API to modify branches and their protection settings.",
+              "source_title": "REST API endpoints for branches - GitHub Docs",
+              "retrieved_at": "2026-11-24T21:25:46.631795Z",
+              "official_source": true
+            },
+            {
+              "source_url": "https://docs.github.com/en/graphql/guides/forming-calls-with-graphql",
+              "excerpt": "With the GraphQL API, the endpoint remains constant, no matter what operation you perform. For GitHub.com, that endpoint is: https://api.github.com/graphql",
+              "source_title": "Forming calls with GraphQL - GitHub Docs",
+              "retrieved_at": "2026-11-24T21:25:46.804647Z",
+              "official_source": true
+            }
+          ],
+          "verification_status": "supported",
+          "verification_reason": "Evidence confirms both REST and GraphQL API availability for GitHub resources."
+        },
+        {
+          "field": "access_types",
+          "statement": "Certain public resources can be accessed via the API without authentication.",
+          "evidence": [
+            {
+              "source_url": "https://docs.github.com/en/rest/branches/branches",
+              "excerpt": "This endpoint can be used without authentication or the aforementioned permissions if only public resources are requested.",
+              "source_title": "REST API endpoints for branches - GitHub Docs",
+              "retrieved_at": "2026-11-24T21:25:46.631795Z",
+              "official_source": true
+            }
+          ],
+          "verification_status": "supported",
+          "verification_reason": "Evidence confirms unauthenticated access is available for public resources."
+        },
+        {
+          "field": "access_types",
+          "statement": "Advanced features and policy controls for certain integrations require specific paid Copilot tiers.",
+          "evidence": [
+            {
+              "source_url": "https://docs.github.com/en/copilot/concepts/customizations/mcp",
+              "excerpt": "The MCP policy only applies to users who have a Copilot Business or Copilot Enterprise subscription from an organization or enterprise that configures the policy.",
+              "source_title": "Model Context Protocol (MCP) - GitHub Docs",
+              "retrieved_at": "2026-11-24T21:25:46.959214Z",
+              "official_source": true
+            }
+          ],
+          "verification_status": "supported",
+          "verification_reason": "Evidence confirms that specific Copilot policies require Business or Enterprise subscriptions."
+        },
+        {
+          "field": "access_details",
+          "statement": "Authenticating requests grants access to more endpoints and provides higher rate limits.",
+          "evidence": [
+            {
+              "source_url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+              "excerpt": "You can authenticate to the REST API to access more endpoints and have a higher rate limit.",
+              "source_title": "Authenticating to the REST API - GitHub Docs",
+              "retrieved_at": "2026-11-24T21:25:46.115643Z",
+              "official_source": true
+            }
+          ],
+          "verification_status": "supported",
+          "verification_reason": "Evidence confirms authentication provides higher rate limits and access to more endpoints."
+        },
+        {
+          "field": "api_breadth",
+          "statement": "The REST and GraphQL APIs cover a broad scope of repository management, branch controls, issues, pull requests, and organization administration.",
+          "evidence": [
+            {
+              "source_url": "https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/choosing-permissions-for-a-github-app",
+              "excerpt": "Repository permissions allow your app to access resources related to repositories that are owned by the account where the app is installed.",
+              "source_title": "Choosing permissions for a GitHub App - GitHub Docs",
+              "retrieved_at": "2026-11-24T21:25:46.447994Z",
+              "official_source": true
+            },
+            {
+              "source_url": "https://docs.github.com/en/rest/branches/branches",
+              "excerpt": "Use the REST API to modify branches and their protection settings.",
+              "source_title": "REST API endpoints for branches - GitHub Docs",
+              "retrieved_at": "2026-11-24T21:25:46.631795Z",
+              "official_source": true
+            }
+          ],
+          "verification_status": "supported",
+          "verification_reason": "Evidence confirms repository-related permissions and branch management capabilities."
+        },
+        {
+          "field": "mcp_status",
+          "statement": "GitHub provides built-in and vendor-verified Model Context Protocol (MCP) server support for GitHub Copilot.",
+          "evidence": [
+            {
+              "source_url": "https://docs.github.com/en/copilot/concepts/customizations/mcp",
+              "excerpt": "GitHub provides access to repository data such as issues and pull requests. By default, it uses a specially scoped token with read-only access to the current repository.",
+              "source_title": "Model Context Protocol (MCP) - GitHub Docs",
+              "retrieved_at": "2026-11-24T21:25:46.959214Z",
+              "official_source": true
+            }
+          ],
+          "verification_status": "supported",
+          "verification_reason": "Evidence confirms GitHub provides MCP support for repository data."
+        },
+        {
+          "field": "mcp_url",
+          "statement": "Official Model Context Protocol (MCP) documentation and configuration details are provided at GitHub Docs.",
+          "evidence": [
+            {
+              "source_url": "https://docs.github.com/en/copilot/concepts/customizations/mcp",
+              "excerpt": "Connect Copilot to external tools and data through Model Context Protocol (MCP) servers.",
+              "source_title": "Model Context Protocol (MCP) - GitHub Docs",
+              "retrieved_at": "2026-11-24T21:25:46.959214Z",
+              "official_source": true
+            }
+          ],
+          "verification_status": "supported",
+          "verification_reason": "Evidence confirms the provided URL relates to official MCP documentation."
+        }
+      ],
+      "research_attempt": 1,
+      "research_errors": [
+        "Final sanitization applied: auth_methods",
+        "Final sanitization applied: api_types",
+        "Final sanitization applied: example_operations"
+      ],
+      "researched_at": "2026-11-24T21:26:00.466342Z"
+    },
+    "verification": {
+      "total_claims": 20,
+      "supported_claims": 14,
+      "contradicted_claims": 0,
+      "insufficient_claims": 6,
+      "support_rate": 0.7,
+      "failed_claims": [
+        {
+          "field": "auth_methods",
+          "statement": "API requests can be authenticated by passing tokens in the Authorization header as bearer tokens.",
+          "status": "insufficient_evidence",
+          "reason": "No valid source quotation."
+        },
+        {
+          "field": "api_types",
+          "statement": "GitHub documents a GraphQL API supporting queries and mutations.",
+          "status": "insufficient_evidence",
+          "reason": "No valid source quotation."
+        },
+        {
+          "field": "example_operations",
+          "statement": "List branches via the REST API.",
+          "status": "insufficient_evidence",
+          "reason": "No valid source quotation."
+        },
+        {
+          "field": "example_operations",
+          "statement": "Get a specific branch via the REST API.",
+          "status": "insufficient_evidence",
+          "reason": "No valid source quotation."
+        },
+        {
+          "field": "example_operations",
+          "statement": "Execute GraphQL mutations using input and payload objects.",
+          "status": "insufficient_evidence",
+          "reason": "No valid source quotation."
+        },
+        {
+          "field": "example_operations",
+          "statement": "Perform OAuth web application flows to authorize application access.",
+          "status": "insufficient_evidence",
+          "reason": "No valid source quotation."
+        }
+      ],
+      "failed_fields": [
+        {
+          "field": "auth_methods",
+          "status": "insufficient_evidence",
+          "reason": "Evidence for bearer_token transport is missing.",
+          "unsupported_values": [
+            "bearer_token"
+          ],
+          "corrective_query": "GitHub REST API authentication bearer token documentation"
+        },
+        {
+          "field": "example_operations",
+          "status": "insufficient_evidence",
+          "reason": "Multiple operations lack specific evidence.",
+          "unsupported_values": [
+            "List branches",
+            "Get a branch",
+            "Execute GraphQL mutations",
+            "Authenticate with OAuth web flow"
+          ],
+          "corrective_query": "GitHub REST API list branches endpoint documentation"
+        }
+      ],
+      "corrective_queries": [
+        "GitHub REST API authentication bearer token documentation",
+        "GitHub REST API list branches endpoint documentation"
+      ],
+      "needs_research": true,
+      "field_verdicts": [
+        {
+          "field": "description",
+          "status": "supported",
+          "reason": "Supported by evidence for REST and GraphQL APIs.",
+          "unsupported_values": [],
+          "corrective_query": ""
+        },
+        {
+          "field": "auth_methods",
+          "status": "insufficient_evidence",
+          "reason": "Evidence for bearer_token transport is missing.",
+          "unsupported_values": [
+            "bearer_token"
+          ],
+          "corrective_query": "GitHub REST API authentication bearer token documentation"
+        },
+        {
+          "field": "access_types",
+          "status": "supported",
+          "reason": "Supported by evidence for public and paid tiers.",
+          "unsupported_values": [],
+          "corrective_query": ""
+        },
+        {
+          "field": "access_details",
+          "status": "supported",
+          "reason": "Supported by evidence regarding rate limits.",
+          "unsupported_values": [],
+          "corrective_query": ""
+        },
+        {
+          "field": "api_types",
+          "status": "supported",
+          "reason": "Supported by evidence for REST and GraphQL.",
+          "unsupported_values": [],
+          "corrective_query": ""
+        },
+        {
+          "field": "api_breadth",
+          "status": "supported",
+          "reason": "Supported by evidence of repository management capabilities.",
+          "unsupported_values": [],
+          "corrective_query": ""
+        },
+        {
+          "field": "example_operations",
+          "status": "insufficient_evidence",
+          "reason": "Multiple operations lack specific evidence.",
+          "unsupported_values": [
+            "List branches",
+            "Get a branch",
+            "Execute GraphQL mutations",
+            "Authenticate with OAuth web flow"
+          ],
+          "corrective_query": "GitHub REST API list branches endpoint documentation"
+        },
+        {
+          "field": "mcp_status",
+          "status": "supported",
+          "reason": "Supported by evidence of MCP support.",
+          "unsupported_values": [],
+          "corrective_query": ""
+        },
+        {
+          "field": "mcp_url",
+          "status": "supported",
+          "reason": "Supported by evidence of official documentation.",
+          "unsupported_values": [],
+          "corrective_query": ""
+        },
+        {
+          "field": "buildability",
+          "status": "supported",
+          "reason": "Supported by evidence of documentation.",
+          "unsupported_values": [],
+          "corrective_query": ""
+        },
+        {
+          "field": "blockers",
+          "status": "supported",
+          "reason": "Supported by evidence of authentication.",
+          "unsupported_values": [],
+          "corrective_query": ""
+        },
+        {
+          "field": "verdict_reason",
+          "status": "supported",
+          "reason": "Supported by evidence of documentation and MCP.",
+          "unsupported_values": [],
+          "corrective_query": ""
+        }
+      ]
+    }
+  },
+  {
+    "app_id": 81,
+    "selected_attempt": 2,
+    "total_attempts": 2,
+    "support_rate": 0.4,
+    "execution_time": 87.0,
+    "result": {
+      "app": {
+        "id": 81,
+        "name": "Stripe",
+        "category": "Finance and Fintech",
+        "website_hint": "stripe.com/docs/api"
+      },
+      "description": "",
+      "auth_methods": [
+        "unknown"
+      ],
+      "access_types": [
+        "unknown"
+      ],
+      "access_details": "",
+      "api_types": [
+        "unknown"
+      ],
+      "api_breadth": "broad",
+      "example_operations": [],
+      "mcp_status": "not_found",
+      "mcp_url": null,
+      "buildability": "unknown",
+      "blockers": [],
+      "verdict_reason": "",
+      "claims": [
+        {
+          "field": "api_breadth",
+          "statement": "The API provides extensive functionality for managing various resources, including products and webhook endpoints.",
+          "evidence": [
+            {
+              "source_url": "https://docs.stripe.com/api/products/list",
+              "excerpt": "Returns a list of your products.",
+              "source_title": "List all products | Stripe API Reference",
+              "retrieved_at": "2026-11-24T21:31:24.046749Z",
+              "official_source": true
+            },
+            {
+              "source_url": "https://docs.stripe.com/api/webhook_endpoints?api-version=2025-07-30.preview",
+              "excerpt": "You can configure webhook endpoints via the API to be notified about events that happen in your Stripe account",
+              "source_title": "Webhook Endpoints | Stripe API Reference",
+              "retrieved_at": "2026-11-24T21:31:01.985360Z",
+              "official_source": true
+            }
+          ],
+          "verification_status": "supported",
+          "verification_reason": "Evidence confirms the API manages diverse resources like products and webhook endpoints."
+        },
+        {
+          "field": "mcp_status",
+          "statement": "There is no evidence of an official Stripe-maintained MCP server in the provided documentation.",
+          "evidence": [
+            {
+              "source_url": "https://docs.stripe.com/api?__hstc=198846256.2f3f33a24b44870ec4a577029c49e44b.1763856000258.1763856000259.1763856000260.1&__hssc=198846256.1.1763856000261&__hsfp=3006156910",
+              "excerpt": "Not a developer? Use Stripe’s no-code options or apps from our partners to get started with Stripe and to do more with your Stripe account—no code required.",
+              "source_title": "Stripe API Reference",
+              "retrieved_at": "2026-11-24T21:31:01.509787Z",
+              "official_source": true
+            }
+          ],
+          "verification_status": "supported",
+          "verification_reason": "The provided documentation does not mention an official MCP server."
+        }
+      ],
+      "research_attempt": 2,
+      "research_errors": [
+        "No valid evidence for field: description",
+        "No valid evidence for field: access_types",
+        "No valid evidence for field: access_details",
+        "No valid evidence for field: api_types",
+        "No valid evidence for field: example_operations",
+        "No valid evidence for field: buildability",
+        "No valid evidence for field: verdict_reason",
+        "Final sanitization: auth_methods reset due to missing support."
+      ],
+      "researched_at": "2026-11-24T21:31:35.184383Z"
+    },
+    "verification": {
+      "total_claims": 5,
+      "supported_claims": 2,
+      "contradicted_claims": 0,
+      "insufficient_claims": 3,
+      "support_rate": 0.4,
+      "failed_claims": [
+        {
+          "field": "description",
+          "statement": "The Stripe API is organized around REST and features predictable resource-oriented URLs.",
+          "status": "insufficient_evidence",
+          "reason": "No valid source quotation."
+        },
+        {
+          "field": "auth_methods",
+          "statement": "Stripe supports API keys, OAuth 2.0, and bearer token authentication.",
+          "status": "insufficient_evidence",
+          "reason": "Evidence supports API keys and OAuth 2.0, but does not explicitly define 'bearer token' as a distinct supported authentication method."
+        },
+        {
+          "field": "buildability",
+          "statement": "Restricted API keys are the recommended authentication method for AI agents to limit potential damage.",
+          "status": "insufficient_evidence",
+          "reason": "No valid source quotation."
+        }
+      ],
+      "failed_fields": [
+        {
+          "field": "description",
+          "status": "insufficient_evidence",
+          "reason": "Field is empty.",
+          "unsupported_values": [],
+          "corrective_query": "Stripe API documentation overview"
+        },
+        {
+          "field": "auth_methods",
+          "status": "insufficient_evidence",
+          "reason": "Bearer token authentication is not explicitly documented as a separate method from API keys.",
+          "unsupported_values": [
+            "bearer_token"
+          ],
+          "corrective_query": "Stripe API authentication methods documentation"
+        },
+        {
+          "field": "access_types",
+          "status": "insufficient_evidence",
+          "reason": "Field is set to unknown.",
+          "unsupported_values": [
+            "unknown"
+          ],
+          "corrective_query": "Stripe API access types documentation"
+        },
+        {
+          "field": "access_details",
+          "status": "insufficient_evidence",
+          "reason": "Field is empty.",
+          "unsupported_values": [],
+          "corrective_query": "Stripe API access details documentation"
+        },
+        {
+          "field": "api_types",
+          "status": "insufficient_evidence",
+          "reason": "Field is set to unknown.",
+          "unsupported_values": [
+            "unknown"
+          ],
+          "corrective_query": "Stripe API architecture type"
+        },
+        {
+          "field": "example_operations",
+          "status": "insufficient_evidence",
+          "reason": "Field is empty.",
+          "unsupported_values": [],
+          "corrective_query": "Stripe API common operations examples"
+        },
+        {
+          "field": "buildability",
+          "status": "insufficient_evidence",
+          "reason": "Field is set to unknown.",
+          "unsupported_values": [
+            "unknown"
+          ],
+          "corrective_query": "Stripe API integration best practices for AI agents"
+        },
+        {
+          "field": "blockers",
+          "status": "insufficient_evidence",
+          "reason": "Field is empty.",
+          "unsupported_values": [],
+          "corrective_query": "Stripe API common integration blockers"
+        },
+        {
+          "field": "verdict_reason",
+          "status": "insufficient_evidence",
+          "reason": "Field is empty.",
+          "unsupported_values": [],
+          "corrective_query": "Stripe API integration summary"
+        }
+      ],
+      "corrective_queries": [
+        "Stripe API documentation overview",
+        "Stripe API authentication methods documentation",
+        "Stripe API access types documentation",
+        "Stripe API access details documentation",
+        "Stripe API architecture type",
+        "Stripe API common operations examples",
+        "Stripe API integration best practices for AI agents",
+        "Stripe API common integration blockers",
+        "Stripe API integration summary"
+      ],
+      "needs_research": true,
+      "field_verdicts": [
+        {
+          "field": "description",
+          "status": "insufficient_evidence",
+          "reason": "Field is empty.",
+          "unsupported_values": [],
+          "corrective_query": "Stripe API documentation overview"
+        },
+        {
+          "field": "auth_methods",
+          "status": "insufficient_evidence",
+          "reason": "Bearer token authentication is not explicitly documented as a separate method from API keys.",
+          "unsupported_values": [
+            "bearer_token"
+          ],
+          "corrective_query": "Stripe API authentication methods documentation"
+        },
+        {
+          "field": "access_types",
+          "status": "insufficient_evidence",
+          "reason": "Field is set to unknown.",
+          "unsupported_values": [
+            "unknown"
+          ],
+          "corrective_query": "Stripe API access types documentation"
+        },
+        {
+          "field": "access_details",
+          "status": "insufficient_evidence",
+          "reason": "Field is empty.",
+          "unsupported_values": [],
+          "corrective_query": "Stripe API access details documentation"
+        },
+        {
+          "field": "api_types",
+          "status": "insufficient_evidence",
+          "reason": "Field is set to unknown.",
+          "unsupported_values": [
+            "unknown"
+          ],
+          "corrective_query": "Stripe API architecture type"
+        },
+        {
+          "field": "api_breadth",
+          "status": "supported",
+          "reason": "Evidence supports broad functionality.",
+          "unsupported_values": [],
+          "corrective_query": ""
+        },
+        {
+          "field": "example_operations",
+          "status": "insufficient_evidence",
+          "reason": "Field is empty.",
+          "unsupported_values": [],
+          "corrective_query": "Stripe API common operations examples"
+        },
+        {
+          "field": "mcp_status",
+          "status": "supported",
+          "reason": "No evidence of an official MCP server found.",
+          "unsupported_values": [],
+          "corrective_query": ""
+        },
+        {
+          "field": "mcp_url",
+          "status": "supported",
+          "reason": "Field is null, consistent with mcp_status.",
+          "unsupported_values": [],
+          "corrective_query": ""
+        },
+        {
+          "field": "buildability",
+          "status": "insufficient_evidence",
+          "reason": "Field is set to unknown.",
+          "unsupported_values": [
+            "unknown"
+          ],
+          "corrective_query": "Stripe API integration best practices for AI agents"
+        },
+        {
+          "field": "blockers",
+          "status": "insufficient_evidence",
+          "reason": "Field is empty.",
+          "unsupported_values": [],
+          "corrective_query": "Stripe API common integration blockers"
+        },
+        {
+          "field": "verdict_reason",
+          "status": "insufficient_evidence",
+          "reason": "Field is empty.",
+          "unsupported_values": [],
+          "corrective_query": "Stripe API integration summary"
+        }
+      ]
+    }
+  }
+]

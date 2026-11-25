@@ -23,3 +23,40 @@ cache/
 # OS
 .DS_Store
 Thumbs.db
+
+
+# Development backups
+*.bak
+
+# Temporary audit output
+audit_output.txt
+
+# Development utilities
+patch_*.py
+smoke_*.py
+inspect_tools.py
+
+# Intermediate research artifacts
+data/discovery_sample.json
+data/discovery_baseline.json
+data/research_sample.json
+data/research_baseline.json
+data/verified_sample.json
+data/verified_baseline.json
+data/verification_feedback.json
+data/verification_baseline.json
+data/pipeline_sample.json
+data/pipeline_sanitized_sample.json
+data/quality_benchmark.json
+
+# Local databases and caches
+*.db
+*.db-wal
+*.db-shm
+data/cache/
+
+# Secrets and environment
+.env
+.venv/
+__pycache__/
+.pytest_cache/

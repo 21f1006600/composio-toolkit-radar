@@ -1,0 +1,300 @@
+{
+  "review_status": "AI-assisted preliminary evidence audit; human confirmation pending",
+  "methodology": "Purposive paired sample of three apps, six fields each. Correct means supported core classification, not exhaustive enumeration. Unknown and search-only not_found are abstentions. Needs review means insufficient grounding, not necessarily false. No live API calls tested.",
+  "sample_size": 3,
+  "fields_per_app": 6,
+  "evaluations_per_version": 18,
+  "before": {
+    "correct": 6,
+    "unresolved": 10,
+    "needs_correction": 1,
+    "needs_review": 1
+  },
+  "after": {
+    "correct": 10,
+    "needs_review": 4,
+    "needs_correction": 1,
+    "unresolved": 3
+  },
+  "rows": [
+    {
+      "app": "Slack",
+      "field": "auth_methods",
+      "before": [
+        "oauth2"
+      ],
+      "after": [
+        "oauth2",
+        "bearer_token"
+      ],
+      "before_status": "correct",
+      "after_status": "correct",
+      "note": "OAuth is documented; bearer transport adds detail.",
+      "sources": [
+        "https://docs.slack.dev/apis/web-api/",
+        "https://docs.slack.dev/authentication/installing-with-oauth/"
+      ]
+    },
+    {
+      "app": "Slack",
+      "field": "access_types",
+      "before": [
+        "unknown"
+      ],
+      "after": [
+        "free",
+        "paid"
+      ],
+      "before_status": "unresolved",
+      "after_status": "needs_review",
+      "note": "Product subscription tiers do not establish API access pricing.",
+      "sources": [
+        "https://slack.com/intl/en-in/help/articles/115004846068-Slack-updates-and-changes"
+      ]
+    },
+    {
+      "app": "Slack",
+      "field": "api_types",
+      "before": [
+        "rpc"
+      ],
+      "after": [
+        "rpc"
+      ],
+      "before_status": "correct",
+      "after_status": "correct",
+      "note": "Official Web API documentation identifies HTTP RPC.",
+      "sources": [
+        "https://docs.slack.dev/apis/web-api/"
+      ]
+    },
+    {
+      "app": "Slack",
+      "field": "api_breadth",
+      "before": "broad",
+      "after": "broad",
+      "before_status": "correct",
+      "after_status": "correct",
+      "note": "Messaging and workspace read/write capabilities support broad classification.",
+      "sources": [
+        "https://docs.slack.dev/apis/web-api/",
+        "https://docs.weweb.io/integrations/slack.html",
+        "https://explainx.ai/mcp-servers/slack-mcp-server-official"
+      ]
+    },
+    {
+      "app": "Slack",
+      "field": "mcp_status",
+      "before": "unknown",
+      "after": "official",
+      "before_status": "unresolved",
+      "after_status": "correct",
+      "note": "Vendor announcement confirms official MCP.",
+      "sources": [
+        "https://slack.com/intl/en-in/blog/news/mcp-real-time-search-api-now-available"
+      ]
+    },
+    {
+      "app": "Slack",
+      "field": "buildability",
+      "before": "unknown",
+      "after": "ready",
+      "before_status": "unresolved",
+      "after_status": "needs_review",
+      "note": "API-specific access requirements remain insufficiently established.",
+      "sources": [
+        "https://slack.com/intl/en-in/blog/news/mcp-real-time-search-api-now-available"
+      ]
+    },
+    {
+      "app": "GitHub",
+      "field": "auth_methods",
+      "before": [
+        "oauth2",
+        "api_key"
+      ],
+      "after": [
+        "oauth2",
+        "api_key",
+        "bearer_token"
+      ],
+      "before_status": "needs_correction",
+      "after_status": "needs_correction",
+      "note": "PAT is not established as a distinct API key mechanism.",
+      "sources": [
+        "https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps",
+        "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api"
+      ]
+    },
+    {
+      "app": "GitHub",
+      "field": "access_types",
+      "before": [
+        "free",
+        "paid"
+      ],
+      "after": [
+        "unknown"
+      ],
+      "before_status": "needs_review",
+      "after_status": "unresolved",
+      "note": "Baseline paid evidence concerns Copilot policy rather than core API access.",
+      "sources": [
+        "https://docs.github.com/en/copilot/concepts/customizations/mcp",
+        "https://docs.github.com/en/rest/branches/branches"
+      ]
+    },
+    {
+      "app": "GitHub",
+      "field": "api_types",
+      "before": [
+        "unknown"
+      ],
+      "after": [
+        "rest",
+        "graphql"
+      ],
+      "before_status": "unresolved",
+      "after_status": "correct",
+      "note": "REST and GraphQL are documented.",
+      "sources": [
+        "https://docs.github.com/en/graphql/guides/forming-calls-with-graphql"
+      ]
+    },
+    {
+      "app": "GitHub",
+      "field": "api_breadth",
+      "before": "broad",
+      "after": "broad",
+      "before_status": "correct",
+      "after_status": "correct",
+      "note": "Repository and related resource operations support broad classification.",
+      "sources": [
+        "https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/choosing-permissions-for-a-github-app",
+        "https://docs.github.com/en/rest/branches/branches",
+        "https://docs.github.com/en/rest/repos/contents"
+      ]
+    },
+    {
+      "app": "GitHub",
+      "field": "mcp_status",
+      "before": "official",
+      "after": "unknown",
+      "before_status": "correct",
+      "after_status": "unresolved",
+      "note": "Official GitHub MCP exists; V4 abstained.",
+      "sources": [
+        "https://docs.github.com/en/copilot/concepts/customizations/mcp"
+      ]
+    },
+    {
+      "app": "GitHub",
+      "field": "buildability",
+      "before": "unknown",
+      "after": "unknown",
+      "before_status": "unresolved",
+      "after_status": "unresolved",
+      "note": "Both versions abstain.",
+      "sources": []
+    },
+    {
+      "app": "Stripe",
+      "field": "auth_methods",
+      "before": [
+        "unknown"
+      ],
+      "after": [
+        "oauth2",
+        "api_key",
+        "bearer_token"
+      ],
+      "before_status": "unresolved",
+      "after_status": "correct",
+      "note": "API keys and scoped OAuth/bearer authentication are documented; Basic transport is omitted.",
+      "sources": [
+        "https://docs.stripe.com/api?__hstc=198846256.2f3f33a24b44870ec4a577029c49e44b.1763856000258.1763856000259.1763856000260.1&__hssc=198846256.1.1763856000261&__hsfp=3006156910",
+        "https://docs.stripe.com/keys/restricted-api-keys",
+        "https://docs.stripe.com/stripe-apps/api-authentication/oauth"
+      ]
+    },
+    {
+      "app": "Stripe",
+      "field": "access_types",
+      "before": [
+        "unknown"
+      ],
+      "after": [
+        "free",
+        "paid"
+      ],
+      "before_status": "unresolved",
+      "after_status": "needs_review",
+      "note": "Sandbox availability does not itself establish free/paid pricing.",
+      "sources": [
+        "https://docs.stripe.com/api?__hstc=198846256.2f3f33a24b44870ec4a577029c49e44b.1763856000258.1763856000259.1763856000260.1&__hssc=198846256.1.1763856000261&__hsfp=3006156910"
+      ]
+    },
+    {
+      "app": "Stripe",
+      "field": "api_types",
+      "before": [
+        "unknown"
+      ],
+      "after": [
+        "rest",
+        "sdk"
+      ],
+      "before_status": "unresolved",
+      "after_status": "correct",
+      "note": "REST and official SDKs are documented.",
+      "sources": [
+        "https://docs.stripe.com/api?__hstc=198846256.2f3f33a24b44870ec4a577029c49e44b.1763856000258.1763856000259.1763856000260.1&__hssc=198846256.1.1763856000261&__hsfp=3006156910"
+      ]
+    },
+    {
+      "app": "Stripe",
+      "field": "api_breadth",
+      "before": "broad",
+      "after": "broad",
+      "before_status": "correct",
+      "after_status": "correct",
+      "note": "Multiple core resource families support broad classification.",
+      "sources": [
+        "https://docs.stripe.com/api/products/list",
+        "https://docs.stripe.com/api/webhook_endpoints?api-version=2025-07-30.preview",
+        "https://github.com/udaykapur/stripe-mcp-server/blob/main/README.md"
+      ]
+    },
+    {
+      "app": "Stripe",
+      "field": "mcp_status",
+      "before": "not_found",
+      "after": "official",
+      "before_status": "unresolved",
+      "after_status": "correct",
+      "note": "Baseline not_found is a search outcome, not proof of absence; V4 identifies official MCP.",
+      "sources": [
+        "https://docs.stripe.com/api?__hstc=198846256.2f3f33a24b44870ec4a577029c49e44b.1763856000258.1763856000259.1763856000260.1&__hssc=198846256.1.1763856000261&__hsfp=3006156910",
+        "https://github.com/mcp/com.stripe/mcp"
+      ]
+    },
+    {
+      "app": "Stripe",
+      "field": "buildability",
+      "before": "unknown",
+      "after": "ready",
+      "before_status": "unresolved",
+      "after_status": "needs_review",
+      "note": "Access pricing and practical restrictions need review.",
+      "sources": [
+        "https://docs.stripe.com/api?__hstc=198846256.2f3f33a24b44870ec4a577029c49e44b.1763856000258.1763856000259.1763856000260.1&__hssc=198846256.1.1763856000261&__hsfp=3006156910",
+        "https://github.com/mcp/com.stripe/mcp"
+      ]
+    }
+  ],
+  "limitations": [
+    "Nonrandom small sample; not representative of all 100 apps.",
+    "Captured source excerpts plus selected external documentation checks; not independent human validation.",
+    "Completeness and evidence support are separate from accuracy."
+  ]
+}

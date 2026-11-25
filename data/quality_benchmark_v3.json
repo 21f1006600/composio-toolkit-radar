@@ -1,0 +1,2549 @@
+[
+  {
+    "app_id": 21,
+    "app_name": "Slack",
+    "before": {
+      "resolved_fields": 4,
+      "total_fields": 12,
+      "completeness": 33.33,
+      "resolved": [
+        "description",
+        "auth_methods",
+        "api_types",
+        "api_breadth"
+      ],
+      "unresolved": [
+        "access_types",
+        "access_details",
+        "example_operations",
+        "mcp_status",
+        "mcp_url",
+        "buildability",
+        "blockers",
+        "verdict_reason"
+      ],
+      "published_claims": 4
+    },
+    "after": {
+      "resolved_fields": 8,
+      "total_fields": 12,
+      "completeness": 66.67,
+      "resolved": [
+        "description",
+        "auth_methods",
+        "access_types",
+        "api_types",
+        "api_breadth",
+        "example_operations",
+        "buildability",
+        "verdict_reason"
+      ],
+      "unresolved": [
+        "access_details",
+        "mcp_status",
+        "mcp_url",
+        "blockers"
+      ],
+      "published_claims": 10
+    },
+    "improvement_pp": 33.34,
+    "baseline_support_rate": 0.5714285714285714,
+    "new_support_rate": 0.8333333333333334,
+    "pipeline_output": {
+      "app": "Slack",
+      "attempts": 2,
+      "selected_attempt": 2,
+      "final_result": {
+        "app": {
+          "id": 21,
+          "name": "Slack",
+          "category": "Communications and Messaging",
+          "website_hint": "slack.com"
+        },
+        "description": "Slack is a communication and messaging platform that provides a Web API for querying information and enacting changes within a workspace, such as managing channels, posting messages, and user management.",
+        "auth_methods": [
+          "oauth2",
+          "bearer_token",
+          "none"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "access_details": "",
+        "api_types": [
+          "rest",
+          "sdk"
+        ],
+        "api_breadth": "broad",
+        "example_operations": [
+          "chat.postMessage",
+          "conversations.list",
+          "users.info",
+          "conversations.create",
+          "admin.users.list"
+        ],
+        "mcp_status": "unknown",
+        "mcp_url": null,
+        "buildability": "ready",
+        "blockers": [],
+        "verdict_reason": "Documentation indicates that integration is feasible.",
+        "claims": [
+          {
+            "field": "description",
+            "statement": "The Slack Web API is an interface for querying information from and enacting change in a Slack workspace.",
+            "evidence": [
+              {
+                "source_url": "https://docs.slack.dev/apis/web-api/",
+                "excerpt": "Copy as markdown\nOn this page\nThe Slack Web API is an interface for querying information\nfrom\nand enacting change\nin\na Slack workspace.\nUse it for individual queries, or as part of a more complex tapestry of platform features in a Slack app.\nWeb API methods\nBasic overview\n​\nThe Web API is a collection of\nHTTP RPC-style methods\n, all with URLs in the form\nhttps://slack.com/api/METHOD_FAMILY.method\n.\nWhile it's not a REST API, those familiar with REST should be at home with its foundations in HTTP.\nUse HTTPS, SSL, and TLS v1.2 or above when calling all methods.\nLearn more about our SSL and TLS requirements\n.\nEach method has a series of arguments informing the execution of your intentions.\nPass arguments as:\nGET querystring parameters,\nPOST",
+                "source_title": "Slack Web API | Slack Developer Docs",
+                "retrieved_at": "2026-11-25T08:03:24.403766Z",
+                "official_source": false
+              }
+            ],
+            "verification_status": "supported",
+            "verification_reason": "The evidence from the official Slack Developer Docs confirms the description."
+          },
+          {
+            "field": "auth_methods",
+            "statement": "Slack Web API requests are authenticated using bearer tokens or OAuth 2.0.",
+            "evidence": [
+              {
+                "source_url": "https://docs.slack.dev/apis/web-api/",
+                "excerpt": "There's a lot of \"stuff\" to unpack, including\nthese types\nand other method or domain-specific curiosities.\nAuthentication\n​\nAuthenticate your Web API requests by providing a\nbearer token\n, which identifies a single user or bot user relationship.\nRegister your application\nwith Slack to obtain credentials for use with our\nOAuth 2.0\nimplementation, which allows you to negotiate tokens on behalf of users and workspaces.\nWe prefer tokens to be sent in the\nAuthorization\nHTTP header of your outbound requests. However, you may also pass tokens in all Web API calls as a POST body parameter called\ntoken\n. Tokens cannot be sent as a query parameter.\nTreat tokens with care\nNever share tokens with other users or applications. Do not publish tokens in",
+                "source_title": "Slack Web API | Slack Developer Docs",
+                "retrieved_at": "2026-11-25T08:03:24.403766Z",
+                "official_source": false
+              },
+              {
+                "source_url": "https://docs.slack.dev/authentication/installing-with-oauth/",
+                "excerpt": "Copy as markdown\nOn this page\nSlack apps are installed with a v2 OAuth 2.0 flow. Your app can act with its own identity instead of acting on behalf of users, without requesting excessive permissions that could cause installations to be rejected.\nOAuth 2.0 refers to the\n2.0 version of the OAuth spec\n, and this is our second version of OAuth 2.0. For the rest of this guide, we'll just refer to it as \"OAuth\".\nHow it works: a high-level overview\n​\nOAuth allows a user in any Slack workspace to install your app. At the end of the OAuth flow, your app gains an access token. Your app's access token allows your app to open doors to the Slack platform. During the OAuth flow, you specify which\nscopes\nyour app needs. Those scopes determine exactly",
+                "source_title": "Installing via OAuth authorization code flow | Slack Developer Docs",
+                "retrieved_at": "2026-11-25T08:03:24.938842Z",
+                "official_source": false
+              }
+            ],
+            "verification_status": "supported",
+            "verification_reason": "The evidence confirms both bearer tokens and OAuth 2.0 are used for authentication."
+          },
+          {
+            "field": "auth_methods",
+            "statement": "The Slack Status API endpoints are unauthenticated.",
+            "evidence": [
+              {
+                "source_url": "https://docs.slack.dev/reference/slack-status-api/",
+                "excerpt": "Copy as markdown\nOn this page\nSlack offers two API endpoints to describe its status. Use the\nhttps://slack-status.com/api/v2.0.0/current\nendpoint to check for active incidents. Use the\nhttps://slack-status.com/api/v2.0.0/history\nendpoint to learn about past incidents. Both are unauthenticated: you can even open these API endpoints directly in your browser.\nTry it\n.\nYou can also find either endpoint with a cURL command:\ncurl https://slack-status.com/api/v2.0.0/current\ncurl https://slack-status.com/api/v2.0.0/history\nVersion 2.0.0\n​\nCurrent Status API\n​\nThe\ncurrent\nendpoint returns a JSON object containing a\nstatus\nfield. When all is well, the\nstatus\nwill be \"ok\", and the response will be brief. Here's a sample \"ok\" response.\n{\n\"status\"\n:",
+                "source_title": "Slack Status API | Slack Developer Docs",
+                "retrieved_at": "2026-11-25T08:03:27.056110Z",
+                "official_source": false
+              }
+            ],
+            "verification_status": "supported",
+            "verification_reason": "The evidence explicitly states the Status API endpoints are unauthenticated."
+          },
+          {
+            "field": "access_types",
+            "statement": "Slack offers both free and paid subscription plans.",
+            "evidence": [
+              {
+                "source_url": "https://slack.com/intl/en-in/pricing",
+                "excerpt": "The world’s leading businesses rely on Slack\nRecommended for you\nFree\nA simpler way to chat and collaborate\n₹0\nFree forever\nGet started\nGet started\n90 days of message history\nMessages are saved and searchable for 90 days. Upgrade to access the previous 12 months messages.\nUp to ten apps\nChoose from over 2,600 apps in the Slack App Directory – from Salesforce, Jira, Google Drive, ChatGPT and more.\n1:1 meetings\nWork together in real time through audio and video meetings (including screen sharing) using Slack huddles.\n1:1 external messages\nSecurely work alongside people outside of your company through one-to-one direct messages using Slack Connect.\nBasic AI\nAI conversation summaries\nSlackbot\nAI workflow generation\nAI search\nAI daily recaps\nAI",
+                "source_title": "Slack Pricing Plans: Find the Right Fit for Your Team | Slack",
+                "retrieved_at": "2026-11-25T08:03:50.576372Z",
+                "official_source": true
+              },
+              {
+                "source_url": "https://slack.com/intl/en-in/pricing/paid-vs-free",
+                "excerpt": "details on our pricing page\nCan I upgrade Slack just for me, rather than upgrading everyone in our workspace?\nUnfortunately, no. Slack is built for teams, so it’s only effective if your whole team are on board. To upgrade Slack, you’ll need to upgrade your entire workspace at once.\nAre there limits to the number of people who can be on my team or the number of people who can be in a channel?\nNot at all! Slack grows with your organisation, so you’ll never have to worry about limits on the number of people in your channels or team.\nWill I be able to see my messages after I upgrade?\nUpon upgrade to Pro, free teams will have access to the previous 12 months of workspace data, including files, messages and other content.\nI’m not sure which",
+                "source_title": "Slack Paid vs. Free | Slack",
+                "retrieved_at": "2026-11-25T08:03:50.778789Z",
+                "official_source": true
+              }
+            ],
+            "verification_status": "supported",
+            "verification_reason": "The official Slack pricing page confirms both free and paid plans."
+          },
+          {
+            "field": "api_types",
+            "statement": "The Slack Web API is a collection of HTTP RPC-style methods.",
+            "evidence": [
+              {
+                "source_url": "https://docs.slack.dev/apis/web-api/",
+                "excerpt": "Copy as markdown\nOn this page\nThe Slack Web API is an interface for querying information\nfrom\nand enacting change\nin\na Slack workspace.\nUse it for individual queries, or as part of a more complex tapestry of platform features in a Slack app.\nWeb API methods\nBasic overview\n​\nThe Web API is a collection of\nHTTP RPC-style methods\n, all with URLs in the form\nhttps://slack.com/api/METHOD_FAMILY.method\n.\nWhile it's not a REST API, those familiar with REST should be at home with its foundations in HTTP.\nUse HTTPS, SSL, and TLS v1.2 or above when calling all methods.\nLearn more about our SSL and TLS requirements\n.\nEach method has a series of arguments informing the execution of your intentions.\nPass arguments as:\nGET querystring parameters,\nPOST",
+                "source_title": "Slack Web API | Slack Developer Docs",
+                "retrieved_at": "2026-11-25T08:03:24.403766Z",
+                "official_source": false
+              }
+            ],
+            "verification_status": "supported",
+            "verification_reason": "The official documentation describes the Web API as a collection of HTTP RPC-style methods."
+          },
+          {
+            "field": "api_types",
+            "statement": "Slack provides an official Node.js SDK, @slack/web-api, for interacting with its Web API.",
+            "evidence": [
+              {
+                "source_url": "https://openapps.pro/packages/slack-web-api",
+                "excerpt": "Package\n97 repository health\n@slack/web-api\nSlack's official Node.js HTTP client for calling any of the 270+ Web API methods, with built-in queuing, retries, pagination, and rate-limit handling.\nSDK\nnpm\nv8.5.0\n3,374\nstars\nMIT License\nnpm install @slack/web-api\nCopy\nView source\nVisit website\nRepository health\nPre-computed score based on development activity, maintenance, community, maturity, and trend momentum.\nHow we score it →\n97\n/100\nRepository health\nExcellent\nDevelopment activity\n100\nMaintenance\n96\nCommunity\n92\nMaturity\n60\nMomentum\n40\nTechnical analysis\nAI-assessed by reading the actual repository — architecture, code quality, innovation, and documentation.\nHow we score it →\n81\n/100\nTechnical analysis\nExcellent\nArchitecture\n88\nCode",
+                "source_title": "@slack/web-api - Node.js Client for the Slack Web API",
+                "retrieved_at": "2026-11-25T08:03:50.685296Z",
+                "official_source": false
+              },
+              {
+                "source_url": "https://openapps.pro/packages/slack-web-api",
+                "excerpt": "quality\n85\nInnovation\n60\nLearning curve\n90\n@slack/web-api is the official Node.js client for Slack’s Web API, maintained by Slack Technologies as part of the node-slack-sdk monorepo. It exports a\nWebClient\nclass with a named, typed method for every public Web API endpoint (chat.postMessage, conversations.list, users.info, and hundreds more), so calls read as\nweb.chat.postMessage({...})\ninstead of hand-built HTTP requests against Slack’s method catalog.\nBeyond simple request/response wrapping, the client handles the operational concerns that come with talking to a rate-limited third-party API at scale: an internal request queue caps concurrency, failed calls are retried with configurable backoff policies, HTTP 429 responses pause the queue",
+                "source_title": "@slack/web-api - Node.js Client for the Slack Web API",
+                "retrieved_at": "2026-11-25T08:03:50.685296Z",
+                "official_source": false
+              }
+            ],
+            "verification_status": "supported",
+            "verification_reason": "The evidence confirms @slack/web-api is the official Node.js client maintained by Slack."
+          },
+          {
+            "field": "api_breadth",
+            "statement": "The Web API supports over 270 methods for operations including posting messages, managing channels, and administrative tasks.",
+            "evidence": [
+              {
+                "source_url": "https://openapps.pro/packages/slack-web-api",
+                "excerpt": "quality\n85\nInnovation\n60\nLearning curve\n90\n@slack/web-api is the official Node.js client for Slack’s Web API, maintained by Slack Technologies as part of the node-slack-sdk monorepo. It exports a\nWebClient\nclass with a named, typed method for every public Web API endpoint (chat.postMessage, conversations.list, users.info, and hundreds more), so calls read as\nweb.chat.postMessage({...})\ninstead of hand-built HTTP requests against Slack’s method catalog.\nBeyond simple request/response wrapping, the client handles the operational concerns that come with talking to a rate-limited third-party API at scale: an internal request queue caps concurrency, failed calls are retried with configurable backoff policies, HTTP 429 responses pause the queue",
+                "source_title": "@slack/web-api - Node.js Client for the Slack Web API",
+                "retrieved_at": "2026-11-25T08:03:50.685296Z",
+                "official_source": false
+              },
+              {
+                "source_url": "https://openapps.pro/packages/slack-web-api",
+                "excerpt": "apps\n- posting and updating messages, reacting, and managing channels from a bot token without hand-rolling HTTP calls to Slack.\nBackend integrations\n- syncing users, channels, or files between Slack and an internal system using the typed method surface and built-in pagination for\n*.list\nendpoints.\nAdmin and Enterprise Grid tooling\n- calling\nadmin.*\nmethods (user provisioning, conversation management, analytics exports) with the same retry/rate-limit handling as any other method.\nCustom Slack workflow steps and interactivity\n- responding to Slack events (typically received via Bolt or a raw event listener) by calling back into the Web API to post results or update UI.\nStreaming/long-running responses\n- using\nchatStream()\nto append",
+                "source_title": "@slack/web-api - Node.js Client for the Slack Web API",
+                "retrieved_at": "2026-11-25T08:03:50.685296Z",
+                "official_source": false
+              }
+            ],
+            "verification_status": "supported",
+            "verification_reason": "The evidence confirms the API supports over 270 methods including administrative tasks."
+          },
+          {
+            "field": "example_operations",
+            "statement": "The Web API includes methods such as chat.postMessage, conversations.list, and users.info.",
+            "evidence": [
+              {
+                "source_url": "https://openapps.pro/packages/slack-web-api",
+                "excerpt": "quality\n85\nInnovation\n60\nLearning curve\n90\n@slack/web-api is the official Node.js client for Slack’s Web API, maintained by Slack Technologies as part of the node-slack-sdk monorepo. It exports a\nWebClient\nclass with a named, typed method for every public Web API endpoint (chat.postMessage, conversations.list, users.info, and hundreds more), so calls read as\nweb.chat.postMessage({...})\ninstead of hand-built HTTP requests against Slack’s method catalog.\nBeyond simple request/response wrapping, the client handles the operational concerns that come with talking to a rate-limited third-party API at scale: an internal request queue caps concurrency, failed calls are retried with configurable backoff policies, HTTP 429 responses pause the queue",
+                "source_title": "@slack/web-api - Node.js Client for the Slack Web API",
+                "retrieved_at": "2026-11-25T08:03:50.685296Z",
+                "official_source": false
+              }
+            ],
+            "verification_status": "supported",
+            "verification_reason": "The evidence lists these specific methods as part of the Web API."
+          },
+          {
+            "field": "example_operations",
+            "statement": "The Web API supports administrative methods like admin.* for user provisioning and conversation management.",
+            "evidence": [
+              {
+                "source_url": "https://openapps.pro/packages/slack-web-api",
+                "excerpt": "apps\n- posting and updating messages, reacting, and managing channels from a bot token without hand-rolling HTTP calls to Slack.\nBackend integrations\n- syncing users, channels, or files between Slack and an internal system using the typed method surface and built-in pagination for\n*.list\nendpoints.\nAdmin and Enterprise Grid tooling\n- calling\nadmin.*\nmethods (user provisioning, conversation management, analytics exports) with the same retry/rate-limit handling as any other method.\nCustom Slack workflow steps and interactivity\n- responding to Slack events (typically received via Bolt or a raw event listener) by calling back into the Web API to post results or update UI.\nStreaming/long-running responses\n- using\nchatStream()\nto append",
+                "source_title": "@slack/web-api - Node.js Client for the Slack Web API",
+                "retrieved_at": "2026-11-25T08:03:50.685296Z",
+                "official_source": false
+              }
+            ],
+            "verification_status": "supported",
+            "verification_reason": "The evidence confirms the availability of admin.* methods."
+          },
+          {
+            "field": "buildability",
+            "statement": "Slack provides official documentation, SDKs, and an MCP server, facilitating integration.",
+            "evidence": [
+              {
+                "source_url": "https://mcp.so/servers/slack",
+                "excerpt": "Slack API. With a Slack app's bot token, an AI assistant can list channels, read channel history and threads, post messages and replies, add reactions and look up users.\nStatus:\nthis server is archived. It moved to the\nmodelcontextprotocol/servers-archived\nrepository, which is no longer maintained, and the npm package\n@modelcontextprotocol/server-slack\nis marked as no longer supported. Slack now offers its own official\nSlack MCP server\n(remote endpoint\nhttps://mcp.slack.com/mcp\n, OAuth, managed by workspace admins), which is the maintained option for new setups.\nHow to use Slack?\nCreate a Slack app at api.slack.com/apps (\"From scratch\") in your workspace.\nUnder OAuth & Permissions add the bot scopes\nchannels:history\n,\nchannels:read\n,",
+                "source_title": "Slack MCP Server: Tools, Setup & Config",
+                "retrieved_at": "2026-11-25T08:03:49.758813Z",
+                "official_source": false
+              },
+              {
+                "source_url": "https://openapps.pro/packages/slack-web-api",
+                "excerpt": "quality\n85\nInnovation\n60\nLearning curve\n90\n@slack/web-api is the official Node.js client for Slack’s Web API, maintained by Slack Technologies as part of the node-slack-sdk monorepo. It exports a\nWebClient\nclass with a named, typed method for every public Web API endpoint (chat.postMessage, conversations.list, users.info, and hundreds more), so calls read as\nweb.chat.postMessage({...})\ninstead of hand-built HTTP requests against Slack’s method catalog.\nBeyond simple request/response wrapping, the client handles the operational concerns that come with talking to a rate-limited third-party API at scale: an internal request queue caps concurrency, failed calls are retried with configurable backoff policies, HTTP 429 responses pause the queue",
+                "source_title": "@slack/web-api - Node.js Client for the Slack Web API",
+                "retrieved_at": "2026-11-25T08:03:50.685296Z",
+                "official_source": false
+              },
+              {
+                "source_url": "https://docs.slack.dev/apis/web-api/",
+                "excerpt": "Copy as markdown\nOn this page\nThe Slack Web API is an interface for querying information\nfrom\nand enacting change\nin\na Slack workspace.\nUse it for individual queries, or as part of a more complex tapestry of platform features in a Slack app.\nWeb API methods\nBasic overview\n​\nThe Web API is a collection of\nHTTP RPC-style methods\n, all with URLs in the form\nhttps://slack.com/api/METHOD_FAMILY.method\n.\nWhile it's not a REST API, those familiar with REST should be at home with its foundations in HTTP.\nUse HTTPS, SSL, and TLS v1.2 or above when calling all methods.\nLearn more about our SSL and TLS requirements\n.\nEach method has a series of arguments informing the execution of your intentions.\nPass arguments as:\nGET querystring parameters,\nPOST",
+                "source_title": "Slack Web API | Slack Developer Docs",
+                "retrieved_at": "2026-11-25T08:03:24.403766Z",
+                "official_source": false
+              }
+            ],
+            "verification_status": "supported",
+            "verification_reason": "The evidence confirms the availability of official documentation and SDKs."
+          }
+        ],
+        "research_attempt": 2,
+        "research_errors": [
+          "No valid evidence for field: access_details",
+          "No valid evidence for field: verdict_reason",
+          "Final sanitization: mcp_status reset due to missing support.",
+          "Final sanitization: mcp_url reset due to missing support."
+        ],
+        "researched_at": "2026-11-25T08:03:55.111648Z"
+      },
+      "final_verification": {
+        "total_claims": 12,
+        "supported_claims": 10,
+        "contradicted_claims": 0,
+        "insufficient_claims": 2,
+        "support_rate": 0.8333333333333334,
+        "failed_claims": [
+          {
+            "field": "mcp_status",
+            "statement": "Slack offers its own official Slack MCP server.",
+            "status": "insufficient_evidence",
+            "reason": "The evidence is from a third-party site (mcp.so) and does not confirm official Slack ownership of the MCP server."
+          },
+          {
+            "field": "mcp_url",
+            "statement": "The official Slack MCP server is available at the remote endpoint https://mcp.slack.com/mcp.",
+            "status": "insufficient_evidence",
+            "reason": "The evidence is from a third-party site and does not verify the official status of the provided URL."
+          }
+        ],
+        "failed_fields": [
+          {
+            "field": "access_details",
+            "status": "insufficient_evidence",
+            "reason": "Field is empty.",
+            "unsupported_values": [],
+            "corrective_query": "Slack API access requirements and pricing details"
+          },
+          {
+            "field": "mcp_status",
+            "status": "insufficient_evidence",
+            "reason": "No official Slack source confirms the existence or status of an official MCP server.",
+            "unsupported_values": [
+              "official"
+            ],
+            "corrective_query": "official Slack MCP server documentation"
+          },
+          {
+            "field": "mcp_url",
+            "status": "insufficient_evidence",
+            "reason": "No official Slack source confirms this URL.",
+            "unsupported_values": [
+              "https://mcp.slack.com/mcp"
+            ],
+            "corrective_query": "official Slack MCP server URL"
+          },
+          {
+            "field": "verdict_reason",
+            "status": "insufficient_evidence",
+            "reason": "Field is empty.",
+            "unsupported_values": [],
+            "corrective_query": ""
+          }
+        ],
+        "corrective_queries": [
+          "Slack official MCP server Model Context Protocol",
+          "Slack API access requirements and pricing details",
+          "official Slack MCP server documentation",
+          "official Slack MCP server URL"
+        ],
+        "needs_research": true,
+        "field_verdicts": [
+          {
+            "field": "description",
+            "status": "supported",
+            "reason": "Accurately reflects the official documentation.",
+            "unsupported_values": [],
+            "corrective_query": ""
+          },
+          {
+            "field": "auth_methods",
+            "status": "supported",
+            "reason": "Supported by documentation, though 'none' is only for the Status API.",
+            "unsupported_values": [],
+            "corrective_query": ""
+          },
+          {
+            "field": "access_types",
+            "status": "supported",
+            "reason": "Confirmed by official pricing documentation.",
+            "unsupported_values": [],
+            "corrective_query": ""
+          },
+          {
+            "field": "access_details",
+            "status": "insufficient_evidence",
+            "reason": "Field is empty.",
+            "unsupported_values": [],
+            "corrective_query": "Slack API access requirements and pricing details"
+          },
+          {
+            "field": "api_types",
+            "status": "supported",
+            "reason": "Confirmed by documentation.",
+            "unsupported_values": [],
+            "corrective_query": ""
+          },
+          {
+            "field": "api_breadth",
+            "status": "supported",
+            "reason": "Supported by the scope of the Web API.",
+            "unsupported_values": [],
+            "corrective_query": ""
+          },
+          {
+            "field": "example_operations",
+            "status": "supported",
+            "reason": "Operations are documented in the SDK and API references.",
+            "unsupported_values": [],
+            "corrective_query": ""
+          },
+          {
+            "field": "mcp_status",
+            "status": "insufficient_evidence",
+            "reason": "No official Slack source confirms the existence or status of an official MCP server.",
+            "unsupported_values": [
+              "official"
+            ],
+            "corrective_query": "official Slack MCP server documentation"
+          },
+          {
+            "field": "mcp_url",
+            "status": "insufficient_evidence",
+            "reason": "No official Slack source confirms this URL.",
+            "unsupported_values": [
+              "https://mcp.slack.com/mcp"
+            ],
+            "corrective_query": "official Slack MCP server URL"
+          },
+          {
+            "field": "buildability",
+            "status": "supported",
+            "reason": "Supported by documentation and SDK availability.",
+            "unsupported_values": [],
+            "corrective_query": ""
+          },
+          {
+            "field": "blockers",
+            "status": "supported",
+            "reason": "No blockers identified.",
+            "unsupported_values": [],
+            "corrective_query": ""
+          },
+          {
+            "field": "verdict_reason",
+            "status": "insufficient_evidence",
+            "reason": "Field is empty.",
+            "unsupported_values": [],
+            "corrective_query": ""
+          }
+        ],
+        "quality": {
+          "critical_fields": 8,
+          "resolved": 7,
+          "unresolved": [
+            "mcp_status"
+          ],
+          "submission_ready": false
+        }
+      },
+      "history": [
+        {
+          "attempt": 1,
+          "documents": 8,
+          "score": [
+            6,
+            0.8,
+            0
+          ],
+          "research": {
+            "app": {
+              "id": 21,
+              "name": "Slack",
+              "category": "Communications and Messaging",
+              "website_hint": "slack.com"
+            },
+            "description": "Slack is a communication and messaging platform that provides a Web API for querying information and enacting changes within a Slack workspace.",
+            "auth_methods": [
+              "oauth2",
+              "bearer_token"
+            ],
+            "access_types": [
+              "free",
+              "paid"
+            ],
+            "access_details": "",
+            "api_types": [
+              "rest",
+              "rpc"
+            ],
+            "api_breadth": "broad",
+            "example_operations": [
+              "chat.postMessage",
+              "conversations.create",
+              "slack_list_channels",
+              "slack_post_message",
+              "search for messages"
+            ],
+            "mcp_status": "official",
+            "mcp_url": "https://mcp.slack.com/mcp",
+            "buildability": "ready",
+            "blockers": [],
+            "verdict_reason": "",
+            "claims": [
+              {
+                "field": "description",
+                "statement": "The Slack Web API is an interface for querying information from and enacting change in a Slack workspace.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.slack.dev/apis/web-api/",
+                    "excerpt": "Copy as markdown\nOn this page\nThe Slack Web API is an interface for querying information\nfrom\nand enacting change\nin\na Slack workspace.\nUse it for individual queries, or as part of a more complex tapestry of platform features in a Slack app.\nWeb API methods\nBasic overview\n​\nThe Web API is a collection of\nHTTP RPC-style methods\n, all with URLs in the form\nhttps://slack.com/api/METHOD_FAMILY.method\n.\nWhile it's not a REST API, those familiar with REST should be at home with its foundations in HTTP.\nUse HTTPS, SSL, and TLS v1.2 or above when calling all methods.\nLearn more about our SSL and TLS requirements\n.\nEach method has a series of arguments informing the execution of your intentions.\nPass arguments as:\nGET querystring parameters,\nPOST",
+                    "source_title": "Slack Web API | Slack Developer Docs",
+                    "retrieved_at": "2026-11-25T08:03:24.403766Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The evidence from the official Slack Developer Docs confirms the Web API's purpose."
+              },
+              {
+                "field": "auth_methods",
+                "statement": "Slack supports OAuth 2.0 for negotiating tokens on behalf of users and workspaces.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.slack.dev/apis/web-api/",
+                    "excerpt": "There's a lot of \"stuff\" to unpack, including\nthese types\nand other method or domain-specific curiosities.\nAuthentication\n​\nAuthenticate your Web API requests by providing a\nbearer token\n, which identifies a single user or bot user relationship.\nRegister your application\nwith Slack to obtain credentials for use with our\nOAuth 2.0\nimplementation, which allows you to negotiate tokens on behalf of users and workspaces.\nWe prefer tokens to be sent in the\nAuthorization\nHTTP header of your outbound requests. However, you may also pass tokens in all Web API calls as a POST body parameter called\ntoken\n. Tokens cannot be sent as a query parameter.\nTreat tokens with care\nNever share tokens with other users or applications. Do not publish tokens in",
+                    "source_title": "Slack Web API | Slack Developer Docs",
+                    "retrieved_at": "2026-11-25T08:03:24.403766Z",
+                    "official_source": false
+                  },
+                  {
+                    "source_url": "https://docs.slack.dev/authentication/installing-with-oauth/",
+                    "excerpt": "Copy as markdown\nOn this page\nSlack apps are installed with a v2 OAuth 2.0 flow. Your app can act with its own identity instead of acting on behalf of users, without requesting excessive permissions that could cause installations to be rejected.\nOAuth 2.0 refers to the\n2.0 version of the OAuth spec\n, and this is our second version of OAuth 2.0. For the rest of this guide, we'll just refer to it as \"OAuth\".\nHow it works: a high-level overview\n​\nOAuth allows a user in any Slack workspace to install your app. At the end of the OAuth flow, your app gains an access token. Your app's access token allows your app to open doors to the Slack platform. During the OAuth flow, you specify which\nscopes\nyour app needs. Those scopes determine exactly",
+                    "source_title": "Installing via OAuth authorization code flow | Slack Developer Docs",
+                    "retrieved_at": "2026-11-25T08:03:24.938842Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "Official documentation confirms Slack uses OAuth 2.0 for token negotiation."
+              },
+              {
+                "field": "auth_methods",
+                "statement": "Web API requests are authenticated by providing a bearer token in the Authorization HTTP header.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.slack.dev/apis/web-api/",
+                    "excerpt": "such without it.\nYou must transmit your\ntoken\nas a bearer token in the\nAuthorization\nHTTP header.\nYou cannot send your token as part of the query string or as an attribute in your posted JSON.\nDo not mix arguments between query string, URL-encoded POST body, and JSON attributes. Choose one approach per request.\nProviding an explicitly\nnull\nvalue for an attribute will result in whichever default behavior is assigned to it.\nFor example, to send the same request above to the\nconversations.create\nmethod with a JSON POST body, send something like this:\nPOST /api/conversations.create\nContent-type: application/json\nAuthorization: Bearer xoxp-xxxxxxxxx-xxxx\n{\"name\":\"something-urgent\"}\nNote how we present the token with the string\nBearer",
+                    "source_title": "Slack Web API | Slack Developer Docs",
+                    "retrieved_at": "2026-11-25T08:03:24.403766Z",
+                    "official_source": false
+                  },
+                  {
+                    "source_url": "https://docs.slack.dev/apis/web-api/",
+                    "excerpt": "There's a lot of \"stuff\" to unpack, including\nthese types\nand other method or domain-specific curiosities.\nAuthentication\n​\nAuthenticate your Web API requests by providing a\nbearer token\n, which identifies a single user or bot user relationship.\nRegister your application\nwith Slack to obtain credentials for use with our\nOAuth 2.0\nimplementation, which allows you to negotiate tokens on behalf of users and workspaces.\nWe prefer tokens to be sent in the\nAuthorization\nHTTP header of your outbound requests. However, you may also pass tokens in all Web API calls as a POST body parameter called\ntoken\n. Tokens cannot be sent as a query parameter.\nTreat tokens with care\nNever share tokens with other users or applications. Do not publish tokens in",
+                    "source_title": "Slack Web API | Slack Developer Docs",
+                    "retrieved_at": "2026-11-25T08:03:24.403766Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "Official documentation explicitly requires bearer tokens in the Authorization header."
+              },
+              {
+                "field": "access_types",
+                "statement": "Slack offers multiple subscription levels including Free, Pro, and Business+.",
+                "evidence": [
+                  {
+                    "source_url": "https://slack.com/intl/en-in/help/articles/115004846068-Slack-updates-and-changes",
+                    "excerpt": "Android apps.\nShare canvases and lists\nfrom Slack on mobile to grant others permission to view and edit them.\nNovember 2025\nKeep track of customer information in Slack\nOn the Business+ subscription, you can now\nmanage customer contacts\ndirectly where your team is already working. Use customer contacts to track interactions, collaborate on deals and more.\nShare AI search answers\nWhen you get an\nAI answer\nthat your teammates would also find helpful, click\nShare\nto post it in a channel or send it in a DM.\nOpen workspace settings from your sidebar\nWorkspace owners and workspace admins on the Free, Pro and Business+ subscriptions can now click\nAdmin\nin the Slack sidebar to access workspace settings.\nOther news\nData residency\nfor Slack is now",
+                    "source_title": "Slack updates and changes | Slack",
+                    "retrieved_at": "2026-11-25T08:03:25.726124Z",
+                    "official_source": true
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "Official Slack help documentation confirms the existence of Free, Pro, and Business+ subscription levels."
+              },
+              {
+                "field": "api_types",
+                "statement": "The Slack Web API is a collection of HTTP RPC-style methods.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.slack.dev/apis/web-api/",
+                    "excerpt": "Copy as markdown\nOn this page\nThe Slack Web API is an interface for querying information\nfrom\nand enacting change\nin\na Slack workspace.\nUse it for individual queries, or as part of a more complex tapestry of platform features in a Slack app.\nWeb API methods\nBasic overview\n​\nThe Web API is a collection of\nHTTP RPC-style methods\n, all with URLs in the form\nhttps://slack.com/api/METHOD_FAMILY.method\n.\nWhile it's not a REST API, those familiar with REST should be at home with its foundations in HTTP.\nUse HTTPS, SSL, and TLS v1.2 or above when calling all methods.\nLearn more about our SSL and TLS requirements\n.\nEach method has a series of arguments informing the execution of your intentions.\nPass arguments as:\nGET querystring parameters,\nPOST",
+                    "source_title": "Slack Web API | Slack Developer Docs",
+                    "retrieved_at": "2026-11-25T08:03:24.403766Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "Official documentation describes the Web API as a collection of HTTP RPC-style methods."
+              },
+              {
+                "field": "api_breadth",
+                "statement": "The Web API allows for a wide range of operations including querying information and enacting changes, supported by various scopes.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.slack.dev/apis/web-api/",
+                    "excerpt": "Copy as markdown\nOn this page\nThe Slack Web API is an interface for querying information\nfrom\nand enacting change\nin\na Slack workspace.\nUse it for individual queries, or as part of a more complex tapestry of platform features in a Slack app.\nWeb API methods\nBasic overview\n​\nThe Web API is a collection of\nHTTP RPC-style methods\n, all with URLs in the form\nhttps://slack.com/api/METHOD_FAMILY.method\n.\nWhile it's not a REST API, those familiar with REST should be at home with its foundations in HTTP.\nUse HTTPS, SSL, and TLS v1.2 or above when calling all methods.\nLearn more about our SSL and TLS requirements\n.\nEach method has a series of arguments informing the execution of your intentions.\nPass arguments as:\nGET querystring parameters,\nPOST",
+                    "source_title": "Slack Web API | Slack Developer Docs",
+                    "retrieved_at": "2026-11-25T08:03:24.403766Z",
+                    "official_source": false
+                  },
+                  {
+                    "source_url": "https://docs.slack.dev/reference/scopes/",
+                    "excerpt": "Copy as markdown\nScopes are the permissions your Slack app requests in order to act.\nEach scope grants access to a specific set of actions or data, such as reading messages in a channel or viewing a user's profile. An app has no access by default. It can only do what its scopes allow. You choose the scopes your app needs when configuring it, then request them during installation through the\nOAuth flow\n.\nScopes are granted to your app's\ntokens\nwhen a user installs your app. Two types of scopes cover most situations:\nBot scopes\ngrant permissions to your app's bot user, which acts with its own identity. Most apps use bot scopes.\nUser scopes\nlet your app act on behalf of the user who installed or authorized it, accessing only what that user",
+                    "source_title": "Scopes | Slack Developer Docs",
+                    "retrieved_at": "2026-11-25T08:03:24.276818Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The documentation confirms the API supports a wide range of operations via scopes."
+              },
+              {
+                "field": "example_operations",
+                "statement": "The Web API supports methods such as chat.postMessage and conversations.create.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.slack.dev/apis/web-api/",
+                    "excerpt": "either standard POST parameters, or you may use JSON instead.\nURL-encoded bodies\n​\nWhen sending URL-encoded data, set your HTTP\nContent-type\nheader to\napplication/x-www-form-urlencoded\nand present your key/value pairs according to\nRFC-3986\n.\nFor example, a POST request to the\nconversations.create\nmethod might look something like this:\nPOST /api/conversations.create\nContent-type: application/x-www-form-urlencoded\ntoken=xoxp-xxxxxxxxx-xxxx&name=something-urgent\nJSON-encoded bodies\n​\nFor\nwrite methods that support JSON\n, you may alternatively send your HTTP POST data as\nContent-type: application/json\n.\nThere are some ground rules:\nYou must explicitly set the\nContent-type\nHTTP header to\napplication/json\n. We won't interpret your POST body as",
+                    "source_title": "Slack Web API | Slack Developer Docs",
+                    "retrieved_at": "2026-11-25T08:03:24.403766Z",
+                    "official_source": false
+                  },
+                  {
+                    "source_url": "https://docs.slack.dev/apis/web-api/",
+                    "excerpt": "pre-pended to it, indicating the\nOAuth 2.0\nauthentication scheme. Consult your favorite HTTP tool or library's manual for further detail on setting HTTP headers.\nHere's a more complicated example — posting a message with\nmenus\nusing\nchat.postMessage\n:\nPOST /api/chat.postMessage\nContent-type: application/json\nAuthorization: Bearer xoxp-xxxxxxxxx-xxxx\n{\"channel\":\"C123ABC456\",\"text\":\"I hope the tour went well, Mr. Wonka.\",\"attachments\":[{\"text\":\"Who wins the lifetime supply of chocolate?\",\"fallback\":\"You could be telling the computer exactly what it can do with a lifetime supply of chocolate.\",\"color\":\"#3AA3E3\",\"attachment_type\":\"default\",\"callback_id\":\"select_simple_1234\",\"actions\":[{\"name\":\"winners_list\",\"text\":\"Who should",
+                    "source_title": "Slack Web API | Slack Developer Docs",
+                    "retrieved_at": "2026-11-25T08:03:24.403766Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "Documentation provides examples for chat.postMessage and conversations.create."
+              },
+              {
+                "field": "mcp_status",
+                "statement": "Slack provides an official MCP server to enable AI agents to interact with Slack workspaces.",
+                "evidence": [
+                  {
+                    "source_url": "https://explainx.ai/mcp-servers/slack-mcp-server-official",
+                    "excerpt": "Last updated\nApr 13, 2026\nAI Builder Workshop: Build and Ship with Claude Code. Black Friday: 20% off every workshop with code BLACKFRIDAY20, applied at checkout →. Use code BLACKFRIDAY20. It applies automatically at checkout, no typing needed..\nLive\nJan 2, 3, 9 & 10, 2027\nBlack Friday: 20% off every workshop with code BLACKFRIDAY20, applied at checkout →\nUse code BLACKFRIDAY20. It applies automatically at checkout, no typing needed.\n4 live sessions · 8 hours total ·\n₹3,199\n₹3,999\nLive with Yash Thakker\nRegister\n→\nAbout\nSlack MCP Server (Official) is an official MCP server published by Slack that provides AI assistants with tools and capabilities via the Model Context Protocol. Official Slack MCP server enabling AI agents to interact with",
+                    "source_title": "Slack MCP Server (Official) — MCP server | explainx.ai | explainx.ai",
+                    "retrieved_at": "2026-11-25T08:03:36.948397Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "insufficient_evidence",
+                "verification_reason": "The evidence is from a third-party site (explainx.ai), not an official Slack domain."
+              },
+              {
+                "field": "mcp_url",
+                "statement": "The official Slack MCP server is accessible via the URL https://mcp.slack.com/mcp.",
+                "evidence": [
+                  {
+                    "source_url": "https://explainx.ai/mcp-servers/slack-mcp-server-official",
+                    "excerpt": "Installation\nExport\n▾\nSelect a client to integrate this server.\nClaude Desktop\nConfig\nCursor\nOne-click\nVS Code\nOne-click\nWindsurf\nConfig\nManual\nConfig\nClaude Desktop\nconfiguration\n{\n  \"mcpServers\": {\n    \"slack\": {\n      \"type\": \"http\",\n      \"url\": \"https://mcp.slack.com/mcp\",\n      \"oauth\": {\n        \"clientId\": \"1601185624273.8899143856786\",\n        \"callbackPort\": 3118\n      }\n    }\n  }\n}\nWhat it does\nConnects AI agents to Slack workspaces to read messages, search conversations, and manage channels through the official Slack API.\nOfficial Slack integration\nReal-time Search API with secure scoped access\nNo external data storage required\nBest for\nTeams wanting AI assistance with Slack workspace management\nDevelopers building",
+                    "source_title": "Slack MCP Server (Official) — MCP server | explainx.ai | explainx.ai",
+                    "retrieved_at": "2026-11-25T08:03:36.948397Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "insufficient_evidence",
+                "verification_reason": "The URL is provided by a third-party site; no official Slack domain confirms this endpoint."
+              },
+              {
+                "field": "buildability",
+                "statement": "Integration is ready due to the availability of official API documentation and an official MCP server implementation.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.slack.dev/apis/web-api/",
+                    "excerpt": "Copy as markdown\nOn this page\nThe Slack Web API is an interface for querying information\nfrom\nand enacting change\nin\na Slack workspace.\nUse it for individual queries, or as part of a more complex tapestry of platform features in a Slack app.\nWeb API methods\nBasic overview\n​\nThe Web API is a collection of\nHTTP RPC-style methods\n, all with URLs in the form\nhttps://slack.com/api/METHOD_FAMILY.method\n.\nWhile it's not a REST API, those familiar with REST should be at home with its foundations in HTTP.\nUse HTTPS, SSL, and TLS v1.2 or above when calling all methods.\nLearn more about our SSL and TLS requirements\n.\nEach method has a series of arguments informing the execution of your intentions.\nPass arguments as:\nGET querystring parameters,\nPOST",
+                    "source_title": "Slack Web API | Slack Developer Docs",
+                    "retrieved_at": "2026-11-25T08:03:24.403766Z",
+                    "official_source": false
+                  },
+                  {
+                    "source_url": "https://explainx.ai/mcp-servers/slack-mcp-server-official",
+                    "excerpt": "Last updated\nApr 13, 2026\nAI Builder Workshop: Build and Ship with Claude Code. Black Friday: 20% off every workshop with code BLACKFRIDAY20, applied at checkout →. Use code BLACKFRIDAY20. It applies automatically at checkout, no typing needed..\nLive\nJan 2, 3, 9 & 10, 2027\nBlack Friday: 20% off every workshop with code BLACKFRIDAY20, applied at checkout →\nUse code BLACKFRIDAY20. It applies automatically at checkout, no typing needed.\n4 live sessions · 8 hours total ·\n₹3,199\n₹3,999\nLive with Yash Thakker\nRegister\n→\nAbout\nSlack MCP Server (Official) is an official MCP server published by Slack that provides AI assistants with tools and capabilities via the Model Context Protocol. Official Slack MCP server enabling AI agents to interact with",
+                    "source_title": "Slack MCP Server (Official) — MCP server | explainx.ai | explainx.ai",
+                    "retrieved_at": "2026-11-25T08:03:36.948397Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "Official API documentation is available, supporting the buildability claim."
+              }
+            ],
+            "research_attempt": 1,
+            "research_errors": [
+              "No valid evidence for field: access_details",
+              "No valid evidence for field: verdict_reason"
+            ],
+            "researched_at": "2026-11-25T08:03:42.042191Z"
+          },
+          "verification": {
+            "total_claims": 10,
+            "supported_claims": 8,
+            "contradicted_claims": 0,
+            "insufficient_claims": 2,
+            "support_rate": 0.8,
+            "failed_claims": [
+              {
+                "field": "mcp_status",
+                "statement": "Slack provides an official MCP server to enable AI agents to interact with Slack workspaces.",
+                "status": "insufficient_evidence",
+                "reason": "The evidence is from a third-party site (explainx.ai), not an official Slack domain."
+              },
+              {
+                "field": "mcp_url",
+                "statement": "The official Slack MCP server is accessible via the URL https://mcp.slack.com/mcp.",
+                "status": "insufficient_evidence",
+                "reason": "The URL is provided by a third-party site; no official Slack domain confirms this endpoint."
+              }
+            ],
+            "failed_fields": [
+              {
+                "field": "access_details",
+                "status": "insufficient_evidence",
+                "reason": "Field is empty.",
+                "unsupported_values": [],
+                "corrective_query": "Slack API pricing and access model details"
+              },
+              {
+                "field": "example_operations",
+                "status": "insufficient_evidence",
+                "reason": "slack_list_channels and slack_post_message are not standard Slack API method names.",
+                "unsupported_values": [
+                  "slack_list_channels",
+                  "slack_post_message"
+                ],
+                "corrective_query": "official Slack Web API method naming conventions"
+              },
+              {
+                "field": "mcp_status",
+                "status": "insufficient_evidence",
+                "reason": "No official Slack domain confirms the existence of an official MCP server.",
+                "unsupported_values": [
+                  "official"
+                ],
+                "corrective_query": "official Slack Model Context Protocol server"
+              },
+              {
+                "field": "mcp_url",
+                "status": "insufficient_evidence",
+                "reason": "URL provided by third-party; no official confirmation.",
+                "unsupported_values": [
+                  "https://mcp.slack.com/mcp"
+                ],
+                "corrective_query": "official Slack MCP server URL"
+              },
+              {
+                "field": "verdict_reason",
+                "status": "insufficient_evidence",
+                "reason": "Field is empty.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              }
+            ],
+            "corrective_queries": [
+              "Slack official MCP server Model Context Protocol",
+              "Slack API pricing and access model details",
+              "official Slack Web API method naming conventions",
+              "official Slack Model Context Protocol server",
+              "official Slack MCP server URL"
+            ],
+            "needs_research": true,
+            "field_verdicts": [
+              {
+                "field": "description",
+                "status": "supported",
+                "reason": "Accurately reflects the official API documentation.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "auth_methods",
+                "status": "supported",
+                "reason": "OAuth 2.0 and bearer tokens are confirmed by official documentation.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "access_types",
+                "status": "supported",
+                "reason": "Confirmed by official Slack help documentation.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "access_details",
+                "status": "insufficient_evidence",
+                "reason": "Field is empty.",
+                "unsupported_values": [],
+                "corrective_query": "Slack API pricing and access model details"
+              },
+              {
+                "field": "api_types",
+                "status": "supported",
+                "reason": "Confirmed as RPC-style by official documentation.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "api_breadth",
+                "status": "supported",
+                "reason": "Supported by the extensive list of available API methods.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "example_operations",
+                "status": "insufficient_evidence",
+                "reason": "slack_list_channels and slack_post_message are not standard Slack API method names.",
+                "unsupported_values": [
+                  "slack_list_channels",
+                  "slack_post_message"
+                ],
+                "corrective_query": "official Slack Web API method naming conventions"
+              },
+              {
+                "field": "mcp_status",
+                "status": "insufficient_evidence",
+                "reason": "No official Slack domain confirms the existence of an official MCP server.",
+                "unsupported_values": [
+                  "official"
+                ],
+                "corrective_query": "official Slack Model Context Protocol server"
+              },
+              {
+                "field": "mcp_url",
+                "status": "insufficient_evidence",
+                "reason": "URL provided by third-party; no official confirmation.",
+                "unsupported_values": [
+                  "https://mcp.slack.com/mcp"
+                ],
+                "corrective_query": "official Slack MCP server URL"
+              },
+              {
+                "field": "buildability",
+                "status": "supported",
+                "reason": "Documentation is robust and publicly available.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "blockers",
+                "status": "supported",
+                "reason": "No blockers identified.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "verdict_reason",
+                "status": "insufficient_evidence",
+                "reason": "Field is empty.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              }
+            ],
+            "quality": {
+              "critical_fields": 8,
+              "resolved": 7,
+              "unresolved": [
+                "mcp_status"
+              ],
+              "submission_ready": false
+            }
+          }
+        },
+        {
+          "attempt": 2,
+          "documents": 10,
+          "score": [
+            7,
+            0.8333333333333334,
+            0
+          ],
+          "research": {
+            "app": {
+              "id": 21,
+              "name": "Slack",
+              "category": "Communications and Messaging",
+              "website_hint": "slack.com"
+            },
+            "description": "Slack is a communication and messaging platform that provides a Web API for querying information and enacting changes within a workspace, such as managing channels, posting messages, and user management.",
+            "auth_methods": [
+              "oauth2",
+              "bearer_token",
+              "none"
+            ],
+            "access_types": [
+              "free",
+              "paid"
+            ],
+            "access_details": "",
+            "api_types": [
+              "rest",
+              "sdk"
+            ],
+            "api_breadth": "broad",
+            "example_operations": [
+              "chat.postMessage",
+              "conversations.list",
+              "users.info",
+              "conversations.create",
+              "admin.users.list"
+            ],
+            "mcp_status": "official",
+            "mcp_url": "https://mcp.slack.com/mcp",
+            "buildability": "ready",
+            "blockers": [],
+            "verdict_reason": "",
+            "claims": [
+              {
+                "field": "description",
+                "statement": "The Slack Web API is an interface for querying information from and enacting change in a Slack workspace.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.slack.dev/apis/web-api/",
+                    "excerpt": "Copy as markdown\nOn this page\nThe Slack Web API is an interface for querying information\nfrom\nand enacting change\nin\na Slack workspace.\nUse it for individual queries, or as part of a more complex tapestry of platform features in a Slack app.\nWeb API methods\nBasic overview\n​\nThe Web API is a collection of\nHTTP RPC-style methods\n, all with URLs in the form\nhttps://slack.com/api/METHOD_FAMILY.method\n.\nWhile it's not a REST API, those familiar with REST should be at home with its foundations in HTTP.\nUse HTTPS, SSL, and TLS v1.2 or above when calling all methods.\nLearn more about our SSL and TLS requirements\n.\nEach method has a series of arguments informing the execution of your intentions.\nPass arguments as:\nGET querystring parameters,\nPOST",
+                    "source_title": "Slack Web API | Slack Developer Docs",
+                    "retrieved_at": "2026-11-25T08:03:24.403766Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The evidence from the official Slack Developer Docs confirms the description."
+              },
+              {
+                "field": "auth_methods",
+                "statement": "Slack Web API requests are authenticated using bearer tokens or OAuth 2.0.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.slack.dev/apis/web-api/",
+                    "excerpt": "There's a lot of \"stuff\" to unpack, including\nthese types\nand other method or domain-specific curiosities.\nAuthentication\n​\nAuthenticate your Web API requests by providing a\nbearer token\n, which identifies a single user or bot user relationship.\nRegister your application\nwith Slack to obtain credentials for use with our\nOAuth 2.0\nimplementation, which allows you to negotiate tokens on behalf of users and workspaces.\nWe prefer tokens to be sent in the\nAuthorization\nHTTP header of your outbound requests. However, you may also pass tokens in all Web API calls as a POST body parameter called\ntoken\n. Tokens cannot be sent as a query parameter.\nTreat tokens with care\nNever share tokens with other users or applications. Do not publish tokens in",
+                    "source_title": "Slack Web API | Slack Developer Docs",
+                    "retrieved_at": "2026-11-25T08:03:24.403766Z",
+                    "official_source": false
+                  },
+                  {
+                    "source_url": "https://docs.slack.dev/authentication/installing-with-oauth/",
+                    "excerpt": "Copy as markdown\nOn this page\nSlack apps are installed with a v2 OAuth 2.0 flow. Your app can act with its own identity instead of acting on behalf of users, without requesting excessive permissions that could cause installations to be rejected.\nOAuth 2.0 refers to the\n2.0 version of the OAuth spec\n, and this is our second version of OAuth 2.0. For the rest of this guide, we'll just refer to it as \"OAuth\".\nHow it works: a high-level overview\n​\nOAuth allows a user in any Slack workspace to install your app. At the end of the OAuth flow, your app gains an access token. Your app's access token allows your app to open doors to the Slack platform. During the OAuth flow, you specify which\nscopes\nyour app needs. Those scopes determine exactly",
+                    "source_title": "Installing via OAuth authorization code flow | Slack Developer Docs",
+                    "retrieved_at": "2026-11-25T08:03:24.938842Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The evidence confirms both bearer tokens and OAuth 2.0 are used for authentication."
+              },
+              {
+                "field": "auth_methods",
+                "statement": "The Slack Status API endpoints are unauthenticated.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.slack.dev/reference/slack-status-api/",
+                    "excerpt": "Copy as markdown\nOn this page\nSlack offers two API endpoints to describe its status. Use the\nhttps://slack-status.com/api/v2.0.0/current\nendpoint to check for active incidents. Use the\nhttps://slack-status.com/api/v2.0.0/history\nendpoint to learn about past incidents. Both are unauthenticated: you can even open these API endpoints directly in your browser.\nTry it\n.\nYou can also find either endpoint with a cURL command:\ncurl https://slack-status.com/api/v2.0.0/current\ncurl https://slack-status.com/api/v2.0.0/history\nVersion 2.0.0\n​\nCurrent Status API\n​\nThe\ncurrent\nendpoint returns a JSON object containing a\nstatus\nfield. When all is well, the\nstatus\nwill be \"ok\", and the response will be brief. Here's a sample \"ok\" response.\n{\n\"status\"\n:",
+                    "source_title": "Slack Status API | Slack Developer Docs",
+                    "retrieved_at": "2026-11-25T08:03:27.056110Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The evidence explicitly states the Status API endpoints are unauthenticated."
+              },
+              {
+                "field": "access_types",
+                "statement": "Slack offers both free and paid subscription plans.",
+                "evidence": [
+                  {
+                    "source_url": "https://slack.com/intl/en-in/pricing",
+                    "excerpt": "The world’s leading businesses rely on Slack\nRecommended for you\nFree\nA simpler way to chat and collaborate\n₹0\nFree forever\nGet started\nGet started\n90 days of message history\nMessages are saved and searchable for 90 days. Upgrade to access the previous 12 months messages.\nUp to ten apps\nChoose from over 2,600 apps in the Slack App Directory – from Salesforce, Jira, Google Drive, ChatGPT and more.\n1:1 meetings\nWork together in real time through audio and video meetings (including screen sharing) using Slack huddles.\n1:1 external messages\nSecurely work alongside people outside of your company through one-to-one direct messages using Slack Connect.\nBasic AI\nAI conversation summaries\nSlackbot\nAI workflow generation\nAI search\nAI daily recaps\nAI",
+                    "source_title": "Slack Pricing Plans: Find the Right Fit for Your Team | Slack",
+                    "retrieved_at": "2026-11-25T08:03:50.576372Z",
+                    "official_source": true
+                  },
+                  {
+                    "source_url": "https://slack.com/intl/en-in/pricing/paid-vs-free",
+                    "excerpt": "details on our pricing page\nCan I upgrade Slack just for me, rather than upgrading everyone in our workspace?\nUnfortunately, no. Slack is built for teams, so it’s only effective if your whole team are on board. To upgrade Slack, you’ll need to upgrade your entire workspace at once.\nAre there limits to the number of people who can be on my team or the number of people who can be in a channel?\nNot at all! Slack grows with your organisation, so you’ll never have to worry about limits on the number of people in your channels or team.\nWill I be able to see my messages after I upgrade?\nUpon upgrade to Pro, free teams will have access to the previous 12 months of workspace data, including files, messages and other content.\nI’m not sure which",
+                    "source_title": "Slack Paid vs. Free | Slack",
+                    "retrieved_at": "2026-11-25T08:03:50.778789Z",
+                    "official_source": true
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The official Slack pricing page confirms both free and paid plans."
+              },
+              {
+                "field": "api_types",
+                "statement": "The Slack Web API is a collection of HTTP RPC-style methods.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.slack.dev/apis/web-api/",
+                    "excerpt": "Copy as markdown\nOn this page\nThe Slack Web API is an interface for querying information\nfrom\nand enacting change\nin\na Slack workspace.\nUse it for individual queries, or as part of a more complex tapestry of platform features in a Slack app.\nWeb API methods\nBasic overview\n​\nThe Web API is a collection of\nHTTP RPC-style methods\n, all with URLs in the form\nhttps://slack.com/api/METHOD_FAMILY.method\n.\nWhile it's not a REST API, those familiar with REST should be at home with its foundations in HTTP.\nUse HTTPS, SSL, and TLS v1.2 or above when calling all methods.\nLearn more about our SSL and TLS requirements\n.\nEach method has a series of arguments informing the execution of your intentions.\nPass arguments as:\nGET querystring parameters,\nPOST",
+                    "source_title": "Slack Web API | Slack Developer Docs",
+                    "retrieved_at": "2026-11-25T08:03:24.403766Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The official documentation describes the Web API as a collection of HTTP RPC-style methods."
+              },
+              {
+                "field": "api_types",
+                "statement": "Slack provides an official Node.js SDK, @slack/web-api, for interacting with its Web API.",
+                "evidence": [
+                  {
+                    "source_url": "https://openapps.pro/packages/slack-web-api",
+                    "excerpt": "Package\n97 repository health\n@slack/web-api\nSlack's official Node.js HTTP client for calling any of the 270+ Web API methods, with built-in queuing, retries, pagination, and rate-limit handling.\nSDK\nnpm\nv8.5.0\n3,374\nstars\nMIT License\nnpm install @slack/web-api\nCopy\nView source\nVisit website\nRepository health\nPre-computed score based on development activity, maintenance, community, maturity, and trend momentum.\nHow we score it →\n97\n/100\nRepository health\nExcellent\nDevelopment activity\n100\nMaintenance\n96\nCommunity\n92\nMaturity\n60\nMomentum\n40\nTechnical analysis\nAI-assessed by reading the actual repository — architecture, code quality, innovation, and documentation.\nHow we score it →\n81\n/100\nTechnical analysis\nExcellent\nArchitecture\n88\nCode",
+                    "source_title": "@slack/web-api - Node.js Client for the Slack Web API",
+                    "retrieved_at": "2026-11-25T08:03:50.685296Z",
+                    "official_source": false
+                  },
+                  {
+                    "source_url": "https://openapps.pro/packages/slack-web-api",
+                    "excerpt": "quality\n85\nInnovation\n60\nLearning curve\n90\n@slack/web-api is the official Node.js client for Slack’s Web API, maintained by Slack Technologies as part of the node-slack-sdk monorepo. It exports a\nWebClient\nclass with a named, typed method for every public Web API endpoint (chat.postMessage, conversations.list, users.info, and hundreds more), so calls read as\nweb.chat.postMessage({...})\ninstead of hand-built HTTP requests against Slack’s method catalog.\nBeyond simple request/response wrapping, the client handles the operational concerns that come with talking to a rate-limited third-party API at scale: an internal request queue caps concurrency, failed calls are retried with configurable backoff policies, HTTP 429 responses pause the queue",
+                    "source_title": "@slack/web-api - Node.js Client for the Slack Web API",
+                    "retrieved_at": "2026-11-25T08:03:50.685296Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The evidence confirms @slack/web-api is the official Node.js client maintained by Slack."
+              },
+              {
+                "field": "api_breadth",
+                "statement": "The Web API supports over 270 methods for operations including posting messages, managing channels, and administrative tasks.",
+                "evidence": [
+                  {
+                    "source_url": "https://openapps.pro/packages/slack-web-api",
+                    "excerpt": "quality\n85\nInnovation\n60\nLearning curve\n90\n@slack/web-api is the official Node.js client for Slack’s Web API, maintained by Slack Technologies as part of the node-slack-sdk monorepo. It exports a\nWebClient\nclass with a named, typed method for every public Web API endpoint (chat.postMessage, conversations.list, users.info, and hundreds more), so calls read as\nweb.chat.postMessage({...})\ninstead of hand-built HTTP requests against Slack’s method catalog.\nBeyond simple request/response wrapping, the client handles the operational concerns that come with talking to a rate-limited third-party API at scale: an internal request queue caps concurrency, failed calls are retried with configurable backoff policies, HTTP 429 responses pause the queue",
+                    "source_title": "@slack/web-api - Node.js Client for the Slack Web API",
+                    "retrieved_at": "2026-11-25T08:03:50.685296Z",
+                    "official_source": false
+                  },
+                  {
+                    "source_url": "https://openapps.pro/packages/slack-web-api",
+                    "excerpt": "apps\n- posting and updating messages, reacting, and managing channels from a bot token without hand-rolling HTTP calls to Slack.\nBackend integrations\n- syncing users, channels, or files between Slack and an internal system using the typed method surface and built-in pagination for\n*.list\nendpoints.\nAdmin and Enterprise Grid tooling\n- calling\nadmin.*\nmethods (user provisioning, conversation management, analytics exports) with the same retry/rate-limit handling as any other method.\nCustom Slack workflow steps and interactivity\n- responding to Slack events (typically received via Bolt or a raw event listener) by calling back into the Web API to post results or update UI.\nStreaming/long-running responses\n- using\nchatStream()\nto append",
+                    "source_title": "@slack/web-api - Node.js Client for the Slack Web API",
+                    "retrieved_at": "2026-11-25T08:03:50.685296Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The evidence confirms the API supports over 270 methods including administrative tasks."
+              },
+              {
+                "field": "example_operations",
+                "statement": "The Web API includes methods such as chat.postMessage, conversations.list, and users.info.",
+                "evidence": [
+                  {
+                    "source_url": "https://openapps.pro/packages/slack-web-api",
+                    "excerpt": "quality\n85\nInnovation\n60\nLearning curve\n90\n@slack/web-api is the official Node.js client for Slack’s Web API, maintained by Slack Technologies as part of the node-slack-sdk monorepo. It exports a\nWebClient\nclass with a named, typed method for every public Web API endpoint (chat.postMessage, conversations.list, users.info, and hundreds more), so calls read as\nweb.chat.postMessage({...})\ninstead of hand-built HTTP requests against Slack’s method catalog.\nBeyond simple request/response wrapping, the client handles the operational concerns that come with talking to a rate-limited third-party API at scale: an internal request queue caps concurrency, failed calls are retried with configurable backoff policies, HTTP 429 responses pause the queue",
+                    "source_title": "@slack/web-api - Node.js Client for the Slack Web API",
+                    "retrieved_at": "2026-11-25T08:03:50.685296Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The evidence lists these specific methods as part of the Web API."
+              },
+              {
+                "field": "example_operations",
+                "statement": "The Web API supports administrative methods like admin.* for user provisioning and conversation management.",
+                "evidence": [
+                  {
+                    "source_url": "https://openapps.pro/packages/slack-web-api",
+                    "excerpt": "apps\n- posting and updating messages, reacting, and managing channels from a bot token without hand-rolling HTTP calls to Slack.\nBackend integrations\n- syncing users, channels, or files between Slack and an internal system using the typed method surface and built-in pagination for\n*.list\nendpoints.\nAdmin and Enterprise Grid tooling\n- calling\nadmin.*\nmethods (user provisioning, conversation management, analytics exports) with the same retry/rate-limit handling as any other method.\nCustom Slack workflow steps and interactivity\n- responding to Slack events (typically received via Bolt or a raw event listener) by calling back into the Web API to post results or update UI.\nStreaming/long-running responses\n- using\nchatStream()\nto append",
+                    "source_title": "@slack/web-api - Node.js Client for the Slack Web API",
+                    "retrieved_at": "2026-11-25T08:03:50.685296Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The evidence confirms the availability of admin.* methods."
+              },
+              {
+                "field": "mcp_status",
+                "statement": "Slack offers its own official Slack MCP server.",
+                "evidence": [
+                  {
+                    "source_url": "https://mcp.so/servers/slack",
+                    "excerpt": "Slack API. With a Slack app's bot token, an AI assistant can list channels, read channel history and threads, post messages and replies, add reactions and look up users.\nStatus:\nthis server is archived. It moved to the\nmodelcontextprotocol/servers-archived\nrepository, which is no longer maintained, and the npm package\n@modelcontextprotocol/server-slack\nis marked as no longer supported. Slack now offers its own official\nSlack MCP server\n(remote endpoint\nhttps://mcp.slack.com/mcp\n, OAuth, managed by workspace admins), which is the maintained option for new setups.\nHow to use Slack?\nCreate a Slack app at api.slack.com/apps (\"From scratch\") in your workspace.\nUnder OAuth & Permissions add the bot scopes\nchannels:history\n,\nchannels:read\n,",
+                    "source_title": "Slack MCP Server: Tools, Setup & Config",
+                    "retrieved_at": "2026-11-25T08:03:49.758813Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "insufficient_evidence",
+                "verification_reason": "The evidence is from a third-party site (mcp.so) and does not confirm official Slack ownership of the MCP server."
+              },
+              {
+                "field": "mcp_url",
+                "statement": "The official Slack MCP server is available at the remote endpoint https://mcp.slack.com/mcp.",
+                "evidence": [
+                  {
+                    "source_url": "https://mcp.so/servers/slack",
+                    "excerpt": "Slack API. With a Slack app's bot token, an AI assistant can list channels, read channel history and threads, post messages and replies, add reactions and look up users.\nStatus:\nthis server is archived. It moved to the\nmodelcontextprotocol/servers-archived\nrepository, which is no longer maintained, and the npm package\n@modelcontextprotocol/server-slack\nis marked as no longer supported. Slack now offers its own official\nSlack MCP server\n(remote endpoint\nhttps://mcp.slack.com/mcp\n, OAuth, managed by workspace admins), which is the maintained option for new setups.\nHow to use Slack?\nCreate a Slack app at api.slack.com/apps (\"From scratch\") in your workspace.\nUnder OAuth & Permissions add the bot scopes\nchannels:history\n,\nchannels:read\n,",
+                    "source_title": "Slack MCP Server: Tools, Setup & Config",
+                    "retrieved_at": "2026-11-25T08:03:49.758813Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "insufficient_evidence",
+                "verification_reason": "The evidence is from a third-party site and does not verify the official status of the provided URL."
+              },
+              {
+                "field": "buildability",
+                "statement": "Slack provides official documentation, SDKs, and an MCP server, facilitating integration.",
+                "evidence": [
+                  {
+                    "source_url": "https://mcp.so/servers/slack",
+                    "excerpt": "Slack API. With a Slack app's bot token, an AI assistant can list channels, read channel history and threads, post messages and replies, add reactions and look up users.\nStatus:\nthis server is archived. It moved to the\nmodelcontextprotocol/servers-archived\nrepository, which is no longer maintained, and the npm package\n@modelcontextprotocol/server-slack\nis marked as no longer supported. Slack now offers its own official\nSlack MCP server\n(remote endpoint\nhttps://mcp.slack.com/mcp\n, OAuth, managed by workspace admins), which is the maintained option for new setups.\nHow to use Slack?\nCreate a Slack app at api.slack.com/apps (\"From scratch\") in your workspace.\nUnder OAuth & Permissions add the bot scopes\nchannels:history\n,\nchannels:read\n,",
+                    "source_title": "Slack MCP Server: Tools, Setup & Config",
+                    "retrieved_at": "2026-11-25T08:03:49.758813Z",
+                    "official_source": false
+                  },
+                  {
+                    "source_url": "https://openapps.pro/packages/slack-web-api",
+                    "excerpt": "quality\n85\nInnovation\n60\nLearning curve\n90\n@slack/web-api is the official Node.js client for Slack’s Web API, maintained by Slack Technologies as part of the node-slack-sdk monorepo. It exports a\nWebClient\nclass with a named, typed method for every public Web API endpoint (chat.postMessage, conversations.list, users.info, and hundreds more), so calls read as\nweb.chat.postMessage({...})\ninstead of hand-built HTTP requests against Slack’s method catalog.\nBeyond simple request/response wrapping, the client handles the operational concerns that come with talking to a rate-limited third-party API at scale: an internal request queue caps concurrency, failed calls are retried with configurable backoff policies, HTTP 429 responses pause the queue",
+                    "source_title": "@slack/web-api - Node.js Client for the Slack Web API",
+                    "retrieved_at": "2026-11-25T08:03:50.685296Z",
+                    "official_source": false
+                  },
+                  {
+                    "source_url": "https://docs.slack.dev/apis/web-api/",
+                    "excerpt": "Copy as markdown\nOn this page\nThe Slack Web API is an interface for querying information\nfrom\nand enacting change\nin\na Slack workspace.\nUse it for individual queries, or as part of a more complex tapestry of platform features in a Slack app.\nWeb API methods\nBasic overview\n​\nThe Web API is a collection of\nHTTP RPC-style methods\n, all with URLs in the form\nhttps://slack.com/api/METHOD_FAMILY.method\n.\nWhile it's not a REST API, those familiar with REST should be at home with its foundations in HTTP.\nUse HTTPS, SSL, and TLS v1.2 or above when calling all methods.\nLearn more about our SSL and TLS requirements\n.\nEach method has a series of arguments informing the execution of your intentions.\nPass arguments as:\nGET querystring parameters,\nPOST",
+                    "source_title": "Slack Web API | Slack Developer Docs",
+                    "retrieved_at": "2026-11-25T08:03:24.403766Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The evidence confirms the availability of official documentation and SDKs."
+              }
+            ],
+            "research_attempt": 2,
+            "research_errors": [
+              "No valid evidence for field: access_details",
+              "No valid evidence for field: verdict_reason"
+            ],
+            "researched_at": "2026-11-25T08:03:55.111648Z"
+          },
+          "verification": {
+            "total_claims": 12,
+            "supported_claims": 10,
+            "contradicted_claims": 0,
+            "insufficient_claims": 2,
+            "support_rate": 0.8333333333333334,
+            "failed_claims": [
+              {
+                "field": "mcp_status",
+                "statement": "Slack offers its own official Slack MCP server.",
+                "status": "insufficient_evidence",
+                "reason": "The evidence is from a third-party site (mcp.so) and does not confirm official Slack ownership of the MCP server."
+              },
+              {
+                "field": "mcp_url",
+                "statement": "The official Slack MCP server is available at the remote endpoint https://mcp.slack.com/mcp.",
+                "status": "insufficient_evidence",
+                "reason": "The evidence is from a third-party site and does not verify the official status of the provided URL."
+              }
+            ],
+            "failed_fields": [
+              {
+                "field": "access_details",
+                "status": "insufficient_evidence",
+                "reason": "Field is empty.",
+                "unsupported_values": [],
+                "corrective_query": "Slack API access requirements and pricing details"
+              },
+              {
+                "field": "mcp_status",
+                "status": "insufficient_evidence",
+                "reason": "No official Slack source confirms the existence or status of an official MCP server.",
+                "unsupported_values": [
+                  "official"
+                ],
+                "corrective_query": "official Slack MCP server documentation"
+              },
+              {
+                "field": "mcp_url",
+                "status": "insufficient_evidence",
+                "reason": "No official Slack source confirms this URL.",
+                "unsupported_values": [
+                  "https://mcp.slack.com/mcp"
+                ],
+                "corrective_query": "official Slack MCP server URL"
+              },
+              {
+                "field": "verdict_reason",
+                "status": "insufficient_evidence",
+                "reason": "Field is empty.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              }
+            ],
+            "corrective_queries": [
+              "Slack official MCP server Model Context Protocol",
+              "Slack API access requirements and pricing details",
+              "official Slack MCP server documentation",
+              "official Slack MCP server URL"
+            ],
+            "needs_research": true,
+            "field_verdicts": [
+              {
+                "field": "description",
+                "status": "supported",
+                "reason": "Accurately reflects the official documentation.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "auth_methods",
+                "status": "supported",
+                "reason": "Supported by documentation, though 'none' is only for the Status API.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "access_types",
+                "status": "supported",
+                "reason": "Confirmed by official pricing documentation.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "access_details",
+                "status": "insufficient_evidence",
+                "reason": "Field is empty.",
+                "unsupported_values": [],
+                "corrective_query": "Slack API access requirements and pricing details"
+              },
+              {
+                "field": "api_types",
+                "status": "supported",
+                "reason": "Confirmed by documentation.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "api_breadth",
+                "status": "supported",
+                "reason": "Supported by the scope of the Web API.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "example_operations",
+                "status": "supported",
+                "reason": "Operations are documented in the SDK and API references.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "mcp_status",
+                "status": "insufficient_evidence",
+                "reason": "No official Slack source confirms the existence or status of an official MCP server.",
+                "unsupported_values": [
+                  "official"
+                ],
+                "corrective_query": "official Slack MCP server documentation"
+              },
+              {
+                "field": "mcp_url",
+                "status": "insufficient_evidence",
+                "reason": "No official Slack source confirms this URL.",
+                "unsupported_values": [
+                  "https://mcp.slack.com/mcp"
+                ],
+                "corrective_query": "official Slack MCP server URL"
+              },
+              {
+                "field": "buildability",
+                "status": "supported",
+                "reason": "Supported by documentation and SDK availability.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "blockers",
+                "status": "supported",
+                "reason": "No blockers identified.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "verdict_reason",
+                "status": "insufficient_evidence",
+                "reason": "Field is empty.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              }
+            ],
+            "quality": {
+              "critical_fields": 8,
+              "resolved": 7,
+              "unresolved": [
+                "mcp_status"
+              ],
+              "submission_ready": false
+            }
+          }
+        }
+      ],
+      "pipeline_errors": [],
+      "execution_time": 38.05
+    }
+  },
+  {
+    "app_id": 61,
+    "app_name": "GitHub",
+    "before": {
+      "resolved_fields": 8,
+      "total_fields": 12,
+      "completeness": 66.67,
+      "resolved": [
+        "description",
+        "auth_methods",
+        "access_types",
+        "access_details",
+        "api_breadth",
+        "example_operations",
+        "mcp_status",
+        "mcp_url"
+      ],
+      "unresolved": [
+        "api_types",
+        "buildability",
+        "blockers",
+        "verdict_reason"
+      ],
+      "published_claims": 7
+    },
+    "after": {
+      "resolved_fields": 0,
+      "total_fields": 12,
+      "completeness": 0.0,
+      "resolved": [],
+      "unresolved": [
+        "description",
+        "auth_methods",
+        "access_types",
+        "access_details",
+        "api_types",
+        "api_breadth",
+        "example_operations",
+        "mcp_status",
+        "mcp_url",
+        "buildability",
+        "blockers",
+        "verdict_reason"
+      ],
+      "published_claims": 0
+    },
+    "improvement_pp": -66.67,
+    "baseline_support_rate": 0.7,
+    "new_support_rate": null,
+    "pipeline_output": {
+      "app": "GitHub",
+      "attempts": 2,
+      "selected_attempt": null,
+      "final_result": {
+        "app": {
+          "id": 61,
+          "name": "GitHub",
+          "category": "Developer, Infra and Data platforms",
+          "website_hint": "docs.github.com/rest"
+        },
+        "description": "",
+        "auth_methods": [
+          "unknown"
+        ],
+        "access_types": [
+          "unknown"
+        ],
+        "access_details": "",
+        "api_types": [
+          "unknown"
+        ],
+        "api_breadth": "unknown",
+        "example_operations": [],
+        "mcp_status": "unknown",
+        "mcp_url": null,
+        "buildability": "unknown",
+        "blockers": [],
+        "verdict_reason": "",
+        "claims": [],
+        "research_attempt": 1,
+        "research_errors": [
+          "Attempt 1 failed: ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+          "Attempt 2 failed: ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+        ],
+        "researched_at": "2026-11-25T08:04:51.317417Z"
+      },
+      "final_verification": null,
+      "history": [
+        {
+          "attempt": 1,
+          "error": "Attempt 1 failed: ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+        },
+        {
+          "attempt": 2,
+          "error": "Attempt 2 failed: ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+        }
+      ],
+      "pipeline_errors": [
+        "Attempt 1 failed: ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "Attempt 2 failed: ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+      ],
+      "execution_time": 51.97
+    }
+  },
+  {
+    "app_id": 81,
+    "app_name": "Stripe",
+    "before": {
+      "resolved_fields": 2,
+      "total_fields": 12,
+      "completeness": 16.67,
+      "resolved": [
+        "api_breadth",
+        "mcp_status"
+      ],
+      "unresolved": [
+        "description",
+        "auth_methods",
+        "access_types",
+        "access_details",
+        "api_types",
+        "example_operations",
+        "mcp_url",
+        "buildability",
+        "blockers",
+        "verdict_reason"
+      ],
+      "published_claims": 2
+    },
+    "after": {
+      "resolved_fields": 8,
+      "total_fields": 12,
+      "completeness": 66.67,
+      "resolved": [
+        "description",
+        "auth_methods",
+        "access_types",
+        "api_types",
+        "api_breadth",
+        "example_operations",
+        "buildability",
+        "verdict_reason"
+      ],
+      "unresolved": [
+        "access_details",
+        "mcp_status",
+        "mcp_url",
+        "blockers"
+      ],
+      "published_claims": 10
+    },
+    "improvement_pp": 50.0,
+    "baseline_support_rate": 0.4,
+    "new_support_rate": 1.0,
+    "pipeline_output": {
+      "app": "Stripe",
+      "attempts": 2,
+      "selected_attempt": 2,
+      "final_result": {
+        "app": {
+          "id": 81,
+          "name": "Stripe",
+          "category": "Finance and Fintech",
+          "website_hint": "stripe.com/docs/api"
+        },
+        "description": "Stripe provides a unified set of REST APIs for accepting payments, managing billing and subscriptions, sending payouts, and building financial workflows.",
+        "auth_methods": [
+          "api_key",
+          "oauth2",
+          "other"
+        ],
+        "access_types": [
+          "paid",
+          "trial"
+        ],
+        "access_details": "",
+        "api_types": [
+          "rest"
+        ],
+        "api_breadth": "broad",
+        "example_operations": [
+          "Create a webhook endpoint",
+          "Retrieve a webhook endpoint",
+          "List all webhook endpoints",
+          "Update a webhook endpoint",
+          "Delete a webhook endpoint"
+        ],
+        "mcp_status": "unknown",
+        "mcp_url": null,
+        "buildability": "ready",
+        "blockers": [],
+        "verdict_reason": "Documentation indicates that integration is feasible.",
+        "claims": [
+          {
+            "field": "description",
+            "statement": "Stripe provides a unified set of REST APIs for accepting payments, managing billing and subscriptions, sending payouts and building financial workflows.",
+            "evidence": [
+              {
+                "source_url": "https://docs.stripe.com/apis",
+                "excerpt": "Stripe APIs\nLearn about Stripe APIs.\nAsk about this page\nCopy for LLM\nView as Markdown\nSet up agent\nStripe provides a unified set of\nREST APIs\n, comprised of\ntwo namespaces\n, for accepting payments, managing billing and subscriptions, sending payouts and building financial workflows. You can authenticate requests, shape responses, localise data, test integrations and handle errors consistently across Stripe products.\nOverview\nCompare the API v1 and v2 namespaces\nLearn about Stripe API v2, its response model and how it compares to API v1.\nManage null API v2 responses\nRequest dependent values in a single response.\nRate limits\nUnderstand throttling and throughput behaviour.\nAuthentication and security\nAPI keys\nAuthenticate requests with",
+                "source_title": "Stripe APIs | Stripe Documentation",
+                "retrieved_at": "2026-11-25T08:05:42.212372Z",
+                "official_source": true
+              }
+            ],
+            "verification_status": "supported",
+            "verification_reason": "The documentation confirms Stripe provides a unified set of REST APIs for these specific financial workflows."
+          },
+          {
+            "field": "auth_methods",
+            "statement": "Stripe supports API key authentication, including secret and restricted keys.",
+            "evidence": [
+              {
+                "source_url": "https://docs.stripe.com/apis",
+                "excerpt": "Stripe APIs\nLearn about Stripe APIs.\nAsk about this page\nCopy for LLM\nView as Markdown\nSet up agent\nStripe provides a unified set of\nREST APIs\n, comprised of\ntwo namespaces\n, for accepting payments, managing billing and subscriptions, sending payouts and building financial workflows. You can authenticate requests, shape responses, localise data, test integrations and handle errors consistently across Stripe products.\nOverview\nCompare the API v1 and v2 namespaces\nLearn about Stripe API v2, its response model and how it compares to API v1.\nManage null API v2 responses\nRequest dependent values in a single response.\nRate limits\nUnderstand throttling and throughput behaviour.\nAuthentication and security\nAPI keys\nAuthenticate requests with",
+                "source_title": "Stripe APIs | Stripe Documentation",
+                "retrieved_at": "2026-11-25T08:05:42.212372Z",
+                "official_source": true
+              },
+              {
+                "source_url": "https://docs.stripe.com/apis",
+                "excerpt": "secret and restricted keys.\nManage secret API keys\nBest practices for creating, rotating and securing keys.\nSpecify request context\nPass account and idempotency context with requests.\nDomains and IP addresses\nAllowlist domains and IP ranges used by Stripe.\nMake requests\nExpand responses\nReturn nested objects in a single request.\nPagination\nIterate through large lists of resources.\nSearch objects\nLook up objects in your Stripe data.\nTesting and data\nMetadata\nAttach custom key-value pairs to objects.\nUse cases\nCommon patterns for modelling data with metadata.\nAutomated testing\nTest your application’s behaviour and ability to handle errors.\nError handling\nError handling\nInterpret errors and display them to users.\nAdvanced error handling\nWork",
+                "source_title": "Stripe APIs | Stripe Documentation",
+                "retrieved_at": "2026-11-25T08:05:42.212372Z",
+                "official_source": true
+              }
+            ],
+            "verification_status": "supported",
+            "verification_reason": "Stripe documentation explicitly mentions support for secret and restricted API keys."
+          },
+          {
+            "field": "auth_methods",
+            "statement": "Stripe supports OAuth 2.0 to authenticate requests on behalf of users.",
+            "evidence": [
+              {
+                "source_url": "https://docs.stripe.com/stripe-apps/api-authentication/oauth",
+                "excerpt": "OAuth 2.0\nUse the industry standard OAuth 2.0 to authenticate requests to the Stripe API on behalf of your users.\nAsk about this page\nCopy for LLM\nView as Markdown\nSet up agent\nA user authenticating with OAuth follows these steps.\nOn your site, the user clicks a link that redirects them to Stripe.\nOn Stripe, the user selects the appropriate account and accepts permissions for installing the app.\nAfter the app is installed, authentication is complete and the user is redirected to a defined URI.\nDevelop your app\nCreate your Stripe App\nby running\nstripe apps create <app-name>\nin the CLI.\nEdit the following fields in the\napp manifest\n:\nSet\nstripe\n_\napi\n_\naccess\n_\ntype\nto\noauth\n.\nSet\ndistribution\n_\ntype\nto\npublic\n.\nSet your\nallowed\n_\nredirect\n_",
+                "source_title": "OAuth 2.0 | Stripe Documentation",
+                "retrieved_at": "2026-11-25T08:04:54.052894Z",
+                "official_source": true
+              }
+            ],
+            "verification_status": "supported",
+            "verification_reason": "Stripe documentation provides a dedicated guide for OAuth 2.0 authentication."
+          },
+          {
+            "field": "auth_methods",
+            "statement": "The Stripe API authenticates requests using HTTP Basic Auth, where the API key is provided as the username.",
+            "evidence": [
+              {
+                "source_url": "https://docs.stripe.com/api",
+                "excerpt": "keys safe. Don’t embed secret or restricted API keys in source code or client-side applications. Instead, use your server platform’s secrets vault to provide keys to your server-side applications. If your platform doesn’t offer a secrets vault, set your keys in environment variables.\nFor added security,\nWorkload Identity Federation\nlets your service authenticate without storing a long-lived API key. Your service exchanges a short-lived identity token from its cloud provider for a Stripe access token that expires after 1 hour.\nThe Stripe API authenticates requests using\nHTTP Basic Auth\n. Provide your API key as the basic auth username value. You don’t need to provide a password.\nIf you need to authenticate using bearer auth (for example,",
+                "source_title": "Stripe API Reference",
+                "retrieved_at": "2026-11-25T08:04:55.046507Z",
+                "official_source": true
+              }
+            ],
+            "verification_status": "supported",
+            "verification_reason": "The API reference confirms that requests are authenticated using HTTP Basic Auth with the API key as the username."
+          },
+          {
+            "field": "access_types",
+            "statement": "Stripe provides sandbox environments for testing integrations without affecting live data.",
+            "evidence": [
+              {
+                "source_url": "https://docs.stripe.com/api?__hstc=198846256.2f3f33a24b44870ec4a577029c49e44b.1763856000258.1763856000259.1763856000260.1&__hssc=198846256.1.1763856000261&__hsfp=3006156910",
+                "excerpt": "API Reference\nAsk about this section\nCopy for LLM\nView as Markdown\nThe Stripe API is organized around\nREST\n. Our API has predictable resource-oriented URLs, accepts\nform-encoded\nrequest bodies, returns\nJSON-encoded\nresponses, and uses standard HTTP response codes, authentication, and verbs.\nYou can use the Stripe API in\nsandboxes\nwithout affecting your live data or interacting with banking networks. The API key that you use to\nauthenticate\nthe request determines whether the request runs in live mode or in a sandbox. Sandboxes support all v2 APIs. Test mode sandboxes support some\nv2 APIs\n.\nThe Stripe API doesn’t support bulk updates. You can work on only one object per request.\nThe Stripe API differs for every account as we release new",
+                "source_title": "Stripe API Reference",
+                "retrieved_at": "2026-11-25T08:04:54.887326Z",
+                "official_source": true
+              }
+            ],
+            "verification_status": "supported",
+            "verification_reason": "The documentation confirms the availability of sandboxes for testing without affecting live data."
+          },
+          {
+            "field": "access_types",
+            "statement": "Stripe supports live mode for processing real payments.",
+            "evidence": [
+              {
+                "source_url": "https://docs.stripe.com/keys",
+                "excerpt": "returns an\nauthentication error\n. Use\nWorkbench request logs\nto inspect API requests and troubleshoot errors.\nIf you're new to Stripe\nKeep your business safe:\nRead our\nbest practices\nfor managing keys.\nBuild and test\n: Create or select a\nsandbox\nand use its test keys. For new integrations, use a separate general sandbox so settings and data remain isolated from live mode. Sandbox keys start with\npk\n_\ntest\n_\nfor publishable keys,\nrk\n_\ntest\n_\nfor restricted keys, and\nsk\n_\ntest\n_\nfor secret keys.\nWhen you’re ready to accept real payments\n:\nSwitch to your live mode keys\n, which start with\npk\n_\nlive\n_\n,\nrk\n_\nlive\n_\n, and\nsk\n_\nlive\n_\n.\nIf you need to find a webhook signing secret\n: Webhook secrets are separate from API keys. Find them in the",
+                "source_title": "API keys | Stripe Documentation",
+                "retrieved_at": "2026-11-25T08:05:42.046969Z",
+                "official_source": true
+              }
+            ],
+            "verification_status": "supported",
+            "verification_reason": "The documentation explicitly describes switching to live mode keys for processing real payments."
+          },
+          {
+            "field": "api_types",
+            "statement": "The Stripe API is organized around REST, using resource-oriented URLs and JSON-encoded responses.",
+            "evidence": [
+              {
+                "source_url": "https://docs.stripe.com/api?__hstc=198846256.2f3f33a24b44870ec4a577029c49e44b.1763856000258.1763856000259.1763856000260.1&__hssc=198846256.1.1763856000261&__hsfp=3006156910",
+                "excerpt": "API Reference\nAsk about this section\nCopy for LLM\nView as Markdown\nThe Stripe API is organized around\nREST\n. Our API has predictable resource-oriented URLs, accepts\nform-encoded\nrequest bodies, returns\nJSON-encoded\nresponses, and uses standard HTTP response codes, authentication, and verbs.\nYou can use the Stripe API in\nsandboxes\nwithout affecting your live data or interacting with banking networks. The API key that you use to\nauthenticate\nthe request determines whether the request runs in live mode or in a sandbox. Sandboxes support all v2 APIs. Test mode sandboxes support some\nv2 APIs\n.\nThe Stripe API doesn’t support bulk updates. You can work on only one object per request.\nThe Stripe API differs for every account as we release new",
+                "source_title": "Stripe API Reference",
+                "retrieved_at": "2026-11-25T08:04:54.887326Z",
+                "official_source": true
+              }
+            ],
+            "verification_status": "supported",
+            "verification_reason": "The API reference confirms the REST architecture, resource-oriented URLs, and JSON-encoded responses."
+          },
+          {
+            "field": "api_breadth",
+            "statement": "Stripe APIs cover a wide range of financial operations including payments, billing, subscriptions, and payouts.",
+            "evidence": [
+              {
+                "source_url": "https://docs.stripe.com/apis",
+                "excerpt": "Stripe APIs\nLearn about Stripe APIs.\nAsk about this page\nCopy for LLM\nView as Markdown\nSet up agent\nStripe provides a unified set of\nREST APIs\n, comprised of\ntwo namespaces\n, for accepting payments, managing billing and subscriptions, sending payouts and building financial workflows. You can authenticate requests, shape responses, localise data, test integrations and handle errors consistently across Stripe products.\nOverview\nCompare the API v1 and v2 namespaces\nLearn about Stripe API v2, its response model and how it compares to API v1.\nManage null API v2 responses\nRequest dependent values in a single response.\nRate limits\nUnderstand throttling and throughput behaviour.\nAuthentication and security\nAPI keys\nAuthenticate requests with",
+                "source_title": "Stripe APIs | Stripe Documentation",
+                "retrieved_at": "2026-11-25T08:05:42.212372Z",
+                "official_source": true
+              }
+            ],
+            "verification_status": "supported",
+            "verification_reason": "The documentation confirms the API covers payments, billing, subscriptions, and payouts."
+          },
+          {
+            "field": "example_operations",
+            "statement": "The API supports creating, updating, retrieving, listing, and deleting webhook endpoints.",
+            "evidence": [
+              {
+                "source_url": "https://docs.stripe.com/api/webhook_endpoints?api-version=2025-07-30.preview",
+                "excerpt": "Webhook Endpoints\nv1\nAsk about this section\nCopy for LLM\nView as Markdown\nYou can configure\nwebhook endpoints\nvia the API to be\nnotified about events that happen in your Stripe account or connected\naccounts.\nMost users configure webhooks from\nthe dashboard\n, which provides a user interface for registering and testing your webhook endpoints.\nRelated guide:\nSetting up webhooks\nWas this section helpful?\nYes\nNo\nCreate a webhook endpoint\nPOST\n/\nv1\n/\nwebhook_endpoints\nUpdate a webhook endpoint\nPOST\n/\nv1\n/\nwebhook_endpoints\n/\n:id\nRetrieve a webhook endpoint\nGET\n/\nv1\n/\nwebhook_endpoints\n/\n:id\nList all webhook endpoints\nGET\n/\nv1\n/\nwebhook_endpoints\nDelete a webhook endpoint\nDELETE\n/\nv1\n/\nwebhook_endpoints\n/\n:id\nThe Webhook Endpoint object\nv1\nAsk",
+                "source_title": "Webhook Endpoints | Stripe API Reference",
+                "retrieved_at": "2026-11-25T08:04:55.621333Z",
+                "official_source": true
+              }
+            ],
+            "verification_status": "supported",
+            "verification_reason": "The API reference lists endpoints for creating, updating, retrieving, listing, and deleting webhook endpoints."
+          },
+          {
+            "field": "buildability",
+            "statement": "Stripe provides clear documentation for API authentication and integration, including specific recommendations for AI agents to use restricted API keys.",
+            "evidence": [
+              {
+                "source_url": "https://docs.stripe.com/keys/restricted-api-keys",
+                "excerpt": "Restricted API keys\nUse restricted API keys to control your application's access to the Stripe API.\nAsk about this page\nCopy for LLM\nView as Markdown\nSet up agent\nYou can use a restricted API key (RAK) to assign specific Stripe API permissions to your API keys. RAKs are the recommended type of key for\nAPI keys you give to AI agents\n. Using a RAK limits the potential damage to your business if an API key is exposed to a bad actor. If a restricted API key doesn’t have the correct permissions to complete an API request, Stripe returns an\ninvalid request error\n.\nWhat is a restricted API key?\nA restricted API key (RAK) is an API key your server-side applications include in Stripe API requests. A RAK starts with\nrk\n_\nlive\n_\nor\nrk\n_\ntest\n_\n.",
+                "source_title": "Restricted API keys | Stripe Documentation",
+                "retrieved_at": "2026-11-25T08:04:53.909594Z",
+                "official_source": true
+              },
+              {
+                "source_url": "https://docs.stripe.com/keys/restricted-api-keys",
+                "excerpt": "Stripe recommends always using RAKs instead of unrestricted secret keys, especially when giving a key to an AI agent. Use RAK permissions to limit what an agent can do in your account.\nAlways follow\nbest practices\nwhen using RAKs to avoid accidental exposure or compromise. Treat RAKs with the same caution as secret API keys.\nWhy use restricted keys instead of secret keys?\nSecret key (\nsk\n_\n)\nRestricted key (\nrk\n_\n)\nScope of access\nFull access to every API resource\nOnly the permissions you assign\nImpact if compromised\nA bad actor can do anything in your account\nA bad actor can do only what the key allows\nSuitability for AI agents\nAn agent might do things you don’t want in your account\nYou explicitly control the agent’s permissions",
+                "source_title": "Restricted API keys | Stripe Documentation",
+                "retrieved_at": "2026-11-25T08:04:53.909594Z",
+                "official_source": true
+              }
+            ],
+            "verification_status": "supported",
+            "verification_reason": "Stripe documentation explicitly recommends restricted API keys for AI agents."
+          }
+        ],
+        "research_attempt": 2,
+        "research_errors": [
+          "No valid evidence for field: access_details"
+        ],
+        "researched_at": "2026-11-25T08:05:51.025932Z"
+      },
+      "final_verification": {
+        "total_claims": 11,
+        "supported_claims": 11,
+        "contradicted_claims": 0,
+        "insufficient_claims": 0,
+        "support_rate": 1.0,
+        "failed_claims": [],
+        "failed_fields": [
+          {
+            "field": "access_details",
+            "status": "insufficient_evidence",
+            "reason": "The field is empty and lacks information regarding pricing or trial terms.",
+            "unsupported_values": [],
+            "corrective_query": "Stripe API pricing and trial access model"
+          }
+        ],
+        "corrective_queries": [
+          "Stripe official MCP server Model Context Protocol",
+          "Stripe API pricing and trial access model"
+        ],
+        "needs_research": true,
+        "field_verdicts": [
+          {
+            "field": "description",
+            "status": "supported",
+            "reason": "Supported by official documentation.",
+            "unsupported_values": [],
+            "corrective_query": ""
+          },
+          {
+            "field": "auth_methods",
+            "status": "supported",
+            "reason": "Supported by official documentation.",
+            "unsupported_values": [],
+            "corrective_query": ""
+          },
+          {
+            "field": "access_types",
+            "status": "supported",
+            "reason": "Supported by official documentation.",
+            "unsupported_values": [],
+            "corrective_query": ""
+          },
+          {
+            "field": "access_details",
+            "status": "insufficient_evidence",
+            "reason": "The field is empty and lacks information regarding pricing or trial terms.",
+            "unsupported_values": [],
+            "corrective_query": "Stripe API pricing and trial access model"
+          },
+          {
+            "field": "api_types",
+            "status": "supported",
+            "reason": "Supported by official documentation.",
+            "unsupported_values": [],
+            "corrective_query": ""
+          },
+          {
+            "field": "api_breadth",
+            "status": "supported",
+            "reason": "Supported by official documentation.",
+            "unsupported_values": [],
+            "corrective_query": ""
+          },
+          {
+            "field": "example_operations",
+            "status": "supported",
+            "reason": "Supported by official documentation.",
+            "unsupported_values": [],
+            "corrective_query": ""
+          },
+          {
+            "field": "mcp_status",
+            "status": "supported",
+            "reason": "Status is correctly identified as unknown.",
+            "unsupported_values": [],
+            "corrective_query": ""
+          },
+          {
+            "field": "mcp_url",
+            "status": "supported",
+            "reason": "Field is null as expected for unknown status.",
+            "unsupported_values": [],
+            "corrective_query": ""
+          },
+          {
+            "field": "buildability",
+            "status": "supported",
+            "reason": "Supported by official documentation.",
+            "unsupported_values": [],
+            "corrective_query": ""
+          },
+          {
+            "field": "blockers",
+            "status": "supported",
+            "reason": "No blockers identified.",
+            "unsupported_values": [],
+            "corrective_query": ""
+          },
+          {
+            "field": "verdict_reason",
+            "status": "supported",
+            "reason": "Supported by official documentation.",
+            "unsupported_values": [],
+            "corrective_query": ""
+          }
+        ],
+        "quality": {
+          "critical_fields": 8,
+          "resolved": 7,
+          "unresolved": [
+            "mcp_status"
+          ],
+          "submission_ready": false
+        }
+      },
+      "history": [
+        {
+          "attempt": 1,
+          "documents": 8,
+          "score": [
+            7,
+            1.0,
+            0
+          ],
+          "research": {
+            "app": {
+              "id": 81,
+              "name": "Stripe",
+              "category": "Finance and Fintech",
+              "website_hint": "stripe.com/docs/api"
+            },
+            "description": "Stripe is a financial infrastructure platform providing a RESTful API for managing payments, customers, subscriptions, and other financial operations.",
+            "auth_methods": [
+              "oauth2",
+              "api_key",
+              "bearer_token"
+            ],
+            "access_types": [
+              "paid",
+              "trial"
+            ],
+            "access_details": "",
+            "api_types": [
+              "unknown"
+            ],
+            "api_breadth": "broad",
+            "example_operations": [
+              "Create and manage customers",
+              "Process payments and manage PaymentIntents",
+              "Manage subscriptions, products, and prices",
+              "Handle refunds and disputes",
+              "Configure and manage webhook endpoints"
+            ],
+            "mcp_status": "official",
+            "mcp_url": "https://mcp.stripe.com/",
+            "buildability": "unknown",
+            "blockers": [],
+            "verdict_reason": "",
+            "claims": [
+              {
+                "field": "description",
+                "statement": "The Stripe API is organized around REST, featuring resource-oriented URLs and JSON-encoded responses.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.stripe.com/api?__hstc=198846256.2f3f33a24b44870ec4a577029c49e44b.1763856000258.1763856000259.1763856000260.1&__hssc=198846256.1.1763856000261&__hsfp=3006156910",
+                    "excerpt": "API Reference\nAsk about this section\nCopy for LLM\nView as Markdown\nThe Stripe API is organized around\nREST\n. Our API has predictable resource-oriented URLs, accepts\nform-encoded\nrequest bodies, returns\nJSON-encoded\nresponses, and uses standard HTTP response codes, authentication, and verbs.\nYou can use the Stripe API in\nsandboxes\nwithout affecting your live data or interacting with banking networks. The API key that you use to\nauthenticate\nthe request determines whether the request runs in live mode or in a sandbox. Sandboxes support all v2 APIs. Test mode sandboxes support some\nv2 APIs\n.\nThe Stripe API doesn’t support bulk updates. You can work on only one object per request.\nThe Stripe API differs for every account as we release new",
+                    "source_title": "Stripe API Reference",
+                    "retrieved_at": "2026-11-25T08:04:54.887326Z",
+                    "official_source": true
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The Stripe API documentation confirms it is RESTful, resource-oriented, and uses JSON-encoded responses."
+              },
+              {
+                "field": "auth_methods",
+                "statement": "Stripe supports OAuth 2.0 for authenticating requests on behalf of users.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.stripe.com/stripe-apps/api-authentication/oauth",
+                    "excerpt": "OAuth 2.0\nUse the industry standard OAuth 2.0 to authenticate requests to the Stripe API on behalf of your users.\nAsk about this page\nCopy for LLM\nView as Markdown\nSet up agent\nA user authenticating with OAuth follows these steps.\nOn your site, the user clicks a link that redirects them to Stripe.\nOn Stripe, the user selects the appropriate account and accepts permissions for installing the app.\nAfter the app is installed, authentication is complete and the user is redirected to a defined URI.\nDevelop your app\nCreate your Stripe App\nby running\nstripe apps create <app-name>\nin the CLI.\nEdit the following fields in the\napp manifest\n:\nSet\nstripe\n_\napi\n_\naccess\n_\ntype\nto\noauth\n.\nSet\ndistribution\n_\ntype\nto\npublic\n.\nSet your\nallowed\n_\nredirect\n_",
+                    "source_title": "OAuth 2.0 | Stripe Documentation",
+                    "retrieved_at": "2026-11-25T08:04:54.052894Z",
+                    "official_source": true
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "Stripe documentation explicitly details OAuth 2.0 support for Stripe Apps."
+              },
+              {
+                "field": "auth_methods",
+                "statement": "Stripe supports API key authentication, including secret keys and restricted API keys.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.stripe.com/api?__hstc=198846256.2f3f33a24b44870ec4a577029c49e44b.1763856000258.1763856000259.1763856000260.1&__hssc=198846256.1.1763856000261&__hsfp=3006156910",
+                    "excerpt": "the Stripe Dashboard\n.\nTest mode secret keys start with\nsk\n_\ntest\n_\nand have unrestricted access to their sandboxes. In live mode, you configure a\nrestricted API key\n(starts with\nrk\n_\nlive\n_\n) with specific API permissions. Using a restricted API key with only a subset of API permissions limits the damage a bad actor could cause if they obtained the key. In both test mode and live mode, you can create as many restricted API keys as you need for different use cases or components of your application. We also create a live mode secret key (starts with\nsk\n_\nlive\n_\n) that grants access to all Stripe API resources. To protect your business, use restricted API keys instead.\nYour API keys carry many privileges. Follow\nbest practices\nto keep your",
+                    "source_title": "Stripe API Reference",
+                    "retrieved_at": "2026-11-25T08:04:54.887326Z",
+                    "official_source": true
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "Stripe documentation confirms support for secret keys and restricted API keys."
+              },
+              {
+                "field": "auth_methods",
+                "statement": "Stripe supports bearer token authentication for specific use cases.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.stripe.com/api?__hstc=198846256.2f3f33a24b44870ec4a577029c49e44b.1763856000258.1763856000259.1763856000260.1&__hssc=198846256.1.1763856000261&__hsfp=3006156910",
+                    "excerpt": "keys safe. Don’t embed secret or restricted API keys in source code or client-side applications. Instead, use your server platform’s secrets vault to provide keys to your server-side applications. If your platform doesn’t offer a secrets vault, set your keys in environment variables.\nFor added security,\nWorkload Identity Federation\nlets your service authenticate without storing a long-lived API key. Your service exchanges a short-lived identity token from its cloud provider for a Stripe access token that expires after 1 hour.\nThe Stripe API authenticates requests using\nHTTP Basic Auth\n. Provide your API key as the basic auth username value. You don’t need to provide a password.\nIf you need to authenticate using bearer auth (for example,",
+                    "source_title": "Stripe API Reference",
+                    "retrieved_at": "2026-11-25T08:04:54.887326Z",
+                    "official_source": true
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "Stripe documentation mentions bearer token authentication for specific use cases."
+              },
+              {
+                "field": "access_types",
+                "statement": "Stripe provides sandboxes for testing without affecting live data, which supports development and trial use.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.stripe.com/api?__hstc=198846256.2f3f33a24b44870ec4a577029c49e44b.1763856000258.1763856000259.1763856000260.1&__hssc=198846256.1.1763856000261&__hsfp=3006156910",
+                    "excerpt": "API Reference\nAsk about this section\nCopy for LLM\nView as Markdown\nThe Stripe API is organized around\nREST\n. Our API has predictable resource-oriented URLs, accepts\nform-encoded\nrequest bodies, returns\nJSON-encoded\nresponses, and uses standard HTTP response codes, authentication, and verbs.\nYou can use the Stripe API in\nsandboxes\nwithout affecting your live data or interacting with banking networks. The API key that you use to\nauthenticate\nthe request determines whether the request runs in live mode or in a sandbox. Sandboxes support all v2 APIs. Test mode sandboxes support some\nv2 APIs\n.\nThe Stripe API doesn’t support bulk updates. You can work on only one object per request.\nThe Stripe API differs for every account as we release new",
+                    "source_title": "Stripe API Reference",
+                    "retrieved_at": "2026-11-25T08:04:54.887326Z",
+                    "official_source": true
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "Stripe documentation confirms the availability of sandboxes for testing."
+              },
+              {
+                "field": "api_breadth",
+                "statement": "The Stripe API covers a wide range of financial operations including customers, payments, subscriptions, and webhooks.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.stripe.com/api/webhook_endpoints?api-version=2025-07-30.preview",
+                    "excerpt": "Webhook Endpoints\nv1\nAsk about this section\nCopy for LLM\nView as Markdown\nYou can configure\nwebhook endpoints\nvia the API to be\nnotified about events that happen in your Stripe account or connected\naccounts.\nMost users configure webhooks from\nthe dashboard\n, which provides a user interface for registering and testing your webhook endpoints.\nRelated guide:\nSetting up webhooks\nWas this section helpful?\nYes\nNo\nCreate a webhook endpoint\nPOST\n/\nv1\n/\nwebhook_endpoints\nUpdate a webhook endpoint\nPOST\n/\nv1\n/\nwebhook_endpoints\n/\n:id\nRetrieve a webhook endpoint\nGET\n/\nv1\n/\nwebhook_endpoints\n/\n:id\nList all webhook endpoints\nGET\n/\nv1\n/\nwebhook_endpoints\nDelete a webhook endpoint\nDELETE\n/\nv1\n/\nwebhook_endpoints\n/\n:id\nThe Webhook Endpoint object\nv1\nAsk",
+                    "source_title": "Webhook Endpoints | Stripe API Reference",
+                    "retrieved_at": "2026-11-25T08:04:55.621333Z",
+                    "official_source": true
+                  },
+                  {
+                    "source_url": "https://github.com/udaykapur/stripe-mcp-server/blob/main/README.md",
+                    "excerpt": "includes doc search, but exposes a smaller toolset. This server runs locally, covers more of the Stripe API surface, and sanitises every response before it reaches the model context, so sensitive data never leaks into conversation history or logs.\nThis server\nStripe official\nTransport\nstdio (local)\nHTTP (remote)\nAuth\nSTRIPE_SECRET_KEY\nenv\nOAuth\nTools\n52\nSmaller subset\nPII redaction\nBuilt-in\nStripe-managed\nDoc search\nNo\nYes\nIdempotency keys\nAll mutating tools\nVaries\nInput validation\nStrict schemas (Zod)\nVaries\nThe two servers complement each other. Run both if you want operational tools plus doc search.\nTools (52)\nCustomers (6)\ncreate_customer\n,\nretrieve_customer\n,\nupdate_customer\n,\ndelete_customer\n,\nlist_customers\n,\nsearch_customers",
+                    "source_title": "stripe-mcp-server/README.md at main · udaykapur/stripe-mcp-server · GitHub",
+                    "retrieved_at": "2026-11-25T08:04:56.529914Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "Stripe documentation and third-party MCP server details confirm broad API coverage."
+              },
+              {
+                "field": "example_operations",
+                "statement": "The API allows for creating, retrieving, updating, and deleting customer objects.",
+                "evidence": [
+                  {
+                    "source_url": "https://github.com/udaykapur/stripe-mcp-server/blob/main/README.md",
+                    "excerpt": "includes doc search, but exposes a smaller toolset. This server runs locally, covers more of the Stripe API surface, and sanitises every response before it reaches the model context, so sensitive data never leaks into conversation history or logs.\nThis server\nStripe official\nTransport\nstdio (local)\nHTTP (remote)\nAuth\nSTRIPE_SECRET_KEY\nenv\nOAuth\nTools\n52\nSmaller subset\nPII redaction\nBuilt-in\nStripe-managed\nDoc search\nNo\nYes\nIdempotency keys\nAll mutating tools\nVaries\nInput validation\nStrict schemas (Zod)\nVaries\nThe two servers complement each other. Run both if you want operational tools plus doc search.\nTools (52)\nCustomers (6)\ncreate_customer\n,\nretrieve_customer\n,\nupdate_customer\n,\ndelete_customer\n,\nlist_customers\n,\nsearch_customers",
+                    "source_title": "stripe-mcp-server/README.md at main · udaykapur/stripe-mcp-server · GitHub",
+                    "retrieved_at": "2026-11-25T08:04:56.529914Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "Stripe API documentation and third-party MCP server tools confirm customer management operations."
+              },
+              {
+                "field": "example_operations",
+                "statement": "The API supports managing webhook endpoints to receive notifications about account events.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.stripe.com/api/webhook_endpoints?api-version=2025-07-30.preview",
+                    "excerpt": "Webhook Endpoints\nv1\nAsk about this section\nCopy for LLM\nView as Markdown\nYou can configure\nwebhook endpoints\nvia the API to be\nnotified about events that happen in your Stripe account or connected\naccounts.\nMost users configure webhooks from\nthe dashboard\n, which provides a user interface for registering and testing your webhook endpoints.\nRelated guide:\nSetting up webhooks\nWas this section helpful?\nYes\nNo\nCreate a webhook endpoint\nPOST\n/\nv1\n/\nwebhook_endpoints\nUpdate a webhook endpoint\nPOST\n/\nv1\n/\nwebhook_endpoints\n/\n:id\nRetrieve a webhook endpoint\nGET\n/\nv1\n/\nwebhook_endpoints\n/\n:id\nList all webhook endpoints\nGET\n/\nv1\n/\nwebhook_endpoints\nDelete a webhook endpoint\nDELETE\n/\nv1\n/\nwebhook_endpoints\n/\n:id\nThe Webhook Endpoint object\nv1\nAsk",
+                    "source_title": "Webhook Endpoints | Stripe API Reference",
+                    "retrieved_at": "2026-11-25T08:04:55.621333Z",
+                    "official_source": true
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "Stripe API documentation confirms support for managing webhook endpoints."
+              },
+              {
+                "field": "mcp_status",
+                "statement": "Stripe hosts an official remote MCP server.",
+                "evidence": [
+                  {
+                    "source_url": "https://github.com/mcp/com.stripe/mcp",
+                    "excerpt": "contact\ntoken-billing-team@stripe.com\n.\nFinal package source\nremains available for reference.\nModel Context Protocol (MCP)\nStripe hosts a remote MCP server at\nhttps://mcp.stripe.com\n. This allows secure MCP client access via OAuth. View the docs\nhere\n.\nYou can also\nbuild autonomous agents\nwith MCP as well.\nAgent skills\nAgent skills\nare instructions that agents can use to build faster and more accurately. Stripe offers a collection of skills that help your agents use the latest best practices when building with Stripe.\nIf you use one of these popular agent harnesses, we recommend installing the official Stripe plugins, which include additional agent tools.\nClaude Code\nRun this command in your project:\nclaude plugin install",
+                    "source_title": "MCP Registry | Stripe · GitHub",
+                    "retrieved_at": "2026-11-25T08:04:56.616937Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The MCP registry confirms Stripe hosts an official remote MCP server."
+              },
+              {
+                "field": "mcp_url",
+                "statement": "The official Stripe MCP server is located at https://mcp.stripe.com.",
+                "evidence": [
+                  {
+                    "source_url": "https://github.com/mcp/com.stripe/mcp",
+                    "excerpt": "contact\ntoken-billing-team@stripe.com\n.\nFinal package source\nremains available for reference.\nModel Context Protocol (MCP)\nStripe hosts a remote MCP server at\nhttps://mcp.stripe.com\n. This allows secure MCP client access via OAuth. View the docs\nhere\n.\nYou can also\nbuild autonomous agents\nwith MCP as well.\nAgent skills\nAgent skills\nare instructions that agents can use to build faster and more accurately. Stripe offers a collection of skills that help your agents use the latest best practices when building with Stripe.\nIf you use one of these popular agent harnesses, we recommend installing the official Stripe plugins, which include additional agent tools.\nClaude Code\nRun this command in your project:\nclaude plugin install",
+                    "source_title": "MCP Registry | Stripe · GitHub",
+                    "retrieved_at": "2026-11-25T08:04:56.616937Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The MCP registry confirms the URL https://mcp.stripe.com for the official server."
+              },
+              {
+                "field": "buildability",
+                "statement": "Stripe recommends using restricted API keys for AI agents to limit potential damage if keys are exposed.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.stripe.com/keys/restricted-api-keys",
+                    "excerpt": "Restricted API keys\nUse restricted API keys to control your application's access to the Stripe API.\nAsk about this page\nCopy for LLM\nView as Markdown\nSet up agent\nYou can use a restricted API key (RAK) to assign specific Stripe API permissions to your API keys. RAKs are the recommended type of key for\nAPI keys you give to AI agents\n. Using a RAK limits the potential damage to your business if an API key is exposed to a bad actor. If a restricted API key doesn’t have the correct permissions to complete an API request, Stripe returns an\ninvalid request error\n.\nWhat is a restricted API key?\nA restricted API key (RAK) is an API key your server-side applications include in Stripe API requests. A RAK starts with\nrk\n_\nlive\n_\nor\nrk\n_\ntest\n_\n.",
+                    "source_title": "Restricted API keys | Stripe Documentation",
+                    "retrieved_at": "2026-11-25T08:04:53.909594Z",
+                    "official_source": true
+                  },
+                  {
+                    "source_url": "https://docs.stripe.com/keys/restricted-api-keys",
+                    "excerpt": "Stripe recommends always using RAKs instead of unrestricted secret keys, especially when giving a key to an AI agent. Use RAK permissions to limit what an agent can do in your account.\nAlways follow\nbest practices\nwhen using RAKs to avoid accidental exposure or compromise. Treat RAKs with the same caution as secret API keys.\nWhy use restricted keys instead of secret keys?\nSecret key (\nsk\n_\n)\nRestricted key (\nrk\n_\n)\nScope of access\nFull access to every API resource\nOnly the permissions you assign\nImpact if compromised\nA bad actor can do anything in your account\nA bad actor can do only what the key allows\nSuitability for AI agents\nAn agent might do things you don’t want in your account\nYou explicitly control the agent’s permissions",
+                    "source_title": "Restricted API keys | Stripe Documentation",
+                    "retrieved_at": "2026-11-25T08:04:53.909594Z",
+                    "official_source": true
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "Stripe documentation explicitly recommends restricted API keys for AI agents."
+              },
+              {
+                "field": "verdict_reason",
+                "statement": "Stripe provides comprehensive documentation and official support for MCP, making it ready for integration.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.stripe.com/api?__hstc=198846256.2f3f33a24b44870ec4a577029c49e44b.1763856000258.1763856000259.1763856000260.1&__hssc=198846256.1.1763856000261&__hsfp=3006156910",
+                    "excerpt": "versions\nand tailor functionality.\nLog in\nto see docs with your test key and data.\nWas this section helpful?\nYes\nNo\nJust getting started?\nCheck out our\ndevelopment quickstart\nguide.\nNot a developer?\nUse Stripe’s\nno-code options\nor apps from\nour partners\nto get started with Stripe and to do more with your Stripe account—no code required.\nBase URL\nhttps://api.stripe.com\nClient Libraries\nRuby\nPython\nPHP\nJava\nNode.js\nGo\n.NET\nBy default, the Stripe API Docs demonstrate using curl to interact with the API over HTTP. Select one of our official\nclient libraries\nto see examples in code.\nAuthentication\nAsk about this section\nCopy for LLM\nView as Markdown\nThe Stripe API uses\nAPI keys\nto authenticate requests. You can view and manage your API keys in",
+                    "source_title": "Stripe API Reference",
+                    "retrieved_at": "2026-11-25T08:04:54.887326Z",
+                    "official_source": true
+                  },
+                  {
+                    "source_url": "https://github.com/mcp/com.stripe/mcp",
+                    "excerpt": "contact\ntoken-billing-team@stripe.com\n.\nFinal package source\nremains available for reference.\nModel Context Protocol (MCP)\nStripe hosts a remote MCP server at\nhttps://mcp.stripe.com\n. This allows secure MCP client access via OAuth. View the docs\nhere\n.\nYou can also\nbuild autonomous agents\nwith MCP as well.\nAgent skills\nAgent skills\nare instructions that agents can use to build faster and more accurately. Stripe offers a collection of skills that help your agents use the latest best practices when building with Stripe.\nIf you use one of these popular agent harnesses, we recommend installing the official Stripe plugins, which include additional agent tools.\nClaude Code\nRun this command in your project:\nclaude plugin install",
+                    "source_title": "MCP Registry | Stripe · GitHub",
+                    "retrieved_at": "2026-11-25T08:04:56.616937Z",
+                    "official_source": false
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "Stripe provides extensive documentation and official MCP support."
+              }
+            ],
+            "research_attempt": 1,
+            "research_errors": [
+              "No valid evidence for field: access_details",
+              "No valid evidence for field: api_types",
+              "Ready verdict downgraded because essential API evidence is missing."
+            ],
+            "researched_at": "2026-11-25T08:05:23.229686Z"
+          },
+          "verification": {
+            "total_claims": 12,
+            "supported_claims": 12,
+            "contradicted_claims": 0,
+            "insufficient_claims": 0,
+            "support_rate": 1.0,
+            "failed_claims": [],
+            "failed_fields": [
+              {
+                "field": "access_details",
+                "status": "insufficient_evidence",
+                "reason": "Field is empty; no details provided regarding access tiers or pricing models.",
+                "unsupported_values": [],
+                "corrective_query": "Stripe API access tiers and pricing model documentation"
+              },
+              {
+                "field": "api_types",
+                "status": "insufficient_evidence",
+                "reason": "Field is marked as unknown; evidence confirms RESTful API.",
+                "unsupported_values": [
+                  "unknown"
+                ],
+                "corrective_query": "Stripe API types REST GraphQL"
+              },
+              {
+                "field": "buildability",
+                "status": "insufficient_evidence",
+                "reason": "Field is marked as unknown; evidence exists for agent-specific security practices.",
+                "unsupported_values": [
+                  "unknown"
+                ],
+                "corrective_query": "Stripe API buildability for AI agents"
+              },
+              {
+                "field": "verdict_reason",
+                "status": "insufficient_evidence",
+                "reason": "Field is empty.",
+                "unsupported_values": [],
+                "corrective_query": "Stripe API integration readiness summary"
+              }
+            ],
+            "corrective_queries": [
+              "Stripe official API reference REST GraphQL RPC",
+              "Stripe official API integration requirements restrictions",
+              "Stripe API access tiers and pricing model documentation",
+              "Stripe API types REST GraphQL",
+              "Stripe API buildability for AI agents",
+              "Stripe API integration readiness summary"
+            ],
+            "needs_research": true,
+            "field_verdicts": [
+              {
+                "field": "description",
+                "status": "supported",
+                "reason": "Accurately describes Stripe's financial infrastructure and API nature.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "auth_methods",
+                "status": "supported",
+                "reason": "Evidence confirms OAuth 2.0, API keys, and bearer token support.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "access_types",
+                "status": "supported",
+                "reason": "Evidence confirms sandbox/test mode availability.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "access_details",
+                "status": "insufficient_evidence",
+                "reason": "Field is empty; no details provided regarding access tiers or pricing models.",
+                "unsupported_values": [],
+                "corrective_query": "Stripe API access tiers and pricing model documentation"
+              },
+              {
+                "field": "api_types",
+                "status": "insufficient_evidence",
+                "reason": "Field is marked as unknown; evidence confirms RESTful API.",
+                "unsupported_values": [
+                  "unknown"
+                ],
+                "corrective_query": "Stripe API types REST GraphQL"
+              },
+              {
+                "field": "api_breadth",
+                "status": "supported",
+                "reason": "Evidence supports the broad scope of the API.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "example_operations",
+                "status": "supported",
+                "reason": "Operations listed are supported by Stripe API documentation.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "mcp_status",
+                "status": "supported",
+                "reason": "Evidence confirms official status.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "mcp_url",
+                "status": "supported",
+                "reason": "Evidence confirms the URL.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "buildability",
+                "status": "insufficient_evidence",
+                "reason": "Field is marked as unknown; evidence exists for agent-specific security practices.",
+                "unsupported_values": [
+                  "unknown"
+                ],
+                "corrective_query": "Stripe API buildability for AI agents"
+              },
+              {
+                "field": "blockers",
+                "status": "supported",
+                "reason": "No blockers identified.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "verdict_reason",
+                "status": "insufficient_evidence",
+                "reason": "Field is empty.",
+                "unsupported_values": [],
+                "corrective_query": "Stripe API integration readiness summary"
+              }
+            ],
+            "quality": {
+              "critical_fields": 8,
+              "resolved": 6,
+              "unresolved": [
+                "api_types",
+                "buildability"
+              ],
+              "submission_ready": false
+            }
+          }
+        },
+        {
+          "attempt": 2,
+          "documents": 10,
+          "score": [
+            8,
+            1.0,
+            0
+          ],
+          "research": {
+            "app": {
+              "id": 81,
+              "name": "Stripe",
+              "category": "Finance and Fintech",
+              "website_hint": "stripe.com/docs/api"
+            },
+            "description": "Stripe provides a unified set of REST APIs for accepting payments, managing billing and subscriptions, sending payouts, and building financial workflows.",
+            "auth_methods": [
+              "api_key",
+              "oauth2",
+              "other"
+            ],
+            "access_types": [
+              "paid",
+              "trial"
+            ],
+            "access_details": "",
+            "api_types": [
+              "rest"
+            ],
+            "api_breadth": "broad",
+            "example_operations": [
+              "Create a webhook endpoint",
+              "Retrieve a webhook endpoint",
+              "List all webhook endpoints",
+              "Update a webhook endpoint",
+              "Delete a webhook endpoint"
+            ],
+            "mcp_status": "unknown",
+            "mcp_url": null,
+            "buildability": "ready",
+            "blockers": [],
+            "verdict_reason": "Stripe offers a comprehensive, well-documented REST API with robust authentication options including OAuth 2.0 and restricted API keys, making it highly suitable for integration into AI agent toolkits.",
+            "claims": [
+              {
+                "field": "description",
+                "statement": "Stripe provides a unified set of REST APIs for accepting payments, managing billing and subscriptions, sending payouts and building financial workflows.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.stripe.com/apis",
+                    "excerpt": "Stripe APIs\nLearn about Stripe APIs.\nAsk about this page\nCopy for LLM\nView as Markdown\nSet up agent\nStripe provides a unified set of\nREST APIs\n, comprised of\ntwo namespaces\n, for accepting payments, managing billing and subscriptions, sending payouts and building financial workflows. You can authenticate requests, shape responses, localise data, test integrations and handle errors consistently across Stripe products.\nOverview\nCompare the API v1 and v2 namespaces\nLearn about Stripe API v2, its response model and how it compares to API v1.\nManage null API v2 responses\nRequest dependent values in a single response.\nRate limits\nUnderstand throttling and throughput behaviour.\nAuthentication and security\nAPI keys\nAuthenticate requests with",
+                    "source_title": "Stripe APIs | Stripe Documentation",
+                    "retrieved_at": "2026-11-25T08:05:42.212372Z",
+                    "official_source": true
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The documentation confirms Stripe provides a unified set of REST APIs for these specific financial workflows."
+              },
+              {
+                "field": "auth_methods",
+                "statement": "Stripe supports API key authentication, including secret and restricted keys.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.stripe.com/apis",
+                    "excerpt": "Stripe APIs\nLearn about Stripe APIs.\nAsk about this page\nCopy for LLM\nView as Markdown\nSet up agent\nStripe provides a unified set of\nREST APIs\n, comprised of\ntwo namespaces\n, for accepting payments, managing billing and subscriptions, sending payouts and building financial workflows. You can authenticate requests, shape responses, localise data, test integrations and handle errors consistently across Stripe products.\nOverview\nCompare the API v1 and v2 namespaces\nLearn about Stripe API v2, its response model and how it compares to API v1.\nManage null API v2 responses\nRequest dependent values in a single response.\nRate limits\nUnderstand throttling and throughput behaviour.\nAuthentication and security\nAPI keys\nAuthenticate requests with",
+                    "source_title": "Stripe APIs | Stripe Documentation",
+                    "retrieved_at": "2026-11-25T08:05:42.212372Z",
+                    "official_source": true
+                  },
+                  {
+                    "source_url": "https://docs.stripe.com/apis",
+                    "excerpt": "secret and restricted keys.\nManage secret API keys\nBest practices for creating, rotating and securing keys.\nSpecify request context\nPass account and idempotency context with requests.\nDomains and IP addresses\nAllowlist domains and IP ranges used by Stripe.\nMake requests\nExpand responses\nReturn nested objects in a single request.\nPagination\nIterate through large lists of resources.\nSearch objects\nLook up objects in your Stripe data.\nTesting and data\nMetadata\nAttach custom key-value pairs to objects.\nUse cases\nCommon patterns for modelling data with metadata.\nAutomated testing\nTest your application’s behaviour and ability to handle errors.\nError handling\nError handling\nInterpret errors and display them to users.\nAdvanced error handling\nWork",
+                    "source_title": "Stripe APIs | Stripe Documentation",
+                    "retrieved_at": "2026-11-25T08:05:42.212372Z",
+                    "official_source": true
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "Stripe documentation explicitly mentions support for secret and restricted API keys."
+              },
+              {
+                "field": "auth_methods",
+                "statement": "Stripe supports OAuth 2.0 to authenticate requests on behalf of users.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.stripe.com/stripe-apps/api-authentication/oauth",
+                    "excerpt": "OAuth 2.0\nUse the industry standard OAuth 2.0 to authenticate requests to the Stripe API on behalf of your users.\nAsk about this page\nCopy for LLM\nView as Markdown\nSet up agent\nA user authenticating with OAuth follows these steps.\nOn your site, the user clicks a link that redirects them to Stripe.\nOn Stripe, the user selects the appropriate account and accepts permissions for installing the app.\nAfter the app is installed, authentication is complete and the user is redirected to a defined URI.\nDevelop your app\nCreate your Stripe App\nby running\nstripe apps create <app-name>\nin the CLI.\nEdit the following fields in the\napp manifest\n:\nSet\nstripe\n_\napi\n_\naccess\n_\ntype\nto\noauth\n.\nSet\ndistribution\n_\ntype\nto\npublic\n.\nSet your\nallowed\n_\nredirect\n_",
+                    "source_title": "OAuth 2.0 | Stripe Documentation",
+                    "retrieved_at": "2026-11-25T08:04:54.052894Z",
+                    "official_source": true
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "Stripe documentation provides a dedicated guide for OAuth 2.0 authentication."
+              },
+              {
+                "field": "auth_methods",
+                "statement": "The Stripe API authenticates requests using HTTP Basic Auth, where the API key is provided as the username.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.stripe.com/api",
+                    "excerpt": "keys safe. Don’t embed secret or restricted API keys in source code or client-side applications. Instead, use your server platform’s secrets vault to provide keys to your server-side applications. If your platform doesn’t offer a secrets vault, set your keys in environment variables.\nFor added security,\nWorkload Identity Federation\nlets your service authenticate without storing a long-lived API key. Your service exchanges a short-lived identity token from its cloud provider for a Stripe access token that expires after 1 hour.\nThe Stripe API authenticates requests using\nHTTP Basic Auth\n. Provide your API key as the basic auth username value. You don’t need to provide a password.\nIf you need to authenticate using bearer auth (for example,",
+                    "source_title": "Stripe API Reference",
+                    "retrieved_at": "2026-11-25T08:04:55.046507Z",
+                    "official_source": true
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The API reference confirms that requests are authenticated using HTTP Basic Auth with the API key as the username."
+              },
+              {
+                "field": "access_types",
+                "statement": "Stripe provides sandbox environments for testing integrations without affecting live data.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.stripe.com/api?__hstc=198846256.2f3f33a24b44870ec4a577029c49e44b.1763856000258.1763856000259.1763856000260.1&__hssc=198846256.1.1763856000261&__hsfp=3006156910",
+                    "excerpt": "API Reference\nAsk about this section\nCopy for LLM\nView as Markdown\nThe Stripe API is organized around\nREST\n. Our API has predictable resource-oriented URLs, accepts\nform-encoded\nrequest bodies, returns\nJSON-encoded\nresponses, and uses standard HTTP response codes, authentication, and verbs.\nYou can use the Stripe API in\nsandboxes\nwithout affecting your live data or interacting with banking networks. The API key that you use to\nauthenticate\nthe request determines whether the request runs in live mode or in a sandbox. Sandboxes support all v2 APIs. Test mode sandboxes support some\nv2 APIs\n.\nThe Stripe API doesn’t support bulk updates. You can work on only one object per request.\nThe Stripe API differs for every account as we release new",
+                    "source_title": "Stripe API Reference",
+                    "retrieved_at": "2026-11-25T08:04:54.887326Z",
+                    "official_source": true
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The documentation confirms the availability of sandboxes for testing without affecting live data."
+              },
+              {
+                "field": "access_types",
+                "statement": "Stripe supports live mode for processing real payments.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.stripe.com/keys",
+                    "excerpt": "returns an\nauthentication error\n. Use\nWorkbench request logs\nto inspect API requests and troubleshoot errors.\nIf you're new to Stripe\nKeep your business safe:\nRead our\nbest practices\nfor managing keys.\nBuild and test\n: Create or select a\nsandbox\nand use its test keys. For new integrations, use a separate general sandbox so settings and data remain isolated from live mode. Sandbox keys start with\npk\n_\ntest\n_\nfor publishable keys,\nrk\n_\ntest\n_\nfor restricted keys, and\nsk\n_\ntest\n_\nfor secret keys.\nWhen you’re ready to accept real payments\n:\nSwitch to your live mode keys\n, which start with\npk\n_\nlive\n_\n,\nrk\n_\nlive\n_\n, and\nsk\n_\nlive\n_\n.\nIf you need to find a webhook signing secret\n: Webhook secrets are separate from API keys. Find them in the",
+                    "source_title": "API keys | Stripe Documentation",
+                    "retrieved_at": "2026-11-25T08:05:42.046969Z",
+                    "official_source": true
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The documentation explicitly describes switching to live mode keys for processing real payments."
+              },
+              {
+                "field": "api_types",
+                "statement": "The Stripe API is organized around REST, using resource-oriented URLs and JSON-encoded responses.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.stripe.com/api?__hstc=198846256.2f3f33a24b44870ec4a577029c49e44b.1763856000258.1763856000259.1763856000260.1&__hssc=198846256.1.1763856000261&__hsfp=3006156910",
+                    "excerpt": "API Reference\nAsk about this section\nCopy for LLM\nView as Markdown\nThe Stripe API is organized around\nREST\n. Our API has predictable resource-oriented URLs, accepts\nform-encoded\nrequest bodies, returns\nJSON-encoded\nresponses, and uses standard HTTP response codes, authentication, and verbs.\nYou can use the Stripe API in\nsandboxes\nwithout affecting your live data or interacting with banking networks. The API key that you use to\nauthenticate\nthe request determines whether the request runs in live mode or in a sandbox. Sandboxes support all v2 APIs. Test mode sandboxes support some\nv2 APIs\n.\nThe Stripe API doesn’t support bulk updates. You can work on only one object per request.\nThe Stripe API differs for every account as we release new",
+                    "source_title": "Stripe API Reference",
+                    "retrieved_at": "2026-11-25T08:04:54.887326Z",
+                    "official_source": true
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The API reference confirms the REST architecture, resource-oriented URLs, and JSON-encoded responses."
+              },
+              {
+                "field": "api_breadth",
+                "statement": "Stripe APIs cover a wide range of financial operations including payments, billing, subscriptions, and payouts.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.stripe.com/apis",
+                    "excerpt": "Stripe APIs\nLearn about Stripe APIs.\nAsk about this page\nCopy for LLM\nView as Markdown\nSet up agent\nStripe provides a unified set of\nREST APIs\n, comprised of\ntwo namespaces\n, for accepting payments, managing billing and subscriptions, sending payouts and building financial workflows. You can authenticate requests, shape responses, localise data, test integrations and handle errors consistently across Stripe products.\nOverview\nCompare the API v1 and v2 namespaces\nLearn about Stripe API v2, its response model and how it compares to API v1.\nManage null API v2 responses\nRequest dependent values in a single response.\nRate limits\nUnderstand throttling and throughput behaviour.\nAuthentication and security\nAPI keys\nAuthenticate requests with",
+                    "source_title": "Stripe APIs | Stripe Documentation",
+                    "retrieved_at": "2026-11-25T08:05:42.212372Z",
+                    "official_source": true
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The documentation confirms the API covers payments, billing, subscriptions, and payouts."
+              },
+              {
+                "field": "example_operations",
+                "statement": "The API supports creating, updating, retrieving, listing, and deleting webhook endpoints.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.stripe.com/api/webhook_endpoints?api-version=2025-07-30.preview",
+                    "excerpt": "Webhook Endpoints\nv1\nAsk about this section\nCopy for LLM\nView as Markdown\nYou can configure\nwebhook endpoints\nvia the API to be\nnotified about events that happen in your Stripe account or connected\naccounts.\nMost users configure webhooks from\nthe dashboard\n, which provides a user interface for registering and testing your webhook endpoints.\nRelated guide:\nSetting up webhooks\nWas this section helpful?\nYes\nNo\nCreate a webhook endpoint\nPOST\n/\nv1\n/\nwebhook_endpoints\nUpdate a webhook endpoint\nPOST\n/\nv1\n/\nwebhook_endpoints\n/\n:id\nRetrieve a webhook endpoint\nGET\n/\nv1\n/\nwebhook_endpoints\n/\n:id\nList all webhook endpoints\nGET\n/\nv1\n/\nwebhook_endpoints\nDelete a webhook endpoint\nDELETE\n/\nv1\n/\nwebhook_endpoints\n/\n:id\nThe Webhook Endpoint object\nv1\nAsk",
+                    "source_title": "Webhook Endpoints | Stripe API Reference",
+                    "retrieved_at": "2026-11-25T08:04:55.621333Z",
+                    "official_source": true
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The API reference lists endpoints for creating, updating, retrieving, listing, and deleting webhook endpoints."
+              },
+              {
+                "field": "buildability",
+                "statement": "Stripe provides clear documentation for API authentication and integration, including specific recommendations for AI agents to use restricted API keys.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.stripe.com/keys/restricted-api-keys",
+                    "excerpt": "Restricted API keys\nUse restricted API keys to control your application's access to the Stripe API.\nAsk about this page\nCopy for LLM\nView as Markdown\nSet up agent\nYou can use a restricted API key (RAK) to assign specific Stripe API permissions to your API keys. RAKs are the recommended type of key for\nAPI keys you give to AI agents\n. Using a RAK limits the potential damage to your business if an API key is exposed to a bad actor. If a restricted API key doesn’t have the correct permissions to complete an API request, Stripe returns an\ninvalid request error\n.\nWhat is a restricted API key?\nA restricted API key (RAK) is an API key your server-side applications include in Stripe API requests. A RAK starts with\nrk\n_\nlive\n_\nor\nrk\n_\ntest\n_\n.",
+                    "source_title": "Restricted API keys | Stripe Documentation",
+                    "retrieved_at": "2026-11-25T08:04:53.909594Z",
+                    "official_source": true
+                  },
+                  {
+                    "source_url": "https://docs.stripe.com/keys/restricted-api-keys",
+                    "excerpt": "Stripe recommends always using RAKs instead of unrestricted secret keys, especially when giving a key to an AI agent. Use RAK permissions to limit what an agent can do in your account.\nAlways follow\nbest practices\nwhen using RAKs to avoid accidental exposure or compromise. Treat RAKs with the same caution as secret API keys.\nWhy use restricted keys instead of secret keys?\nSecret key (\nsk\n_\n)\nRestricted key (\nrk\n_\n)\nScope of access\nFull access to every API resource\nOnly the permissions you assign\nImpact if compromised\nA bad actor can do anything in your account\nA bad actor can do only what the key allows\nSuitability for AI agents\nAn agent might do things you don’t want in your account\nYou explicitly control the agent’s permissions",
+                    "source_title": "Restricted API keys | Stripe Documentation",
+                    "retrieved_at": "2026-11-25T08:04:53.909594Z",
+                    "official_source": true
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "Stripe documentation explicitly recommends restricted API keys for AI agents."
+              },
+              {
+                "field": "verdict_reason",
+                "statement": "Stripe's API is well-documented, supports standard authentication protocols, and provides granular access control via restricted keys, facilitating integration.",
+                "evidence": [
+                  {
+                    "source_url": "https://docs.stripe.com/keys/restricted-api-keys",
+                    "excerpt": "Unlike a secret key that can do anything in your Stripe account, a RAK can do only what you give it permission to do. When you create a RAK in the Stripe Dashboard, you select which Stripe resources the key can access and the permissions for each resource:\nRead\n,\nWrite\n, or\nNone\n. All Stripe APIs support restricted API keys.\nUse RAKs as a defensive measure to protect your Stripe account in case your keys are exposed or compromised. If a bad actor obtains a RAK, they’re limited to that key’s permissions. For example, you could create a RAK that can only read dispute data and nothing else. If a bad actor obtained that key, they could only read dispute data. They couldn’t create charges, access customer payment methods, or trigger payouts.",
+                    "source_title": "Restricted API keys | Stripe Documentation",
+                    "retrieved_at": "2026-11-25T08:04:53.909594Z",
+                    "official_source": true
+                  },
+                  {
+                    "source_url": "https://docs.stripe.com/api?__hstc=198846256.2f3f33a24b44870ec4a577029c49e44b.1763856000258.1763856000259.1763856000260.1&__hssc=198846256.1.1763856000261&__hsfp=3006156910",
+                    "excerpt": "API Reference\nAsk about this section\nCopy for LLM\nView as Markdown\nThe Stripe API is organized around\nREST\n. Our API has predictable resource-oriented URLs, accepts\nform-encoded\nrequest bodies, returns\nJSON-encoded\nresponses, and uses standard HTTP response codes, authentication, and verbs.\nYou can use the Stripe API in\nsandboxes\nwithout affecting your live data or interacting with banking networks. The API key that you use to\nauthenticate\nthe request determines whether the request runs in live mode or in a sandbox. Sandboxes support all v2 APIs. Test mode sandboxes support some\nv2 APIs\n.\nThe Stripe API doesn’t support bulk updates. You can work on only one object per request.\nThe Stripe API differs for every account as we release new",
+                    "source_title": "Stripe API Reference",
+                    "retrieved_at": "2026-11-25T08:04:54.887326Z",
+                    "official_source": true
+                  }
+                ],
+                "verification_status": "supported",
+                "verification_reason": "The evidence confirms the API is well-documented, supports standard auth, and provides granular access control via restricted keys."
+              }
+            ],
+            "research_attempt": 2,
+            "research_errors": [
+              "No valid evidence for field: access_details"
+            ],
+            "researched_at": "2026-11-25T08:05:51.025932Z"
+          },
+          "verification": {
+            "total_claims": 11,
+            "supported_claims": 11,
+            "contradicted_claims": 0,
+            "insufficient_claims": 0,
+            "support_rate": 1.0,
+            "failed_claims": [],
+            "failed_fields": [
+              {
+                "field": "access_details",
+                "status": "insufficient_evidence",
+                "reason": "The field is empty and lacks information regarding pricing or trial terms.",
+                "unsupported_values": [],
+                "corrective_query": "Stripe API pricing and trial access model"
+              }
+            ],
+            "corrective_queries": [
+              "Stripe official MCP server Model Context Protocol",
+              "Stripe API pricing and trial access model"
+            ],
+            "needs_research": true,
+            "field_verdicts": [
+              {
+                "field": "description",
+                "status": "supported",
+                "reason": "Supported by official documentation.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "auth_methods",
+                "status": "supported",
+                "reason": "Supported by official documentation.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "access_types",
+                "status": "supported",
+                "reason": "Supported by official documentation.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "access_details",
+                "status": "insufficient_evidence",
+                "reason": "The field is empty and lacks information regarding pricing or trial terms.",
+                "unsupported_values": [],
+                "corrective_query": "Stripe API pricing and trial access model"
+              },
+              {
+                "field": "api_types",
+                "status": "supported",
+                "reason": "Supported by official documentation.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "api_breadth",
+                "status": "supported",
+                "reason": "Supported by official documentation.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "example_operations",
+                "status": "supported",
+                "reason": "Supported by official documentation.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "mcp_status",
+                "status": "supported",
+                "reason": "Status is correctly identified as unknown.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "mcp_url",
+                "status": "supported",
+                "reason": "Field is null as expected for unknown status.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "buildability",
+                "status": "supported",
+                "reason": "Supported by official documentation.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "blockers",
+                "status": "supported",
+                "reason": "No blockers identified.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              },
+              {
+                "field": "verdict_reason",
+                "status": "supported",
+                "reason": "Supported by official documentation.",
+                "unsupported_values": [],
+                "corrective_query": ""
+              }
+            ],
+            "quality": {
+              "critical_fields": 8,
+              "resolved": 7,
+              "unresolved": [
+                "mcp_status"
+              ],
+              "submission_ready": false
+            }
+          }
+        }
+      ],
+      "pipeline_errors": [],
+      "execution_time": 67.13
+    }
+  }
+]
