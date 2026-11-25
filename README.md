@@ -320,3 +320,20 @@ toolkit-radar/
 ## Acknowledgements
 
 Built using Composio, Tavily and Google Gemini for the Composio AI Product Ops take-home assignment.
+
+## Final Execution Status
+
+The research pipeline was configured to investigate 100 applications across 10 categories.
+
+At the submission cutoff:
+
+- Applications successfully researched: 87/100
+- Research completion rate: 87%
+- Applications without a completed research record: 13
+- Recorded terminal application failures: 0
+
+The remaining applications were not completed within the execution window. The pipeline supports persistent SQLite checkpoints and resumable batch execution, allowing unfinished applications to be processed without repeating completed research.
+
+All reported aggregate findings are based on completed application records. Unknown or insufficiently supported findings are retained as research gaps rather than replaced with speculative answers.
+
+Earlier pilot records were generated using previous pipeline iterations. Automated evidence verification and AI-assisted accuracy assessments should not be interpreted as independently established factual accuracy.

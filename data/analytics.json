@@ -1,0 +1,2697 @@
+{
+  "generated_at": "2026-11-25T12:28:59.820152+00:00",
+  "progress": {
+    "pending": 13,
+    "running": 0,
+    "completed": 87,
+    "failed": 0,
+    "total": 100,
+    "completion_rate": 87.0
+  },
+  "analyzed_applications": 87,
+  "distributions": {
+    "auth_methods": {
+      "oauth2": 68,
+      "api_key": 56,
+      "bearer_token": 43,
+      "basic": 19,
+      "other": 5,
+      "unknown": 2,
+      "none": 1
+    },
+    "access_types": {
+      "paid": 65,
+      "free": 41,
+      "unknown": 10,
+      "trial": 10,
+      "admin_approval": 10
+    },
+    "api_types": {
+      "rest": 80,
+      "sdk": 27,
+      "graphql": 18,
+      "cli": 10,
+      "rpc": 4,
+      "other": 3,
+      "unknown": 2
+    },
+    "api_breadth": {
+      "broad": 73,
+      "unknown": 5,
+      "moderate": 5,
+      "limited": 4
+    },
+    "mcp_status": {
+      "unknown": 33,
+      "official": 30,
+      "community": 13,
+      "not_found": 11
+    },
+    "buildability": {
+      "ready": 56,
+      "unknown": 18,
+      "conditional": 13
+    }
+  },
+  "categories": [
+    {
+      "category": "CRM",
+      "expected_apps": 10,
+      "completed_apps": 1,
+      "completion_rate": 10.0,
+      "buildability": {
+        "conditional": 1
+      },
+      "mcp_status": {
+        "unknown": 1
+      }
+    },
+    {
+      "category": "CRM and Sales",
+      "expected_apps": 10,
+      "completed_apps": 9,
+      "completion_rate": 90.0,
+      "buildability": {
+        "ready": 6,
+        "unknown": 2,
+        "conditional": 1
+      },
+      "mcp_status": {
+        "unknown": 5,
+        "not_found": 2,
+        "community": 1,
+        "official": 1
+      }
+    },
+    {
+      "category": "Communications and Messaging",
+      "expected_apps": 10,
+      "completed_apps": 10,
+      "completion_rate": 100.0,
+      "buildability": {
+        "ready": 8,
+        "unknown": 2
+      },
+      "mcp_status": {
+        "unknown": 4,
+        "official": 4,
+        "community": 2
+      }
+    },
+    {
+      "category": "Data, SEO and Scraping",
+      "expected_apps": 10,
+      "completed_apps": 10,
+      "completion_rate": 100.0,
+      "buildability": {
+        "ready": 7,
+        "unknown": 2,
+        "conditional": 1
+      },
+      "mcp_status": {
+        "official": 5,
+        "unknown": 4,
+        "not_found": 1
+      }
+    },
+    {
+      "category": "Developer, Infra and Data platforms",
+      "expected_apps": 10,
+      "completed_apps": 10,
+      "completion_rate": 100.0,
+      "buildability": {
+        "ready": 8,
+        "unknown": 2
+      },
+      "mcp_status": {
+        "official": 6,
+        "unknown": 3,
+        "not_found": 1
+      }
+    },
+    {
+      "category": "Ecommerce",
+      "expected_apps": 10,
+      "completed_apps": 10,
+      "completion_rate": 100.0,
+      "buildability": {
+        "ready": 6,
+        "unknown": 2,
+        "conditional": 2
+      },
+      "mcp_status": {
+        "community": 3,
+        "not_found": 3,
+        "unknown": 2,
+        "official": 2
+      }
+    },
+    {
+      "category": "Finance and Fintech",
+      "expected_apps": 10,
+      "completed_apps": 7,
+      "completion_rate": 70.0,
+      "buildability": {
+        "ready": 4,
+        "unknown": 2,
+        "conditional": 1
+      },
+      "mcp_status": {
+        "official": 3,
+        "not_found": 2,
+        "unknown": 1,
+        "community": 1
+      }
+    },
+    {
+      "category": "Marketing, Ads, Email and Social",
+      "expected_apps": 10,
+      "completed_apps": 10,
+      "completion_rate": 100.0,
+      "buildability": {
+        "conditional": 5,
+        "ready": 4,
+        "unknown": 1
+      },
+      "mcp_status": {
+        "unknown": 4,
+        "community": 4,
+        "not_found": 1,
+        "official": 1
+      }
+    },
+    {
+      "category": "Productivity and Project Management",
+      "expected_apps": 10,
+      "completed_apps": 10,
+      "completion_rate": 100.0,
+      "buildability": {
+        "ready": 7,
+        "unknown": 3
+      },
+      "mcp_status": {
+        "official": 5,
+        "unknown": 3,
+        "community": 2
+      }
+    },
+    {
+      "category": "Support and Helpdesk",
+      "expected_apps": 10,
+      "completed_apps": 10,
+      "completion_rate": 100.0,
+      "buildability": {
+        "ready": 6,
+        "conditional": 2,
+        "unknown": 2
+      },
+      "mcp_status": {
+        "unknown": 6,
+        "official": 3,
+        "not_found": 1
+      }
+    }
+  ],
+  "evidence": {
+    "published_claims": 928,
+    "supported_claims": 928,
+    "evidence_backed_claims": 928,
+    "unique_sources": 476,
+    "official_domain_matched_sources": 345,
+    "evidence_coverage": 100.0
+  },
+  "completeness": {
+    "average_critical_completeness": 88.51,
+    "field_coverage": {
+      "description": {
+        "resolved": 86,
+        "unresolved": 1,
+        "coverage": 98.85
+      },
+      "auth_methods": {
+        "resolved": 85,
+        "unresolved": 2,
+        "coverage": 97.7
+      },
+      "access_types": {
+        "resolved": 77,
+        "unresolved": 10,
+        "coverage": 88.51
+      },
+      "api_types": {
+        "resolved": 85,
+        "unresolved": 2,
+        "coverage": 97.7
+      },
+      "api_breadth": {
+        "resolved": 82,
+        "unresolved": 5,
+        "coverage": 94.25
+      },
+      "example_operations": {
+        "resolved": 78,
+        "unresolved": 9,
+        "coverage": 89.66
+      },
+      "mcp_status": {
+        "resolved": 54,
+        "unresolved": 33,
+        "coverage": 62.07
+      },
+      "buildability": {
+        "resolved": 69,
+        "unresolved": 18,
+        "coverage": 79.31
+      }
+    },
+    "application_scores": [
+      {
+        "app": "Salesforce",
+        "resolved_fields": 6,
+        "total_fields": 8,
+        "completeness": 75.0
+      },
+      {
+        "app": "HubSpot",
+        "resolved_fields": 5,
+        "total_fields": 8,
+        "completeness": 62.5
+      },
+      {
+        "app": "Pipedrive",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "Attio",
+        "resolved_fields": 5,
+        "total_fields": 8,
+        "completeness": 62.5
+      },
+      {
+        "app": "Twenty",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Podio",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Zoho CRM",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "Close",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "Copper",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "DealCloud",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Zendesk",
+        "resolved_fields": 5,
+        "total_fields": 8,
+        "completeness": 62.5
+      },
+      {
+        "app": "Intercom",
+        "resolved_fields": 5,
+        "total_fields": 8,
+        "completeness": 62.5
+      },
+      {
+        "app": "Freshdesk",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "Front",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "Pylon",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "LiveAgent",
+        "resolved_fields": 6,
+        "total_fields": 8,
+        "completeness": 75.0
+      },
+      {
+        "app": "Plain",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Help Scout",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "Gorgias",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Gladly",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "Slack",
+        "resolved_fields": 4,
+        "total_fields": 8,
+        "completeness": 50.0
+      },
+      {
+        "app": "Twilio",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Zoho Cliq",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "Lark",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "Pumble",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Discord",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "Telegram",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "WhatsApp Business",
+        "resolved_fields": 6,
+        "total_fields": 8,
+        "completeness": 75.0
+      },
+      {
+        "app": "Aircall",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Vonage",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Google Ads",
+        "resolved_fields": 6,
+        "total_fields": 8,
+        "completeness": 75.0
+      },
+      {
+        "app": "Meta Ads",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "LinkedIn Ads",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "GoHighLevel",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "Mailchimp",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "Klaviyo",
+        "resolved_fields": 6,
+        "total_fields": 8,
+        "completeness": 75.0
+      },
+      {
+        "app": "systeme.io",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Pinterest",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Threads",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "SendGrid",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "Shopify",
+        "resolved_fields": 4,
+        "total_fields": 8,
+        "completeness": 50.0
+      },
+      {
+        "app": "WooCommerce",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "BigCommerce",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Salesforce Commerce Cloud",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Magento",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Squarespace",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Ecwid",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Gumroad",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Amazon Selling Partner",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "fanbasis",
+        "resolved_fields": 3,
+        "total_fields": 8,
+        "completeness": 37.5
+      },
+      {
+        "app": "DataForSEO",
+        "resolved_fields": 4,
+        "total_fields": 8,
+        "completeness": 50.0
+      },
+      {
+        "app": "SE Ranking",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Ahrefs",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "MrScraper",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "Apify",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Firecrawl",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Bright Data",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Sherlock",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "Waterfall.io",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "Clay",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "GitHub",
+        "resolved_fields": 6,
+        "total_fields": 8,
+        "completeness": 75.0
+      },
+      {
+        "app": "Vercel",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Netlify",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Cloudflare",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Supabase",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "Neo4j",
+        "resolved_fields": 5,
+        "total_fields": 8,
+        "completeness": 62.5
+      },
+      {
+        "app": "Snowflake",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "MongoDB Atlas",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Datadog",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Sentry",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Notion",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "Airtable",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "Linear",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Jira",
+        "resolved_fields": 6,
+        "total_fields": 8,
+        "completeness": 75.0
+      },
+      {
+        "app": "Asana",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Monday.com",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "ClickUp",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Coda",
+        "resolved_fields": 6,
+        "total_fields": 8,
+        "completeness": 75.0
+      },
+      {
+        "app": "Smartsheet",
+        "resolved_fields": 6,
+        "total_fields": 8,
+        "completeness": 75.0
+      },
+      {
+        "app": "Harvest",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Stripe",
+        "resolved_fields": 2,
+        "total_fields": 8,
+        "completeness": 25.0
+      },
+      {
+        "app": "Plaid",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Binance",
+        "resolved_fields": 7,
+        "total_fields": 8,
+        "completeness": 87.5
+      },
+      {
+        "app": "Paygent Connect",
+        "resolved_fields": 6,
+        "total_fields": 8,
+        "completeness": 75.0
+      },
+      {
+        "app": "iPayX",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "QuickBooks",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      },
+      {
+        "app": "Brex",
+        "resolved_fields": 8,
+        "total_fields": 8,
+        "completeness": 100.0
+      }
+    ]
+  },
+  "opportunities": {
+    "easy_wins": [
+      {
+        "name": "Pipedrive",
+        "category": "CRM and Sales",
+        "auth_methods": [
+          "oauth2",
+          "api_key"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "free"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Twenty",
+        "category": "CRM and Sales",
+        "auth_methods": [
+          "api_key",
+          "oauth2"
+        ],
+        "api_types": [
+          "rest",
+          "graphql"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "community",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Podio",
+        "category": "CRM and Sales",
+        "auth_methods": [
+          "oauth2",
+          "api_key"
+        ],
+        "api_types": [
+          "rest",
+          "sdk"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "not_found",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Twilio",
+        "category": "Communications and Messaging",
+        "auth_methods": [
+          "oauth2",
+          "api_key",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Zoho Cliq",
+        "category": "Communications and Messaging",
+        "auth_methods": [
+          "oauth2"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Lark",
+        "category": "Communications and Messaging",
+        "auth_methods": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest",
+          "sdk"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Discord",
+        "category": "Communications and Messaging",
+        "auth_methods": [
+          "api_key",
+          "oauth2",
+          "basic"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "free"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Telegram",
+        "category": "Communications and Messaging",
+        "auth_methods": [
+          "api_key",
+          "bearer_token",
+          "basic"
+        ],
+        "api_types": [
+          "rest",
+          "rpc",
+          "sdk",
+          "cli"
+        ],
+        "access_types": [
+          "free"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "community",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Vonage",
+        "category": "Communications and Messaging",
+        "auth_methods": [
+          "oauth2",
+          "api_key",
+          "bearer_token",
+          "basic"
+        ],
+        "api_types": [
+          "rest",
+          "graphql",
+          "sdk"
+        ],
+        "access_types": [
+          "free",
+          "paid",
+          "admin_approval"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "systeme.io",
+        "category": "Marketing, Ads, Email and Social",
+        "auth_methods": [
+          "api_key"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "SendGrid",
+        "category": "Marketing, Ads, Email and Social",
+        "auth_methods": [
+          "api_key",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "paid",
+          "free"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "WooCommerce",
+        "category": "Ecommerce",
+        "auth_methods": [
+          "api_key",
+          "basic",
+          "other"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "free"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "community",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Magento",
+        "category": "Ecommerce",
+        "auth_methods": [
+          "oauth2",
+          "bearer_token",
+          "other"
+        ],
+        "api_types": [
+          "rest",
+          "graphql",
+          "other"
+        ],
+        "access_types": [
+          "paid",
+          "free"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "not_found",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Gumroad",
+        "category": "Ecommerce",
+        "auth_methods": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "free"
+        ],
+        "api_breadth": "moderate",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Firecrawl",
+        "category": "Data, SEO and Scraping",
+        "auth_methods": [
+          "api_key",
+          "bearer_token",
+          "oauth2"
+        ],
+        "api_types": [
+          "rest",
+          "sdk",
+          "cli"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Bright Data",
+        "category": "Data, SEO and Scraping",
+        "auth_methods": [
+          "api_key",
+          "bearer_token",
+          "other"
+        ],
+        "api_types": [
+          "rest",
+          "sdk",
+          "cli"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Vercel",
+        "category": "Developer, Infra and Data platforms",
+        "auth_methods": [
+          "api_key",
+          "oauth2"
+        ],
+        "api_types": [
+          "rest",
+          "sdk"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Netlify",
+        "category": "Developer, Infra and Data platforms",
+        "auth_methods": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest",
+          "cli"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Cloudflare",
+        "category": "Developer, Infra and Data platforms",
+        "auth_methods": [
+          "api_key",
+          "bearer_token",
+          "oauth2"
+        ],
+        "api_types": [
+          "rest",
+          "graphql",
+          "sdk"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "not_found",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Supabase",
+        "category": "Developer, Infra and Data platforms",
+        "auth_methods": [
+          "api_key",
+          "oauth2",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest",
+          "graphql",
+          "rpc"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Sentry",
+        "category": "Developer, Infra and Data platforms",
+        "auth_methods": [
+          "oauth2",
+          "api_key",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest",
+          "sdk",
+          "cli"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Notion",
+        "category": "Productivity and Project Management",
+        "auth_methods": [
+          "oauth2",
+          "api_key",
+          "bearer_token",
+          "basic"
+        ],
+        "api_types": [
+          "rest",
+          "sdk"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Airtable",
+        "category": "Productivity and Project Management",
+        "auth_methods": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Linear",
+        "category": "Productivity and Project Management",
+        "auth_methods": [
+          "oauth2",
+          "api_key",
+          "bearer_token"
+        ],
+        "api_types": [
+          "graphql",
+          "sdk"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Asana",
+        "category": "Productivity and Project Management",
+        "auth_methods": [
+          "oauth2",
+          "api_key",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Monday.com",
+        "category": "Productivity and Project Management",
+        "auth_methods": [
+          "api_key",
+          "oauth2"
+        ],
+        "api_types": [
+          "graphql"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "ClickUp",
+        "category": "Productivity and Project Management",
+        "auth_methods": [
+          "oauth2",
+          "api_key"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Plaid",
+        "category": "Finance and Fintech",
+        "auth_methods": [
+          "api_key",
+          "bearer_token",
+          "oauth2"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "free",
+          "trial",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Binance",
+        "category": "Finance and Fintech",
+        "auth_methods": [
+          "api_key",
+          "other"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "free"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "iPayX",
+        "category": "Finance and Fintech",
+        "auth_methods": [
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "moderate",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      }
+    ],
+    "conditional_integrations": [
+      {
+        "name": "Salesforce",
+        "category": "CRM",
+        "auth_methods": [
+          "oauth2"
+        ],
+        "api_types": [
+          "rest",
+          "graphql",
+          "sdk",
+          "other"
+        ],
+        "access_types": [
+          "unknown"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "conditional",
+        "blockers": [
+          "Requires specific Salesforce editions for API access (Professional Edition needs an add-on).",
+          "Requires 'API Enabled' permission for the user profile."
+        ],
+        "reason": "Integration is feasible subject to documented requirements. Requirements or restrictions: Requires specific Salesforce editions for API access (Professional Edition needs an add-on).; Requires 'API Enabled' permission for the user profile."
+      },
+      {
+        "name": "Zoho CRM",
+        "category": "CRM and Sales",
+        "auth_methods": [
+          "oauth2",
+          "api_key"
+        ],
+        "api_types": [
+          "rest",
+          "graphql",
+          "sdk"
+        ],
+        "access_types": [
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Close",
+        "category": "CRM and Sales",
+        "auth_methods": [
+          "api_key",
+          "oauth2"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Copper",
+        "category": "CRM and Sales",
+        "auth_methods": [
+          "api_key",
+          "oauth2"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "not_found",
+        "buildability": "conditional",
+        "blockers": [
+          "Full API access requires a Business plan subscription",
+          "API key generation is restricted to administrator users"
+        ],
+        "reason": "Integration is feasible subject to documented requirements. Requirements or restrictions: Full API access requires a Business plan subscription; API key generation is restricted to administrator users"
+      },
+      {
+        "name": "DealCloud",
+        "category": "CRM and Sales",
+        "auth_methods": [
+          "oauth2",
+          "api_key",
+          "basic",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest",
+          "graphql"
+        ],
+        "access_types": [
+          "admin_approval"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Zendesk",
+        "category": "Support and Helpdesk",
+        "auth_methods": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest",
+          "graphql"
+        ],
+        "access_types": [
+          "paid"
+        ],
+        "api_breadth": "unknown",
+        "mcp_status": "unknown",
+        "buildability": "conditional",
+        "blockers": [
+          "Certain APIs like Chat Conversations are in maintenance mode or restricted for new integrations",
+          "API access is dependent on specific Zendesk plan levels"
+        ],
+        "reason": "Integration is feasible subject to documented requirements. Requirements or restrictions: Certain APIs like Chat Conversations are in maintenance mode or restricted for new integrations; API access is dependent on specific Zendesk plan levels"
+      },
+      {
+        "name": "Freshdesk",
+        "category": "Support and Helpdesk",
+        "auth_methods": [
+          "api_key",
+          "basic"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "paid",
+          "admin_approval"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "conditional",
+        "blockers": [
+          "API key and MCP functionality are unavailable on the Free plan",
+          "Requires administrator or agent privileges",
+          "Custom domains are not supported for MCP endpoints"
+        ],
+        "reason": "Integration is feasible subject to documented requirements. Requirements or restrictions: API key and MCP functionality are unavailable on the Free plan; Requires administrator or agent privileges; Custom domains are not supported for MCP endpoints"
+      },
+      {
+        "name": "Front",
+        "category": "Support and Helpdesk",
+        "auth_methods": [
+          "api_key",
+          "oauth2",
+          "basic",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest",
+          "sdk"
+        ],
+        "access_types": [
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Pylon",
+        "category": "Support and Helpdesk",
+        "auth_methods": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Plain",
+        "category": "Support and Helpdesk",
+        "auth_methods": [
+          "oauth2",
+          "api_key"
+        ],
+        "api_types": [
+          "graphql"
+        ],
+        "access_types": [
+          "paid",
+          "trial"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Help Scout",
+        "category": "Support and Helpdesk",
+        "auth_methods": [
+          "oauth2",
+          "basic"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "paid",
+          "trial"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Gorgias",
+        "category": "Support and Helpdesk",
+        "auth_methods": [
+          "oauth2",
+          "api_key",
+          "basic"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "paid",
+          "trial"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Gladly",
+        "category": "Support and Helpdesk",
+        "auth_methods": [
+          "api_key",
+          "basic",
+          "oauth2"
+        ],
+        "api_types": [
+          "rest",
+          "sdk"
+        ],
+        "access_types": [
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Pumble",
+        "category": "Communications and Messaging",
+        "auth_methods": [
+          "api_key",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "free"
+        ],
+        "api_breadth": "limited",
+        "mcp_status": "community",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Aircall",
+        "category": "Communications and Messaging",
+        "auth_methods": [
+          "oauth2",
+          "basic"
+        ],
+        "api_types": [
+          "rest",
+          "sdk",
+          "other"
+        ],
+        "access_types": [
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Google Ads",
+        "category": "Marketing, Ads, Email and Social",
+        "auth_methods": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest",
+          "rpc",
+          "sdk"
+        ],
+        "access_types": [
+          "free"
+        ],
+        "api_breadth": "unknown",
+        "mcp_status": "unknown",
+        "buildability": "conditional",
+        "blockers": [
+          "Access to production accounts and higher API operation limits requires applying for specific access levels (Explorer, Basic, Standard) which are subject to review and approval."
+        ],
+        "reason": "Integration is feasible subject to documented requirements. Requirements or restrictions: Access to production accounts and higher API operation limits requires applying for specific access levels (Explorer, Basic, Standard) which are subject to review and approval."
+      },
+      {
+        "name": "Meta Ads",
+        "category": "Marketing, Ads, Email and Social",
+        "auth_methods": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "free",
+          "admin_approval",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "community",
+        "buildability": "conditional",
+        "blockers": [
+          "App Review and business verification required for production access",
+          "Rate limits apply based on access tier",
+          "Permissions must be explicitly requested and approved"
+        ],
+        "reason": "Integration is feasible subject to documented requirements. Requirements or restrictions: App Review and business verification required for production access; Rate limits apply based on access tier; Permissions must be explicitly requested and approved"
+      },
+      {
+        "name": "LinkedIn Ads",
+        "category": "Marketing, Ads, Email and Social",
+        "auth_methods": [
+          "oauth2"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "paid",
+          "admin_approval"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "not_found",
+        "buildability": "conditional",
+        "blockers": [
+          "Requires formal developer application and approval process",
+          "Access tiers restrict the number of manageable ad accounts",
+          "No official LinkedIn-provided MCP server exists"
+        ],
+        "reason": "Integration is feasible subject to documented requirements. Requirements or restrictions: Requires formal developer application and approval process; Access tiers restrict the number of manageable ad accounts; No official LinkedIn-provided MCP server exists"
+      },
+      {
+        "name": "GoHighLevel",
+        "category": "Marketing, Ads, Email and Social",
+        "auth_methods": [
+          "oauth2",
+          "api_key"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Mailchimp",
+        "category": "Marketing, Ads, Email and Social",
+        "auth_methods": [
+          "oauth2",
+          "api_key",
+          "basic",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Pinterest",
+        "category": "Marketing, Ads, Email and Social",
+        "auth_methods": [
+          "oauth2"
+        ],
+        "api_types": [
+          "rest",
+          "sdk"
+        ],
+        "access_types": [
+          "trial",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "community",
+        "buildability": "conditional",
+        "blockers": [
+          "Requires application review and approval by Pinterest",
+          "Standard access requires a video demonstration of the OAuth flow"
+        ],
+        "reason": "Integration is feasible subject to documented requirements. Requirements or restrictions: Requires application review and approval by Pinterest; Standard access requires a video demonstration of the OAuth flow"
+      },
+      {
+        "name": "Threads",
+        "category": "Marketing, Ads, Email and Social",
+        "auth_methods": [
+          "oauth2"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "free",
+          "admin_approval"
+        ],
+        "api_breadth": "moderate",
+        "mcp_status": "community",
+        "buildability": "conditional",
+        "blockers": [
+          "Requires App Review and approval for advanced access to specific permissions",
+          "Media must be hosted on a publicly accessible server for publishing"
+        ],
+        "reason": "Integration is feasible subject to documented requirements. Requirements or restrictions: Requires App Review and approval for advanced access to specific permissions; Media must be hosted on a publicly accessible server for publishing"
+      },
+      {
+        "name": "BigCommerce",
+        "category": "Ecommerce",
+        "auth_methods": [
+          "oauth2",
+          "api_key"
+        ],
+        "api_types": [
+          "rest",
+          "graphql"
+        ],
+        "access_types": [
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "not_found",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Salesforce Commerce Cloud",
+        "category": "Ecommerce",
+        "auth_methods": [
+          "oauth2",
+          "basic"
+        ],
+        "api_types": [
+          "rest",
+          "graphql"
+        ],
+        "access_types": [
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "community",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Squarespace",
+        "category": "Ecommerce",
+        "auth_methods": [
+          "oauth2",
+          "api_key",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "paid"
+        ],
+        "api_breadth": "moderate",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Ecwid",
+        "category": "Ecommerce",
+        "auth_methods": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "not_found",
+        "buildability": "conditional",
+        "blockers": [
+          "Requires a paid Ecwid subscription plan to access the API",
+          "API rate limits apply (600 requests per minute per token)"
+        ],
+        "reason": "Integration is feasible subject to documented requirements. Requirements or restrictions: Requires a paid Ecwid subscription plan to access the API; API rate limits apply (600 requests per minute per token)"
+      },
+      {
+        "name": "Amazon Selling Partner",
+        "category": "Ecommerce",
+        "auth_methods": [
+          "oauth2"
+        ],
+        "api_types": [
+          "rest",
+          "sdk"
+        ],
+        "access_types": [
+          "admin_approval"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "community",
+        "buildability": "conditional",
+        "blockers": [
+          "Requires registration and approval in the Solution Provider Portal",
+          "Requires OAuth 2.0 authorization from a selling partner or self-authorization for private apps",
+          "Restricted operations require specific roles and Restricted Data Tokens (RDTs)"
+        ],
+        "reason": "Integration is feasible subject to documented requirements. Requirements or restrictions: Requires registration and approval in the Solution Provider Portal; Requires OAuth 2.0 authorization from a selling partner or self-authorization for private apps; Restricted operations require specific roles and Restricted Data Tokens (RDTs)"
+      },
+      {
+        "name": "SE Ranking",
+        "category": "Data, SEO and Scraping",
+        "auth_methods": [
+          "api_key",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "paid",
+          "trial"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Ahrefs",
+        "category": "Data, SEO and Scraping",
+        "auth_methods": [
+          "api_key",
+          "oauth2"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "MrScraper",
+        "category": "Data, SEO and Scraping",
+        "auth_methods": [
+          "api_key",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest",
+          "cli",
+          "sdk"
+        ],
+        "access_types": [
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Apify",
+        "category": "Data, SEO and Scraping",
+        "auth_methods": [
+          "api_key"
+        ],
+        "api_types": [
+          "rest",
+          "sdk"
+        ],
+        "access_types": [
+          "paid",
+          "trial"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Sherlock",
+        "category": "Data, SEO and Scraping",
+        "auth_methods": [
+          "none"
+        ],
+        "api_types": [
+          "cli"
+        ],
+        "access_types": [
+          "free"
+        ],
+        "api_breadth": "limited",
+        "mcp_status": "unknown",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Clay",
+        "category": "Data, SEO and Scraping",
+        "auth_methods": [
+          "api_key",
+          "bearer_token",
+          "oauth2"
+        ],
+        "api_types": [
+          "rest",
+          "cli"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "limited",
+        "mcp_status": "unknown",
+        "buildability": "conditional",
+        "blockers": [
+          "Public REST API is read-only for tables and cannot create or write to them",
+          "Enterprise-level features like People & Company API require sales contact",
+          "CLI access is restricted to Admin and Editor roles",
+          "Webhook delivery is not guaranteed"
+        ],
+        "reason": "Integration is feasible subject to documented requirements. Requirements or restrictions: Public REST API is read-only for tables and cannot create or write to them; Enterprise-level features like People & Company API require sales contact; CLI access is restricted to Admin and Editor roles; Webhook delivery is not guaranteed"
+      },
+      {
+        "name": "Snowflake",
+        "category": "Developer, Infra and Data platforms",
+        "auth_methods": [
+          "oauth2",
+          "api_key",
+          "bearer_token",
+          "other"
+        ],
+        "api_types": [
+          "rest",
+          "sdk"
+        ],
+        "access_types": [
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "MongoDB Atlas",
+        "category": "Developer, Infra and Data platforms",
+        "auth_methods": [
+          "oauth2",
+          "api_key"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Datadog",
+        "category": "Developer, Infra and Data platforms",
+        "auth_methods": [
+          "oauth2",
+          "api_key",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest",
+          "graphql"
+        ],
+        "access_types": [
+          "paid",
+          "trial"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "Harvest",
+        "category": "Productivity and Project Management",
+        "auth_methods": [
+          "oauth2",
+          "api_key"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "community",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      },
+      {
+        "name": "QuickBooks",
+        "category": "Finance and Fintech",
+        "auth_methods": [
+          "oauth2"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "community",
+        "buildability": "conditional",
+        "blockers": [
+          "Strict rate limits of 500 requests per minute per company",
+          "1-hour access token expiry requiring token management",
+          "Usage-based pricing for data retrieval operations",
+          "Requirement for an Intuit Developer account and OAuth 2.0 implementation"
+        ],
+        "reason": "Integration is feasible subject to documented requirements. Requirements or restrictions: Strict rate limits of 500 requests per minute per company; 1-hour access token expiry requiring token management; Usage-based pricing for data retrieval operations; Requirement for an Intuit Developer account and OAuth 2.0 implementation"
+      },
+      {
+        "name": "Brex",
+        "category": "Finance and Fintech",
+        "auth_methods": [
+          "oauth2",
+          "api_key",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "paid",
+          "admin_approval"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "ready",
+        "blockers": [],
+        "reason": "Documentation indicates that integration is feasible."
+      }
+    ],
+    "outreach_candidates": [],
+    "needs_more_research": [
+      {
+        "name": "HubSpot",
+        "category": "CRM and Sales",
+        "auth_methods": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest",
+          "graphql"
+        ],
+        "access_types": [
+          "paid",
+          "trial"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "unknown",
+        "blockers": [],
+        "reason": ""
+      },
+      {
+        "name": "Attio",
+        "category": "CRM and Sales",
+        "auth_methods": [
+          "oauth2",
+          "api_key",
+          "bearer_token",
+          "basic"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "unknown",
+        "mcp_status": "unknown",
+        "buildability": "unknown",
+        "blockers": [],
+        "reason": ""
+      },
+      {
+        "name": "Intercom",
+        "category": "Support and Helpdesk",
+        "auth_methods": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "unknown"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "unknown",
+        "blockers": [],
+        "reason": ""
+      },
+      {
+        "name": "LiveAgent",
+        "category": "Support and Helpdesk",
+        "auth_methods": [
+          "api_key",
+          "oauth2"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "unknown"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "not_found",
+        "buildability": "unknown",
+        "blockers": [],
+        "reason": ""
+      },
+      {
+        "name": "Slack",
+        "category": "Communications and Messaging",
+        "auth_methods": [
+          "oauth2"
+        ],
+        "api_types": [
+          "rpc"
+        ],
+        "access_types": [
+          "unknown"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "unknown",
+        "blockers": [],
+        "reason": ""
+      },
+      {
+        "name": "WhatsApp Business",
+        "category": "Communications and Messaging",
+        "auth_methods": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "paid",
+          "free"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "unknown",
+        "blockers": [],
+        "reason": ""
+      },
+      {
+        "name": "Klaviyo",
+        "category": "Marketing, Ads, Email and Social",
+        "auth_methods": [
+          "api_key",
+          "oauth2"
+        ],
+        "api_types": [
+          "rest",
+          "sdk"
+        ],
+        "access_types": [
+          "unknown"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "community",
+        "buildability": "unknown",
+        "blockers": [],
+        "reason": ""
+      },
+      {
+        "name": "Shopify",
+        "category": "Ecommerce",
+        "auth_methods": [
+          "oauth2",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest",
+          "graphql",
+          "sdk",
+          "cli"
+        ],
+        "access_types": [
+          "paid",
+          "admin_approval"
+        ],
+        "api_breadth": "unknown",
+        "mcp_status": "unknown",
+        "buildability": "unknown",
+        "blockers": [],
+        "reason": ""
+      },
+      {
+        "name": "fanbasis",
+        "category": "Ecommerce",
+        "auth_methods": [
+          "unknown"
+        ],
+        "api_types": [
+          "rest",
+          "sdk"
+        ],
+        "access_types": [
+          "unknown"
+        ],
+        "api_breadth": "moderate",
+        "mcp_status": "unknown",
+        "buildability": "unknown",
+        "blockers": [],
+        "reason": ""
+      },
+      {
+        "name": "DataForSEO",
+        "category": "Data, SEO and Scraping",
+        "auth_methods": [
+          "basic"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "trial",
+          "paid"
+        ],
+        "api_breadth": "unknown",
+        "mcp_status": "unknown",
+        "buildability": "unknown",
+        "blockers": [],
+        "reason": ""
+      },
+      {
+        "name": "Waterfall.io",
+        "category": "Data, SEO and Scraping",
+        "auth_methods": [
+          "api_key"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "admin_approval",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "not_found",
+        "buildability": "unknown",
+        "blockers": [],
+        "reason": ""
+      },
+      {
+        "name": "GitHub",
+        "category": "Developer, Infra and Data platforms",
+        "auth_methods": [
+          "oauth2",
+          "api_key"
+        ],
+        "api_types": [
+          "unknown"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "unknown",
+        "blockers": [],
+        "reason": ""
+      },
+      {
+        "name": "Neo4j",
+        "category": "Developer, Infra and Data platforms",
+        "auth_methods": [
+          "api_key",
+          "oauth2",
+          "basic",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest",
+          "sdk",
+          "cli"
+        ],
+        "access_types": [
+          "free",
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "unknown",
+        "blockers": [],
+        "reason": ""
+      },
+      {
+        "name": "Jira",
+        "category": "Productivity and Project Management",
+        "auth_methods": [
+          "oauth2",
+          "api_key",
+          "basic"
+        ],
+        "api_types": [
+          "rest",
+          "graphql"
+        ],
+        "access_types": [
+          "unknown"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "official",
+        "buildability": "unknown",
+        "blockers": [],
+        "reason": ""
+      },
+      {
+        "name": "Coda",
+        "category": "Productivity and Project Management",
+        "auth_methods": [
+          "api_key"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "unknown"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "community",
+        "buildability": "unknown",
+        "blockers": [],
+        "reason": ""
+      },
+      {
+        "name": "Smartsheet",
+        "category": "Productivity and Project Management",
+        "auth_methods": [
+          "oauth2",
+          "api_key",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest",
+          "sdk"
+        ],
+        "access_types": [
+          "paid"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "unknown",
+        "buildability": "unknown",
+        "blockers": [
+          "MFA policies on user accounts can block API token requests if not exempted by a system administrator"
+        ],
+        "reason": ""
+      },
+      {
+        "name": "Stripe",
+        "category": "Finance and Fintech",
+        "auth_methods": [
+          "unknown"
+        ],
+        "api_types": [
+          "unknown"
+        ],
+        "access_types": [
+          "unknown"
+        ],
+        "api_breadth": "broad",
+        "mcp_status": "not_found",
+        "buildability": "unknown",
+        "blockers": [],
+        "reason": ""
+      },
+      {
+        "name": "Paygent Connect",
+        "category": "Finance and Fintech",
+        "auth_methods": [
+          "basic",
+          "bearer_token"
+        ],
+        "api_types": [
+          "rest"
+        ],
+        "access_types": [
+          "unknown"
+        ],
+        "api_breadth": "limited",
+        "mcp_status": "not_found",
+        "buildability": "unknown",
+        "blockers": [],
+        "reason": ""
+      }
+    ]
+  },
+  "benchmarks": {
+    "v2": {
+      "successful": 3,
+      "failed": 0,
+      "matched_baseline": 38.89,
+      "average_completeness": 33.34,
+      "improvement_pp": -5.55,
+      "applications": [
+        {
+          "name": "Slack",
+          "before": 33.33,
+          "after": 41.67
+        },
+        {
+          "name": "GitHub",
+          "before": 66.67,
+          "after": 41.67
+        },
+        {
+          "name": "Stripe",
+          "before": 16.67,
+          "after": 16.67
+        }
+      ]
+    },
+    "v3": {
+      "successful": 2,
+      "failed": 1,
+      "matched_baseline": 25.0,
+      "average_completeness": 66.67,
+      "improvement_pp": 41.67,
+      "applications": [
+        {
+          "name": "Slack",
+          "before": 33.33,
+          "after": 66.67
+        },
+        {
+          "name": "Stripe",
+          "before": 16.67,
+          "after": 66.67
+        }
+      ]
+    },
+    "v4": {
+      "successful": 3,
+      "failed": 0,
+      "matched_baseline": 38.89,
+      "average_completeness": 72.22,
+      "improvement_pp": 33.33,
+      "applications": [
+        {
+          "name": "Slack",
+          "before": 33.33,
+          "after": 83.33
+        },
+        {
+          "name": "GitHub",
+          "before": 66.67,
+          "after": 50.0
+        },
+        {
+          "name": "Stripe",
+          "before": 16.67,
+          "after": 83.33
+        }
+      ]
+    }
+  }
+}
