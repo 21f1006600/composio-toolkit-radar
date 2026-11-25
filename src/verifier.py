@@ -6,8 +6,8 @@ import time
 from typing import Literal
 
 from google import genai
-from google.genai import types
-from pydantic import BaseModel
+from google.genai import types, errors
+from pydantic import BaseModel, ValidationError
 
 from src.config import (
     GEMINI_API_KEY,
@@ -162,6 +162,13 @@ An empty MCP URL when MCP is unknown or not_found, and empty blockers when
 no blocker is asserted, need not independently trigger searches.
 For nonempty list fields, unsupported_values must use exact original values.
 Do not classify personal access tokens as API keys without explicit evidence.
+Audit the actual structured field values independently of claim truth.
+A true RPC claim cannot support a REST field value. Explicitly flag each
+unsupported original enum value. Product pricing alone does not establish
+API access pricing. Sandbox mode is not a time-limited trial. Live mode is
+not proof of a paid access requirement. HTTP Basic must map to basic.
+Distinguish core business APIs from status endpoints and configuration APIs.
+Do not approve a ready assessment if essential access facts are unsupported.
 Do not rewrite the research record.
 Only evaluate it.
 """
@@ -264,7 +271,25 @@ class VerificationAgent:
     # Execute Semantic Verification
     # ======================================
 
-    async def generate_verdicts(
+    async def generate_verdicts(self, payload: dict) -> VerificationOutput:
+        # Retry transient service failures, not exhausted quotas or invalid requests.
+        for attempt in range(3):
+            try:
+                return await self._generate_verdicts_once(payload)
+            except errors.APIError as exc:
+                if getattr(exc, "code", None) not in {500, 502, 503, 504} or attempt == 2:
+                    raise
+                delay = 2 ** (attempt + 2)
+                logger.warning("Verification transient failure; retry in %ss", delay)
+            except (ValidationError, RuntimeError):
+                if attempt == 2:
+                    raise
+                delay = 2 ** (attempt + 2)
+                logger.warning("Invalid verification output; retry in %ss", delay)
+            await asyncio.sleep(delay)
+        raise RuntimeError("Verification attempts exhausted")
+
+    async def _generate_verdicts_once(
         self,
         payload: dict
     ) -> VerificationOutput:
@@ -521,7 +546,7 @@ class VerificationAgent:
                 )
 
                 claim.verification_reason = (
-                    "No valid source quotation."
+                    "No valid source passage."
                 )
 
                 continue

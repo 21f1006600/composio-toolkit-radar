@@ -45,8 +45,7 @@ logger = logging.getLogger(__name__)
 
 class LLMEvidence(BaseModel):
 
-    source_id: str
-    quote: str
+    passage_id: str
 
 
 class LLMClaim(BaseModel):
@@ -140,18 +139,16 @@ RESEARCH RULES:
 7. Use unknown when evidence is insufficient.
 
 8. Every material non-unknown field must have
-   supporting claims and exact source quotations.
+   supporting claims and source passage IDs.
 
 9. For list fields, provide a separate claim
    for each material item.
 
-10. Every quotation must appear verbatim in
-    the supplied source content.
+10. Cite passage IDs only; Python retrieves the original evidence.
 
-11. Reference evidence using source IDs such
-    as S1, S2 and S3.
+11. Reference evidence using passage IDs such as S1-P1.
 
-12. Do not invent source IDs or quotations.
+12. Do not invent passage IDs.
 
 13. Do not treat free documentation access
     as evidence of free API access.
@@ -254,7 +251,7 @@ Do not include authentication procedures or
 MCP tool names as direct API operations.
 
 For each claim, prefer one or two strong
-supporting quotations.
+supporting passages.
 
 Avoid repeating the same fact across
 multiple fields unless necessary.
@@ -265,12 +262,14 @@ from adjacent vendor products.
 Assess every field explicitly. Prioritize authentication, access, API protocol,
 core business operations, breadth, MCP and buildability before optional detail.
 Do not omit evidence claims for populated fields. Aim for 12–24 claims when
-sources permit, not a fixed minimum. Copy short contiguous quotations exactly;
-never join separate passages or add ellipses. For each list value use a claim
+sources permit, not a fixed minimum. Cite passage IDs, not copied quotations. For each list value use a claim
 whose statement explicitly names that value. Unknown is preferable to guessing.
+Use rpc for explicitly RPC-style APIs, not rest. Use basic for HTTP Basic.
+Do not infer paid access from live mode or trial access from sandboxes.
 Do not classify MCP as not_found from document silence alone; use unknown.
 For MCP URL use a supplied source URL that actually identifies the implementation,
-not a general MCP tutorial. Include a claim with a quotation identifying it.
+not a general MCP tutorial. Include a claim citing a passage identifying it.
+MCP is optional for REST or other documented API integration; unknown MCP alone must not prevent a buildability assessment.
 A community MCP server does not exclude
 the existence of an official MCP server.
 """
@@ -360,26 +359,48 @@ class ResearchAgent:
 
             source_id = f"S{index}"
 
-            content = ResearchAgent.relevant_excerpt(document["content"], per_source_budget, document.get("topic", ""))
-
-            source = {
-                **document,
-                "original_content": document["content"],
-                "content": content,
-            }
-
-            source_map[source_id] = source
-
+            content = document["content"]
+            # Split original text at whitespace boundaries; never join unrelated passages.
+            chunks = []
+            start = 0
+            while start < len(content):
+                end = min(start + 750, len(content))
+                if end < len(content):
+                    boundary = content.rfind(" ", start + 350, end)
+                    newline = content.rfind("\n", start + 350, end)
+                    if max(boundary, newline) > start:
+                        end = max(boundary, newline)
+                chunks.append((start, content[start:end]))
+                start = end
+            terms = {
+                "authentication": "oauth authentication token authorization key credentials",
+                "access": "pricing free paid plan subscription permission approval",
+                "api_capabilities": "endpoint resource create update delete list rest graphql rpc",
+                "mcp": "mcp server model context protocol official maintained",
+            }.get(document.get("topic"), "api authentication pricing endpoint resource mcp").split()
+            ranked = sorted(chunks, key=lambda x: sum(t in x[1].lower() for t in terms), reverse=True)
+            selected = []
+            remaining = per_source_budget
+            for offset, passage in chunks[:1] + ranked:
+                if any(offset == old for old, _ in selected) or remaining < 100:
+                    continue
+                passage = passage[:remaining].strip()
+                if len(passage) < 20:
+                    continue
+                selected.append((offset, passage))
+                remaining -= len(passage)
+            passages = []
+            for number, (_, passage) in enumerate(sorted(selected), 1):
+                pid = f"{source_id}-P{number}"
+                source_map[pid] = {**document, "content": passage}
+                passages.append({"passage_id": pid, "text": passage})
             block = {
                 "source_id": source_id,
                 "title": document.get("title", ""),
                 "url": document["url"],
                 "topic": document.get("topic", ""),
-                "official_domain_match": document.get(
-                    "official_source",
-                    False
-                ),
-                "content": content,
+                "official_domain_match": document.get("official_source", False),
+                "passages": passages,
             }
 
             context_blocks.append(block)
@@ -427,8 +448,7 @@ END OF SOURCE DOCUMENTS
 
 Return the complete structured research output.
 
-Every material claim must be linked to exact
-supporting quotations from the supplied sources.
+Every material claim must cite supporting passage IDs from the supplied sources.
 """
 
     # ======================================
@@ -454,52 +474,18 @@ supporting quotations from the supplied sources.
         source_map: dict
     ) -> Evidence | None:
 
-        source = source_map.get(
-            reference.source_id
-        )
-
+        source = source_map.get(reference.passage_id)
         if not source:
-
-            logger.warning(
-                "Unknown source ID: %s",
-                reference.source_id
-            )
-
+            logger.warning("Unknown passage ID: %s", reference.passage_id)
             return None
-
-        quote = self.normalize_text(
-            reference.quote
-        )
-
-        content = self.normalize_text(
-            source.get("original_content", source["content"])
-        )
-
-        # Reject empty or excessively short quotations.
-        if len(quote) < 20:
-
-            logger.warning(
-                "Evidence quotation too short: %s",
-                reference.source_id
-            )
-
-            return None
-
-        # Exact matching after whitespace normalization.
-        if quote not in content:
-
-            logger.warning(
-                "Quotation not found in source %s",
-                reference.source_id
-            )
-
+        if len(source["content"].strip()) < 20:
             return None
 
         try:
 
             return Evidence(
                 source_url=source["url"],
-                excerpt=reference.quote.strip(),
+                excerpt=source["content"].strip(),
                 source_title=source.get("title", ""),
                 retrieved_at=source["retrieved_at"],
                 official_source=source.get(
@@ -566,7 +552,7 @@ supporting quotations from the supplied sources.
                 status = VerificationStatus.PENDING
 
                 reason = (
-                    "Source and quotation checks passed. "
+                    "Passage reference validated. "
                     "Semantic verification pending."
                 )
 
@@ -575,7 +561,7 @@ supporting quotations from the supplied sources.
                 status = VerificationStatus.INSUFFICIENT
 
                 reason = (
-                    "No valid source quotation "
+                    "No valid source passage "
                     "could be established."
                 )
 
