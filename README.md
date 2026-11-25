@@ -152,7 +152,7 @@ The project also includes 22 automated regression tests covering schemas, verifi
 ### Installation
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/21f1006600/composio-toolkit-radar
 cd toolkit-radar
 
 python -m venv .venv
